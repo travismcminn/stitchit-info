@@ -1,60 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>SWF Sales Deck</title>
 
 <style>
-  body {
-    margin: 0;
-    background: #111;
-    scroll-snap-type: y mandatory;
+  :root{
+    --slide-w: 1056; /* 11in at 96dpi */
+    --slide-h: 816;  /* 8.5in at 96dpi */
   }
 
-  .slide {
-    width: 100%;
-    height: 100vh;
-    border: none;
-    display: block;
-    scroll-snap-align: start;
+  * { box-sizing: border-box; }
+
+  body{
+    margin:0;
+    background:#e9e9e9;
+    font-family:Arial, Helvetica, sans-serif;
+  }
+
+  .deck{
+    width:100%;
+    padding:18px 0 40px;
+  }
+
+  .slide-shell{
+    width:min(100%, 1100px);
+    margin:0 auto 18px;
+    background:#fff;
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:0 8px 24px rgba(0,0,0,.10);
+  }
+
+  .slide-frame-wrap{
+    position:relative;
+    width:100%;
+    overflow:hidden;
+    background:#fff;
+  }
+
+  .slide-frame{
+    display:block;
+    width:calc(var(--slide-w) * 1px);
+    height:calc(var(--slide-h) * 1px);
+    border:0;
+    transform-origin:top left;
+  }
+
+  @media (max-width: 768px){
+    .deck{
+      padding:10px 0 24px;
+    }
+
+    .slide-shell{
+      margin:0 auto 12px;
+      border-radius:0;
+      box-shadow:none;
+    }
   }
 </style>
 </head>
-
 <body>
 
-<!-- MACHINES -->
+<div class="deck">
 
-<iframe class="slide" src="KE-page.html"></iframe>
-<iframe class="slide" src="KX-page.html"></iframe>
-<iframe class="slide" src="KX Dual-Page.html"></iframe>
-<iframe class="slide" src="KX Single-Page.html"></iframe>
+  <section class="slide-shell"><div class="slide-frame-wrap"><iframe class="slide-frame" src="KE-page.html" loading="lazy"></iframe></div></section>
+  <section class="slide-shell"><div class="slide-frame-wrap"><iframe class="slide-frame" src="KX-page.html" loading="lazy"></iframe></div></section>
+  <section class="slide-shell"><div class="slide-frame-wrap"><iframe class="slide-frame" src="KX Dual-Page.html" loading="lazy"></iframe></div></section>
+  <section class="slide-shell"><div class="slide-frame-wrap"><iframe class="slide-frame" src="KX Single-Page.html" loading="lazy"></iframe></div></section>
 
-<!-- SINGLE HEAD / ENTRY -->
+  <section class="slide-shell"><div class="slide-frame-wrap"><iframe class="slide-frame" src="ES Full Size-Page.html" loading="lazy"></iframe></div></section>
+  <section class="slide-shell"><div class="slide-frame-wrap"><iframe class="slide-frame" src="ES-T1501C-Page.html" loading="lazy"></iframe></div></section>
+  <section class="slide-shell"><div class="slide-frame-wrap"><iframe class="slide-frame" src="MAS-12-Page.html" loading="lazy"></iframe></div></section>
 
-<iframe class="slide" src="ES Full Size-Page.html"></iframe>
-<iframe class="slide" src="ES-T1501C-Page.html"></iframe>
-<iframe class="slide" src="MAS-12-Page.html"></iframe>
-<iframe class="slide" src="Sunny 7-Page.html"></iframe>
+  <section class="slide-shell"><div class="slide-frame-wrap"><iframe class="slide-frame" src="byld-roi-page.html" loading="lazy"></iframe></div></section>
+  <section class="slide-shell"><div class="slide-frame-wrap"><iframe class="slide-frame" src="Sunny 7-Page.html" loading="lazy"></iframe></div></section>
+  <section class="slide-shell"><div class="slide-frame-wrap"><iframe class="slide-frame" src="install-training-page.html" loading="lazy"></iframe></div></section>
 
-<!-- SERVICE + TRUST BUILDER -->
+  <section class="slide-shell"><div class="slide-frame-wrap"><iframe class="slide-frame" src="mighty-hoop-Page.html" loading="lazy"></iframe></div></section>
+  <section class="slide-shell"><div class="slide-frame-wrap"><iframe class="slide-frame" src="stitchit-supplies-page.html" loading="lazy"></iframe></div></section>
+  <section class="slide-shell"><div class="slide-frame-wrap"><iframe class="slide-frame" src="stitchmaker-page.html" loading="lazy"></iframe></div></section>
+  <section class="slide-shell"><div class="slide-frame-wrap"><iframe class="slide-frame" src="trade-in-quote-page.html" loading="lazy"></iframe></div></section>
 
-<iframe class="slide" src="install-training-page.html"></iframe>
+</div>
 
-<!-- FINANCING + POSITIONING -->
+<script>
+  (function () {
+    const SLIDE_W = 1056;
+    const SLIDE_H = 816;
 
-<iframe class="slide" src="byld-roi-page.html"></iframe>
+    function sizeSlides() {
+      document.querySelectorAll('.slide-frame-wrap').forEach((wrap) => {
+        const iframe = wrap.querySelector('.slide-frame');
+        const availableWidth = wrap.clientWidth;
+        const scale = availableWidth / SLIDE_W;
 
-<!-- CLOSE / CONVERSION -->
+        iframe.style.transform = `scale(${scale})`;
+        wrap.style.height = `${SLIDE_H * scale}px`;
+      });
+    }
 
-<iframe class="slide" src="trade-in-quote-page.html"></iframe>
-
-<!-- ADD-ONS / UPSELL -->
-
-<iframe class="slide" src="stitchmaker-page.html"></iframe>
-<iframe class="slide" src="mighty-hoop-Page.html"></iframe>
-<iframe class="slide" src="stitchit-supplies-page.html"></iframe>
+    window.addEventListener('load', sizeSlides);
+    window.addEventListener('resize', sizeSlides);
+  })();
+</script>
 
 </body>
 </html>
