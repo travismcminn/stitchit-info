@@ -1,0 +1,510 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>SWF ES-T1501C (Compact Single Head) - One Page</title>
+
+<style>
+:root{
+  --swf-red:#E31B23;
+  --ink:#101010;
+  --muted:#5a5a5a;
+  --line:#E7E7E7;
+  --soft:#F6F7F9;
+  --green:#39B54A;
+  --shadow:0 8px 22px rgba(0,0,0,.05);
+}
+
+*{box-sizing:border-box;}
+@page{size:11in 8.5in;margin:0;}
+
+html,body{
+  margin:0;
+  padding:0;
+  background:#fff;
+  font-family:Arial,Helvetica,sans-serif;
+  color:var(--ink);
+}
+
+.page{
+  width:11in;
+  height:8.5in;
+  overflow:hidden;
+}
+
+/* Print color fix (keeps green button green in PDF) */
+@media print{
+  *{ -webkit-print-color-adjust:exact !important; print-color-adjust:exact !important; }
+  a{ color:inherit !important; text-decoration:none !important; }
+  .cta-btn, .cta-primary{
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+  .cta-primary{
+    background:var(--green) !important;
+    color:#fff !important;
+    border:0 !important;
+  }
+}
+
+/* Header */
+.topbar{
+  height:.75in;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:.22in .5in .12in .5in;
+  border-bottom:1px solid var(--line);
+}
+.brand-left{
+  display:flex;
+  align-items:center;
+  gap:16px;
+}
+.logo{height:.34in; width:auto; display:block;}
+.divider{width:1px;height:.34in;background:var(--line);}
+.kicker{
+  font-size:10px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:var(--muted);
+  margin-bottom:2px;
+}
+.h1{
+  font-size:24px;
+  font-weight:900;
+  margin:0;
+}
+.h1 span{color:var(--swf-red);}
+
+/* Layout */
+.content{
+  height:calc(8.5in - .75in);
+  padding:.18in .5in;
+  display:grid;
+  grid-template-columns:1.18fr 1fr;
+  gap:.22in;
+}
+
+/* Cards */
+.card{
+  border:1px solid var(--line);
+  border-radius:14px;
+  background:#fff;
+  padding:12px 14px;
+  box-shadow:var(--shadow);
+}
+.card h2{
+  margin:0 0 6px 0;
+  font-size:12px;
+  text-transform:uppercase;
+  letter-spacing:.06em;
+  border-bottom:1px solid #EFEFEF;
+  padding-bottom:5px;
+}
+
+/* Hero */
+.hero{
+  border:1px solid var(--line);
+  border-radius:14px;
+  overflow:hidden;
+  display:grid;
+  grid-template-rows:1.95in auto;
+  box-shadow:var(--shadow);
+}
+.hero-img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  padding:3px 10px;
+  border-bottom:1px solid var(--line);
+}
+.hero-pad{
+  padding:10px;
+  display:flex;
+  flex-direction:column;
+  min-height:0;
+}
+
+.desc{
+  font-size:11.5px;
+  line-height:1.4;
+  margin:0 0 8px 0;
+}
+.desc p{ margin:0 0 6px 0; }
+.desc p:last-child{ margin-bottom:0; }
+
+.bullets{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:6px;
+  margin-bottom:6px;
+}
+.bullet{
+  background:var(--soft);
+  border:1px solid #EEF0F3;
+  border-radius:10px;
+  padding:7px;
+  font-size:11px;
+}
+.bullet b{ display:block; margin-bottom:2px; }
+
+/* Value strip */
+.value-strip{
+  margin-bottom:6px;
+  padding:8px 10px;
+  border:1px solid #E7E7E7;
+  border-radius:10px;
+  background:#FAFAFA;
+}
+.value-title{
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  margin-bottom:4px;
+}
+.value-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:4px 10px;
+}
+.value-item{
+  font-size:10.5px;
+  font-weight:700;
+}
+
+/* Mid filler */
+.mid-strip{
+  margin-bottom:6px;
+  padding:8px 10px;
+  border:1px solid #E7E7E7;
+  border-radius:10px;
+  background:var(--soft);
+}
+.mid-title{
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  margin:0 0 6px 0;
+}
+.mid-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:6px 10px;
+}
+.mid-box{
+  background:#fff;
+  border:1px solid #EEF0F3;
+  border-radius:10px;
+  padding:7px 9px;
+  font-size:10.7px;
+  line-height:1.25;
+}
+.mid-box b{ display:block; margin-bottom:2px; }
+.mini-list{ margin:3px 0 0 14px; padding:0; }
+.mini-list li{ margin:2px 0; }
+
+/* CTA */
+.cta-row{
+  margin-top:auto;
+  padding-top:8px;
+  border-top:1px solid #EFEFEF;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:6px;
+}
+.cta-btn{
+  display:block;
+  text-align:center;
+  padding:8px;
+  border-radius:9px;
+  font-size:10.8px;
+  font-weight:800;
+  text-decoration:none;
+  border:1px solid #E3E3E3;
+  background:#F7F7F7;
+  color:#111;
+}
+.cta-primary{
+  background:var(--green);
+  color:#fff;
+  border:none;
+}
+
+/* Right */
+.right{
+  display:grid;
+  grid-template-rows:auto auto 1fr;
+  gap:8px;
+  min-height:0;
+}
+
+/* Pricing */
+.pricing{
+  display:grid;
+  grid-template-columns:1fr auto;
+  row-gap:6px;
+  column-gap:8px;
+  font-size:12.8px;
+}
+.model{font-weight:900;}
+.price{
+  color:var(--green);
+  font-weight:900;
+  font-size:16px;
+  text-align:right;
+}
+.subnote{
+  grid-column:1/-1;
+  font-size:10.5px;
+  color:var(--muted);
+  line-height:1.25;
+  margin-top:4px;
+}
+
+/* Specs */
+table{
+  width:100%;
+  border-collapse:collapse;
+  font-size:11px;
+}
+td{
+  padding:5px 0;
+  border-top:1px solid #EFEFEF;
+}
+td:first-child{
+  color:var(--muted);
+  width:52%;
+}
+
+/* Highlights */
+.acc-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:6px;
+}
+.acc-item{
+  background:var(--soft);
+  border:1px solid #EEF0F3;
+  border-radius:10px;
+  padding:7px 9px;
+  font-size:10.8px;
+  line-height:1.25;
+  min-height:56px;
+}
+.acc-item b{ display:block; margin-bottom:2px; }
+
+/* Included accessories list */
+.incl{
+  margin-top:6px;
+  padding:8px 10px;
+  border:1px solid #E7E7E7;
+  border-radius:10px;
+  background:#FAFAFA;
+}
+.incl .t{
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  margin:0 0 6px 0;
+}
+.incl-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:6px 10px;
+}
+.incl-box{
+  background:#fff;
+  border:1px solid #EEF0F3;
+  border-radius:10px;
+  padding:7px 9px;
+  font-size:10.6px;
+  line-height:1.25;
+}
+.incl-box b{ display:block; margin-bottom:2px; }
+.incl-list{ margin:3px 0 0 14px; padding:0; }
+.incl-list li{ margin:2px 0; }
+</style>
+</head>
+
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="topbar">
+    <div class="brand-left">
+      <img class="logo" alt="SWF" src="https://cdn.shopify.com/s/files/1/1236/6284/files/swfnobg.png?v=1759258611">
+      <div class="divider"></div>
+      <div>
+        <div class="kicker">SINGLE HEAD EMBROIDERY</div>
+        <h1 class="h1"><span>ES</span>-T1501C (Compact Single Head)</h1>
+      </div>
+    </div>
+    <img class="logo" alt="Stitch It International" src="https://cdn.shopify.com/s/files/1/1236/6284/files/new_sii_logo_1_1_f7596205-751d-425c-ba49-acfe68d36dea.png?v=1771362816">
+  </div>
+
+  <div class="content">
+
+    <!-- LEFT -->
+    <div class="hero">
+      <img class="hero-img" alt="SWF MAS-15 Compact Single Head" src="https://cdn.shopify.com/s/files/1/1236/6284/files/es_compact_ce76207c-a665-4f6f-8335-a67fc84e26c4.jpg?v=1759260197">
+
+      <div class="hero-pad">
+
+        <div class="desc">
+          <p>
+            The SWF/ES-T1501C is a compact, 15 needle single head built for shops that want true commercial embroidery capability with a smaller footprint.
+            It is a strong fit for startups, home based businesses, and growing decorators who want to produce caps and flats in house without dedicating a large floor area.
+          </p>
+          <p>
+            You still get the SWF workflow, fast color changes, and a production ready cap system, while keeping the machine size and layout simple and efficient.
+          </p>
+        </div>
+
+        <div class="bullets">
+          <div class="bullet"><b>Compact single head</b>Smaller footprint for tight spaces.</div>
+          <div class="bullet"><b>15 needle platform</b>Fast color changes and versatility.</div>
+          <div class="bullet"><b>Cap ready</b>Quick-change cap system included.</div>
+          <div class="bullet"><b>Everyday production</b>Built for reliable daily output.</div>
+        </div>
+
+        <div class="value-strip">
+          <div class="value-title">WHY BUY FROM STITCH IT INTERNATIONAL</div>
+          <div class="value-grid">
+            <div class="value-item">✔ Authorized SWF Distributor</div>
+            <div class="value-item">✔ 7 Year Limited Factory Warranty</div>
+            <div class="value-item">✔ Financing available through BYLD Finance</div>
+            <div class="value-item">✔ Installation and training available</div>
+          </div>
+        </div>
+
+        <div class="mid-strip">
+          <div class="mid-title">QUICK SNAPSHOT</div>
+          <div class="mid-grid">
+            <div class="mid-box">
+              <b>Best for</b>
+              <ul class="mini-list">
+                <li>Startups and small shops</li>
+                <li>Home based embroidery</li>
+                <li>Cap and flat production</li>
+              </ul>
+            </div>
+            <div class="mid-box">
+              <b>What to decide</b>
+              <ul class="mini-list">
+                <li>Freight and setup timing</li>
+                <li>Install and training schedule</li>
+                <li>Any add-on hoops needed</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="cta-row">
+          <a class="cta-btn cta-primary" href="https://byldfinance.com/pages/apply-now" target="_blank" rel="noopener">Get Pre-Approved</a>
+          <a class="cta-btn" href="https://form.jotform.com/260635331558054" target="_blank" rel="noopener">Freight Quote</a>
+          <a class="cta-btn" href="https://www.youtube.com/watch?v=jMvpN7zj3Vo" target="_blank" rel="noopener">Watch Demo</a>
+          <a class="cta-btn" href="https://form.jotform.com/260636305618154" target="_blank" rel="noopener">Request Live Demo</a>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- RIGHT -->
+    <div class="right">
+
+      <div class="card">
+        <h2>Lineup and Pricing</h2>
+        <div class="pricing">
+          <div class="model">ES-T1501C (Compact Single Head)</div>
+          <div class="price">$17,549</div>
+          <div class="subnote">
+            Ask about freight, install and training options.
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Machine Specifications</h2>
+        <table>
+          <tr><td>Max speed</td><td><b>1,200 rpm</b></td></tr>
+          <tr><td>Embroidery field (Tubular)</td><td><b>460 x 300 mm</b></td></tr>
+          <tr><td>Embroidery field (Cap)</td><td><b>360 x 75 mm</b></td></tr>
+          <tr><td>Memory capacity</td><td><b>40,000,000 stitches</b></td></tr>
+          <tr><td>Machine type</td><td><b>Compact stand</b></td></tr>
+        </table>
+      </div>
+
+      <div class="card">
+        <h2>Highlights and Included Accessories</h2>
+
+        <div class="acc-grid">
+          <div class="acc-item">
+            <b>Compact footprint</b>
+            Built to fit tight spaces without sacrificing capability.
+          </div>
+          <div class="acc-item">
+            <b>Cap plus tubular support</b>
+            Set up quickly for hats and tubular jobs.
+          </div>
+          <div class="acc-item">
+            <b>Quick-change cap system</b>
+            Included for production workflows.
+          </div>
+          <div class="acc-item">
+            <b>15 needle versatility</b>
+            Fast color changes across job types.
+          </div>
+        </div>
+
+        <div class="incl">
+          <div class="t">INCLUDED ACCESSORIES</div>
+
+          <div class="incl-grid">
+            <div class="incl-box">
+              <b>Tubular Round Frames (2 pcs per head)</b>
+              <ul class="incl-list">
+                <li>TRF 12 (4.25")</li>
+                <li>TRF 15 (5.4")</li>
+                <li>TRF 18 (6.6")</li>
+              </ul>
+            </div>
+
+            <div class="incl-box">
+              <b>Tubular Square Frames (2 pcs per head)</b>
+              <ul class="incl-list">
+                <li>TSF-30x30 (12.3" x 12.3")</li>
+                <li>TSF-41x27 (16.7" x 10.9")</li>
+              </ul>
+            </div>
+
+            <div class="incl-box">
+              <b>Quick-Change Cap System</b>
+              <ul class="incl-list">
+                <li>Cap frames (2 pcs per head)</li>
+                <li>Cap frame driver (1 pc per head)</li>
+                <li>Cap frame holder (1 pc)</li>
+              </ul>
+            </div>
+
+            <div class="incl-box">
+              <b>Notes</b>
+              <ul class="incl-list">
+                <li>Ask about optional add-on hoops</li>
+                <li>We can help schedule freight and setup</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</div>
+</body>
+</html>

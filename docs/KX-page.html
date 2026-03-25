@@ -1,0 +1,497 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>SWF KX Series</title>
+
+<style>
+:root{
+  --swf-red:#E31B23;
+  --ink:#101010;
+  --muted:#5a5a5a;
+  --line:#E7E7E7;
+  --soft:#F6F7F9;
+  --green:#39B54A;
+  --shadow:0 8px 22px rgba(0,0,0,.05);
+}
+
+*{box-sizing:border-box;}
+@page{size:11in 8.5in;margin:0;}
+
+html,body{
+  margin:0;
+  padding:0;
+  background:#fff;
+  font-family:Arial,Helvetica,sans-serif;
+  color:var(--ink);
+}
+
+.page{
+  width:11in;
+  height:8.5in;
+  overflow:hidden;
+}
+
+/* Header */
+.topbar{
+  height:.75in;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:.22in .5in .12in .5in;
+  border-bottom:1px solid var(--line);
+}
+.brand-left{
+  display:flex;
+  align-items:center;
+  gap:16px;
+}
+.logo{height:.34in;}
+.divider{width:1px;height:.34in;background:var(--line);}
+.kicker{
+  font-size:10px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:var(--muted);
+  margin-bottom:2px;
+}
+.h1{
+  font-size:24px;
+  font-weight:900;
+  margin:0;
+}
+.h1 span{color:var(--swf-red);}
+
+/* Layout */
+.content{
+  height:calc(8.5in - .75in);
+  padding:.18in .5in;
+  display:grid;
+  grid-template-columns:1.18fr 1fr;
+  gap:.22in;
+}
+
+/* Cards */
+.card{
+  border:1px solid var(--line);
+  border-radius:14px;
+  background:#fff;
+  padding:12px 14px;
+  box-shadow:var(--shadow);
+}
+.card h2{
+  margin:0 0 6px 0;
+  font-size:12px;
+  text-transform:uppercase;
+  letter-spacing:.06em;
+  border-bottom:1px solid #EFEFEF;
+  padding-bottom:5px;
+}
+
+/* Hero */
+.hero{
+  border:1px solid var(--line);
+  border-radius:14px;
+  overflow:hidden;
+  display:grid;
+  grid-template-rows:2.05in auto;
+  box-shadow:var(--shadow);
+}
+.hero-img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  padding:4px 10px;
+  border-bottom:1px solid var(--line);
+}
+.hero-pad{
+  padding:10px;
+  display:flex;
+  flex-direction:column;
+}
+.desc{
+  font-size:11.5px;
+  line-height:1.4;
+  margin:0 0 8px 0;
+}
+.desc p{ margin:0 0 6px 0; }
+.desc p:last-child{ margin-bottom:0; }
+
+.bullets{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:6px;
+  margin-bottom:6px;
+}
+.bullet{
+  background:var(--soft);
+  border:1px solid #EEF0F3;
+  border-radius:10px;
+  padding:7px;
+  font-size:11px;
+}
+.bullet b{
+  display:block;
+  margin-bottom:2px;
+}
+
+/* Value strip */
+.value-strip{
+  margin-bottom:6px;
+  padding:8px 10px;
+  border:1px solid #E7E7E7;
+  border-radius:10px;
+  background:#FAFAFA;
+}
+.value-title{
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  margin-bottom:4px;
+}
+.value-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:4px 10px;
+}
+.value-item{
+  font-size:10.5px;
+  font-weight:700;
+}
+
+/* NEW: mid filler (useful, not fluff) */
+.mid-strip{
+  margin-bottom:6px;
+  padding:8px 10px;
+  border:1px solid #E7E7E7;
+  border-radius:10px;
+  background:var(--soft);
+}
+.mid-title{
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  margin:0 0 6px 0;
+}
+.mid-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:6px 10px;
+}
+.mid-box{
+  background:#fff;
+  border:1px solid #EEF0F3;
+  border-radius:10px;
+  padding:7px 9px;
+  font-size:10.7px;
+  line-height:1.25;
+}
+.mid-box b{ display:block; margin-bottom:2px; }
+.mini-list{
+  margin:3px 0 0 14px;
+  padding:0;
+}
+.mini-list li{ margin:2px 0; }
+
+/* CTA */
+.cta-row{
+  margin-top:auto;
+  padding-top:8px;
+  border-top:1px solid #EFEFEF;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:6px;
+}
+.cta-btn{
+  display:block;
+  text-align:center;
+  padding:8px;
+  border-radius:9px;
+  font-size:10.8px;
+  font-weight:800;
+  text-decoration:none;
+  border:1px solid #E3E3E3;
+  background:#F7F7F7;
+  color:#111;
+}
+.cta-primary{
+  background:var(--green);
+  color:#fff;
+  border:none;
+}
+
+/* Right */
+.right{
+  display:grid;
+  grid-template-rows:auto auto 1fr;
+  gap:8px;
+}
+
+/* Pricing */
+.pricing{
+  display:grid;
+  grid-template-columns:1fr auto;
+  row-gap:4px;
+  column-gap:8px;
+  font-size:12.5px;
+}
+.pricing small{
+  grid-column:1/-1;
+  font-weight:900;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  font-size:9px;
+  color:var(--muted);
+  margin-top:2px;
+}
+.model{font-weight:800;}
+.price{
+  color:var(--green);
+  font-weight:900;
+  font-size:15px;
+  text-align:right;
+}
+
+/* Specs */
+table{
+  width:100%;
+  border-collapse:collapse;
+  font-size:11px;
+}
+td{
+  padding:5px 0;
+  border-top:1px solid #EFEFEF;
+}
+td:first-child{
+  color:var(--muted);
+  width:46%;
+}
+
+/* Accessories */
+.acc-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:6px;
+}
+.acc-item{
+  background:var(--soft);
+  border:1px solid #EEF0F3;
+  border-radius:10px;
+  padding:7px 9px;
+  font-size:10.8px;
+  line-height:1.25;
+  min-height:54px;
+}
+.acc-item b{
+  display:block;
+  margin-bottom:2px;
+}
+.badge{
+  display:inline-block;
+  font-size:9px;
+  font-weight:900;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  padding:3px 7px;
+  border-radius:999px;
+  border:1px solid #E6E6E6;
+  background:#fff;
+  color:#111;
+  margin-left:6px;
+  vertical-align:middle;
+}
+.badge.uk{
+  border-color:#D9E7FF;
+  background:#F3F8FF;
+}
+
+/* NEW: filler under accessories */
+.acc-notes{
+  margin-top:6px;
+  padding:8px 10px;
+  border:1px solid #E7E7E7;
+  border-radius:10px;
+  background:#FAFAFA;
+}
+.acc-notes .t{
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  margin:0 0 5px 0;
+}
+.acc-notes .p{
+  font-size:10.7px;
+  color:#222;
+  line-height:1.25;
+  margin:0;
+}
+.acc-notes .p span{
+  color:var(--muted);
+}
+</style>
+</head>
+
+<body>
+<div class="page">
+
+  <div class="topbar">
+    <div class="brand-left">
+      <img class="logo" alt="SWF" src="https://cdn.shopify.com/s/files/1/1236/6284/files/swfnobg.png?v=1759258611">
+      <div class="divider"></div>
+      <div>
+        <div class="kicker">MULTI-HEAD EMBROIDERY</div>
+        <h1 class="h1"><span>KX</span> Series (Tubular)</h1>
+      </div>
+    </div>
+    <img class="logo" alt="Stitch It International" src="https://cdn.shopify.com/s/files/1/1236/6284/files/new_sii_logo_1_1_f7596205-751d-425c-ba49-acfe68d36dea.png?v=1771362816">
+  </div>
+
+  <div class="content">
+
+    <!-- LEFT -->
+    <div class="hero">
+      <img class="hero-img" alt="SWF KX Series" src="https://cdn.shopify.com/s/files/1/1236/6284/files/KX_6_head.png?v=1771959407">
+
+      <div class="hero-pad">
+
+        <div class="desc">
+          <p>
+            The SWF KX Tubular Series is a smart, automatic multi-head embroidery solution built for high-volume production, precision, and versatility. Designed to handle tubular, cap, and specialty embroidery, the KX Series features a large 15.1" full-touch LCD control panel for intuitive operation, fast design selection, and real-time monitoring.
+          </p>
+          <p>
+            Advanced systems like Smart Tension and an improved cap-focused design help maintain consistently high-quality results while reducing setup time. It’s a strong fit for shops looking to scale efficiently and deliver premium embroidery output at speed.
+          </p>
+        </div>
+
+        <div class="bullets">
+          <div class="bullet"><b>High-volume platform</b>Built for daily production output.</div>
+          <div class="bullet"><b>15.1" LCD control</b>Fast design selection and monitoring.</div>
+          <div class="bullet"><b>Smart tension system</b>Auto-adjusts for consistent stitching.</div>
+          <div class="bullet"><b>EZ-Change cap system</b>Quickly switch between cap and tubular.</div>
+        </div>
+
+        <div class="value-strip">
+          <div class="value-title">WHY BUY FROM STITCH IT INTERNATIONAL</div>
+          <div class="value-grid">
+            <div class="value-item">✔ Authorized SWF Distributor</div>
+            <div class="value-item">✔ 7 Year Limited Factory Warranty</div>
+            <div class="value-item">✔ Financing through BYLD Finance</div>
+            <div class="value-item">✔ Installation and training available</div>
+          </div>
+        </div>
+
+        <!-- NEW: fills left-side dead space and helps sell -->
+        <div class="mid-strip">
+          <div class="mid-title">QUICK SNAPSHOT</div>
+          <div class="mid-grid">
+            <div class="mid-box">
+              <b>Best for</b>
+              <ul class="mini-list">
+                <li>Growing production shops</li>
+                <li>Cap-heavy embroidery work</li>
+                <li>Consistent high volume output</li>
+              </ul>
+            </div>
+            <div class="mid-box">
+              <b>What to decide</b>
+              <ul class="mini-list">
+                <li>UH vs UK sewing field</li>
+                <li>4, 6, or 8 head lineup</li>
+                <li>Freight and install timing</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="cta-row">
+          <a class="cta-btn cta-primary" href="https://byldfinance.com/pages/apply-now" target="_blank" rel="noopener">Get Pre-Approved</a>
+          <a class="cta-btn" href="https://form.jotform.com/260635331558054" target="_blank" rel="noopener">Freight Quote</a>
+          <a class="cta-btn" href="https://www.youtube.com/watch?v=qaDz0VXBX3M" target="_blank" rel="noopener">Watch Demo</a>
+          <a class="cta-btn" href="https://form.jotform.com/260636305618154" target="_blank" rel="noopener">Request Live Demo</a>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- RIGHT -->
+    <div class="right">
+
+      <div class="card">
+        <h2>Lineup and Pricing</h2>
+
+        <div class="pricing">
+          <small>STANDARD SEWING FIELD (UH)</small>
+          <div class="model">KX-UH1504-45</div><div class="price">$52,500</div>
+          <div class="model">KX-UH1506-45</div><div class="price">$65,500</div>
+          <div class="model">KX-UH1508-45</div><div class="price">$77,900</div>
+
+          <small>EXPANDED SEWING FIELD (UK)</small>
+          <div class="model">KX-UK1504-45</div><div class="price">$54,500</div>
+          <div class="model">KX-UK1506-45</div><div class="price">$67,500</div>
+          <div class="model">KX-UK1508-45</div><div class="price">$79,900</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Machine Specifications</h2>
+        <table>
+          <tr><td>Max speed</td><td><b>1,200 SPM</b></td></tr>
+          <tr><td>Embroidery field (Cap)</td><td><b>360 x 75 mm</b></td></tr>
+          <tr><td>Embroidery field (Flat)</td><td><b>UH: 400x450 mm | UK: 500x450mm</b></td></tr>
+          <tr><td>Memory capacity</td><td><b>40,000,000 stitches</b></td></tr>
+        </table>
+      </div>
+
+      <div class="card">
+        <h2>Included Accessories</h2>
+
+        <div class="acc-grid">
+          <div class="acc-item">
+            <b>Square Hoops</b>
+            30 x 30cm, 32 x 44cm
+          </div>
+
+          <div class="acc-item">
+            <b>Round Hoops</b>
+            12cm, 15cm, 18cm
+          </div>
+
+          <div class="acc-item">
+            <b>Wide Field Hoop <span class="badge uk">UK only</span></b>
+            45 x 44cm (16.6 x 17.1")
+          </div>
+
+          <div class="acc-item">
+            <b>EZ Change Cap System</b>
+            Stronger, lighter cap frame for quick switching.
+          </div>
+
+          <div class="acc-item">
+            <b>Smart Tension System</b>
+            Automatically adjusts tension in real time for consistent results.
+          </div>
+
+          <div class="acc-item">
+            <b>15-inch Touch LCD</b>
+            Fast settings, design selection, and monitoring.
+          </div>
+        </div>
+
+        <!-- NEW: fills remaining white space, reads premium, does not overpromise -->
+        <div class="acc-notes">
+          <div class="t">NOTES AND OPTIONS</div>
+          <p class="p">Most customers ask about:</span> freight timing, installation and training scheduling, Use the buttons on the left to get pre-approved, request freight, watch the demo, or download the brochure.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</div>
+</body>
+</html>
