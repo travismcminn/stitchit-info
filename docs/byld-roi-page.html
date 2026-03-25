@@ -1,0 +1,565 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>BYLD Finance ROI Calculator - KX-UH1506-45</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+:root{
+  --byld-green:#449F50;
+  --ink:#101010;
+  --muted:#5b5b5b;
+  --line:#E7E7E7;
+  --soft:#F6F7F9;
+  --shadow:0 8px 22px rgba(0,0,0,.05);
+}
+
+*{box-sizing:border-box;}
+@page{size:11in 8.5in;margin:0;}
+
+html,body{
+  margin:0;
+  padding:0;
+  background:#fff;
+  font-family:Arial,Helvetica,sans-serif;
+  color:var(--ink);
+}
+
+.page{
+  width:11in;
+  height:8.5in;
+  overflow:hidden;
+  background:#fff;
+}
+
+@media print{
+  *{
+    -webkit-print-color-adjust:exact !important;
+    print-color-adjust:exact !important;
+  }
+  a{
+    color:inherit !important;
+    text-decoration:none !important;
+  }
+  .cta-primary{
+    background:var(--byld-green) !important;
+    color:#fff !important;
+    border:0 !important;
+  }
+}
+
+/* Header */
+.topbar{
+  height:.80in;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:.20in .5in .12in .5in;
+  border-bottom:1px solid var(--line);
+}
+.brand-left{
+  display:flex;
+  align-items:center;
+  gap:16px;
+}
+.logo-stitch{
+  height:.34in;
+  width:auto;
+  display:block;
+}
+.logo-byld{
+  height:.60in;
+  width:auto;
+  display:block;
+}
+.divider{
+  width:1px;
+  height:.34in;
+  background:var(--line);
+}
+.kicker{
+  font-size:10px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:var(--muted);
+  margin-bottom:2px;
+}
+.h1{
+  font-size:25px;
+  font-weight:900;
+  margin:0;
+  line-height:1.05;
+}
+.h1 span{color:var(--byld-green);}
+
+/* Layout */
+.content{
+  height:calc(8.5in - .80in);
+  padding:.16in .5in;
+  display:grid;
+  grid-template-columns:1.02fr 1fr;
+  gap:.22in;
+}
+
+/* Cards */
+.card{
+  border:1px solid var(--line);
+  border-radius:14px;
+  background:#fff;
+  padding:11px 13px;
+  box-shadow:var(--shadow);
+}
+.card h2{
+  margin:0 0 6px 0;
+  font-size:12px;
+  text-transform:uppercase;
+  letter-spacing:.06em;
+  border-bottom:1px solid #EFEFEF;
+  padding-bottom:5px;
+}
+
+/* Left column */
+.left{
+  display:grid;
+  grid-template-rows:auto auto auto 1fr auto;
+  gap:8px;
+  min-height:0;
+}
+
+.hero{
+  border:1px solid var(--line);
+  border-radius:14px;
+  background:#fff;
+  box-shadow:var(--shadow);
+  overflow:hidden;
+}
+.hero-inner{
+  padding:12px 14px;
+}
+.desc{
+  font-size:11.7px;
+  line-height:1.42;
+  margin:0 0 8px 0;
+}
+.desc p{margin:0 0 7px 0;}
+.desc p:last-child{margin-bottom:0;}
+
+.bullets{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:6px;
+  margin-top:8px;
+}
+.bullet{
+  background:var(--soft);
+  border:1px solid #EEF0F3;
+  border-radius:10px;
+  padding:7px 8px;
+  font-size:10.9px;
+  line-height:1.24;
+}
+.bullet b{
+  display:block;
+  margin-bottom:2px;
+}
+
+.machine-box{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:6px;
+}
+.machine-mini{
+  background:var(--soft);
+  border:1px solid #EEF0F3;
+  border-radius:10px;
+  padding:8px 9px;
+}
+.machine-mini .label{
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:.05em;
+  text-transform:uppercase;
+  color:var(--muted);
+  margin-bottom:3px;
+}
+.machine-mini .value{
+  font-size:15px;
+  font-weight:900;
+  line-height:1.08;
+}
+
+.assumption-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:6px;
+}
+.assump{
+  background:var(--soft);
+  border:1px solid #EEF0F3;
+  border-radius:10px;
+  padding:8px 9px;
+}
+.assump .label{
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:.05em;
+  text-transform:uppercase;
+  color:var(--muted);
+  margin-bottom:3px;
+}
+.assump .value{
+  font-size:13px;
+  font-weight:900;
+  line-height:1.1;
+}
+
+.cta-row{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:6px;
+  padding-top:8px;
+  border-top:1px solid #EFEFEF;
+}
+.cta-btn{
+  display:block;
+  text-align:center;
+  padding:10px 8px;
+  border-radius:9px;
+  font-size:11px;
+  font-weight:900;
+  text-decoration:none;
+  border:1px solid #E3E3E3;
+  background:#F7F7F7;
+  color:#111;
+}
+.cta-primary{
+  background:var(--byld-green);
+  color:#fff;
+  border:none;
+}
+
+/* Right column */
+.right{
+  display:grid;
+  grid-template-rows:auto auto 1fr;
+  gap:8px;
+  min-height:0;
+}
+
+.summary-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:6px;
+}
+.summary-box{
+  background:var(--soft);
+  border:1px solid #EEF0F3;
+  border-radius:10px;
+  padding:8px 9px;
+  min-height:58px;
+}
+.summary-box .label{
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:.05em;
+  text-transform:uppercase;
+  color:var(--muted);
+  margin-bottom:3px;
+}
+.summary-box .value{
+  font-size:18px;
+  font-weight:900;
+  line-height:1.1;
+}
+.summary-box .sub{
+  font-size:10px;
+  color:var(--muted);
+  margin-top:3px;
+}
+
+.roi-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+  gap:6px;
+}
+.roi-col{
+  background:var(--soft);
+  border:1px solid #EEF0F3;
+  border-radius:12px;
+  padding:8px 9px;
+}
+.roi-title{
+  font-size:11px;
+  font-weight:900;
+  text-transform:uppercase;
+  letter-spacing:.06em;
+  margin-bottom:6px;
+}
+.metric{
+  border-top:1px solid #E6E6E6;
+  padding-top:5px;
+  margin-top:5px;
+}
+.metric:first-of-type{
+  border-top:0;
+  padding-top:0;
+  margin-top:0;
+}
+.metric .m-label{
+  font-size:10px;
+  color:var(--muted);
+  margin-bottom:2px;
+}
+.metric .m-value{
+  font-size:15px;
+  font-weight:900;
+  line-height:1.08;
+}
+.metric .m-value.small{
+  font-size:13px;
+}
+
+.foot{
+  margin-top:6px;
+  padding:8px 10px;
+  border:1px solid #E7E7E7;
+  border-radius:10px;
+  background:#FAFAFA;
+  font-size:10.5px;
+  line-height:1.22;
+  color:#222;
+}
+.foot span{color:var(--muted);}
+.green{color:var(--byld-green);}
+</style>
+</head>
+
+<body>
+<div class="page">
+
+  <div class="topbar">
+    <div class="brand-left">
+      <img class="logo-stitch" alt="Stitch It International" src="https://cdn.shopify.com/s/files/1/1236/6284/files/new_sii_logo_1_1_f7596205-751d-425c-ba49-acfe68d36dea.png?v=1771362816">
+      <div class="divider"></div>
+      <div>
+        <div class="kicker">Equipment Financing + ROI Example</div>
+        <h1 class="h1"><span>Can this machine</span> pay for itself?</h1>
+      </div>
+    </div>
+
+    <img class="logo-byld" alt="BYLD Finance" src="https://cdn.shopify.com/s/files/1/0878/0608/3384/files/4_1_black_text_5.png?v=1762451516">
+  </div>
+
+  <div class="content">
+
+    <!-- LEFT -->
+    <div class="left">
+
+      <div class="hero">
+        <div class="hero-inner">
+          <div class="desc">
+            <p>
+              This example shows how financing can turn a machine purchase into a monthly cash flow decision instead of one large upfront expense.
+            </p>
+            <p>
+              Below is a static ROI example for the <b>SWF KX-UH1506-45</b>, using average production assumptions based on caps only.
+            </p>
+          </div>
+
+          <div class="bullets">
+            <div class="bullet"><b>Soft credit pull</b>Fast pre-approval without a hard inquiry up front.</div>
+            <div class="bullet"><b>Cash flow focused</b>Compare estimated payment against production potential.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Selected Machine</h2>
+        <div class="machine-box">
+          <div class="machine-mini">
+            <div class="label">Model</div>
+            <div class="value">KX-UH1506-45</div>
+          </div>
+          <div class="machine-mini">
+            <div class="label">Heads</div>
+            <div class="value">6 Head Setup</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Assumptions Used</h2>
+        <div class="assumption-grid">
+          <div class="assump">
+            <div class="label">Machine Price</div>
+            <div class="value">$65,500</div>
+          </div>
+          <div class="assump">
+            <div class="label">Estimated Monthly Payment</div>
+            <div class="value">$1,458</div>
+          </div>
+          <div class="assump">
+            <div class="label">Gross Profit Per Cap</div>
+            <div class="value">$8.00</div>
+          </div>
+          <div class="assump">
+            <div class="label">Workdays Per Month</div>
+            <div class="value">22 Days</div>
+          </div>
+          <div class="assump">
+            <div class="label">Low Output</div>
+            <div class="value">8 Caps / Head / Day</div>
+          </div>
+          <div class="assump">
+            <div class="label">Average Output</div>
+            <div class="value">15 Caps / Head / Day</div>
+          </div>
+          <div class="assump" style="grid-column:1 / -1;">
+            <div class="label">High Output</div>
+            <div class="value">25 Caps / Head / Day</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Financing Options</h2>
+        <div style="font-size:12px;line-height:1.45;margin-bottom:10px;">
+          Get pre-approved with BYLD Finance in minutes using a soft credit check.
+          Approval lets you review financing options before finalizing your machine purchase.
+        </div>
+
+        <div class="cta-row" style="padding-top:0;border-top:0;">
+          <a class="cta-btn cta-primary" href="https://byldfinance.com/pages/apply-now" target="_blank" rel="noopener">Get Pre-Approved</a>
+          <a class="cta-btn" href="https://byldfinance.com/pages/apply-now" target="_blank" rel="noopener">Apply Now</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Next Step</h2>
+        <a class="cta-btn cta-primary" href="https://byldfinance.com/pages/swf-roi-interactive-calculator" target="_blank" rel="noopener">Open Interactive ROI Calculator</a>
+      </div>
+
+    </div>
+
+    <!-- RIGHT -->
+    <div class="right">
+
+      <div class="card">
+        <h2>Monthly ROI Snapshot</h2>
+        <div class="summary-grid">
+          <div class="summary-box">
+            <div class="label">Machine Price</div>
+            <div class="value">$65,500</div>
+            <div class="sub">Estimated selling price</div>
+          </div>
+          <div class="summary-box">
+            <div class="label">Estimated Payment</div>
+            <div class="value">$1,458</div>
+            <div class="sub">Illustration only</div>
+          </div>
+          <div class="summary-box">
+            <div class="label">Break-Even Caps / Month</div>
+            <div class="value">183</div>
+            <div class="sub">At $8 gross profit per cap</div>
+          </div>
+          <div class="summary-box">
+            <div class="label">Machine</div>
+            <div class="value" style="font-size:16px;">KX-UH1506-45</div>
+            <div class="sub">6 head production setup</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Production Example</h2>
+        <div class="roi-grid">
+
+          <div class="roi-col">
+            <div class="roi-title">Low Output</div>
+            <div class="metric">
+              <div class="m-label">Caps / Month</div>
+              <div class="m-value">1,056</div>
+            </div>
+            <div class="metric">
+              <div class="m-label">Gross Profit</div>
+              <div class="m-value">$8,448</div>
+            </div>
+            <div class="metric">
+              <div class="m-label">After Payment</div>
+              <div class="m-value small green">$6,990</div>
+            </div>
+          </div>
+
+          <div class="roi-col">
+            <div class="roi-title">Average Output</div>
+            <div class="metric">
+              <div class="m-label">Caps / Month</div>
+              <div class="m-value">1,980</div>
+            </div>
+            <div class="metric">
+              <div class="m-label">Gross Profit</div>
+              <div class="m-value">$15,840</div>
+            </div>
+            <div class="metric">
+              <div class="m-label">After Payment</div>
+              <div class="m-value small green">$14,382</div>
+            </div>
+          </div>
+
+          <div class="roi-col">
+            <div class="roi-title">High Output</div>
+            <div class="metric">
+              <div class="m-label">Caps / Month</div>
+              <div class="m-value">3,300</div>
+            </div>
+            <div class="metric">
+              <div class="m-label">Gross Profit</div>
+              <div class="m-value">$26,400</div>
+            </div>
+            <div class="metric">
+              <div class="m-label">After Payment</div>
+              <div class="m-value small green">$24,942</div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="foot">
+          <span>Illustration only:</span> This example is based on cap production assumptions and should be treated as a directional ROI tool, not a guarantee of performance or profitability.
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Why Financing Works</h2>
+        <div class="summary-grid">
+          <div class="summary-box">
+            <div class="label">1</div>
+            <div class="sub" style="font-size:12px;color:#111;">Turns a large purchase into a monthly cash flow decision</div>
+          </div>
+          <div class="summary-box">
+            <div class="label">2</div>
+            <div class="sub" style="font-size:12px;color:#111;">Matches estimated payment against real production potential</div>
+          </div>
+          <div class="summary-box">
+            <div class="label">3</div>
+            <div class="sub" style="font-size:12px;color:#111;">Lets BYLD structure the deal around the shop’s growth plan</div>
+          </div>
+          <div class="summary-box">
+            <div class="label">4</div>
+            <div class="sub" style="font-size:12px;color:#111;">Gives the customer a clear path to pre-approval first</div>
+          </div>
+        </div>
+
+        <div class="foot">
+          <span>Disclaimer:</span> Actual terms, rates, and payments are subject to credit approval, equipment type, vendor approval, and lender program availability.
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>
