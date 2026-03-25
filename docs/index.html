@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>SWF Sales Deck</title>
 
 <style>
@@ -13,15 +13,10 @@
 
   * { box-sizing: border-box; }
 
-  html, body{
+  body{
     margin:0;
-    padding:0;
     background:#e9e9e9;
     font-family:Arial, Helvetica, sans-serif;
-  }
-
-  body{
-    overflow-x:hidden;
   }
 
   .deck{
@@ -38,13 +33,7 @@
     box-shadow:0 8px 24px rgba(0,0,0,.10);
   }
 
-  .slide-stage{
-    width:100%;
-    overflow:hidden;
-    background:#fff;
-  }
-
-  .slide-fit{
+  .slide-frame-wrap{
     position:relative;
     width:100%;
     overflow:hidden;
@@ -56,21 +45,7 @@
     width:calc(var(--slide-w) * 1px);
     height:calc(var(--slide-h) * 1px);
     border:0;
-    background:#fff;
     transform-origin:top left;
-  }
-
-  .mobile-hint{
-    display:none;
-    padding:10px 12px;
-    font-size:12px;
-    color:#555;
-    background:#f7f7f7;
-    border-top:1px solid #e5e5e5;
-  }
-
-  .mobile-hint b{
-    color:#111;
   }
 
   @media (max-width: 768px){
@@ -79,34 +54,9 @@
     }
 
     .slide-shell{
-      width:100%;
-      margin:0 0 12px;
+      margin:0 auto 12px;
       border-radius:0;
       box-shadow:none;
-    }
-  }
-
-  @media (max-width: 900px){
-    .slide-stage{
-      overflow-x:auto;
-      overflow-y:hidden;
-      -webkit-overflow-scrolling:touch;
-    }
-
-    .slide-fit{
-      width:calc(var(--slide-w) * 1px);
-      min-width:calc(var(--slide-w) * 1px);
-      overflow:hidden;
-    }
-
-    .slide-frame{
-      transform:none !important;
-      width:calc(var(--slide-w) * 1px);
-      height:calc(var(--slide-h) * 1px);
-    }
-
-    .mobile-hint{
-      display:block;
     }
   }
 </style>
@@ -115,75 +65,23 @@
 
 <div class="deck">
 
-  <section class="slide-shell">
-    <div class="slide-stage"><div class="slide-fit"><iframe class="slide-frame" src="KE-page.html" loading="lazy"></iframe></div></div>
-    <div class="mobile-hint"><b>Tip:</b> swipe sideways on each slide for easier reading.</div>
-  </section>
+  <section class="slide-shell"><div class="slide-frame-wrap"><iframe class="slide-frame" src="KE-page.html" loading="lazy"></iframe></div></section>
+  <section class="slide-shell"><div class="slide-frame-wrap"><iframe class="slide-frame" src="KX-page.html" loading="lazy"></iframe></div></section>
+  <section class="slide-shell"><div class="slide-frame-wrap"><iframe class="slide-frame" src="KX Dual-Page.html" loading="lazy"></iframe></div></section>
+  <section class="slide-shell"><div class="slide-frame-wrap"><iframe class="slide-frame" src="KX Single-Page.html" loading="lazy"></iframe></div></section>
 
-  <section class="slide-shell">
-    <div class="slide-stage"><div class="slide-fit"><iframe class="slide-frame" src="KX-page.html" loading="lazy"></iframe></div></div>
-    <div class="mobile-hint"><b>Tip:</b> swipe sideways on each slide for easier reading.</div>
-  </section>
+  <section class="slide-shell"><div class="slide-frame-wrap"><iframe class="slide-frame" src="ES Full Size-Page.html" loading="lazy"></iframe></div></section>
+  <section class="slide-shell"><div class="slide-frame-wrap"><iframe class="slide-frame" src="ES-T1501C-Page.html" loading="lazy"></iframe></div></section>
+  <section class="slide-shell"><div class="slide-frame-wrap"><iframe class="slide-frame" src="MAS-12-Page.html" loading="lazy"></iframe></div></section>
+  <section class="slide-shell"><div class="slide-frame-wrap"><iframe class="slide-frame" src="Sunny 7-Page.html" loading="lazy"></iframe></div></section>
 
-  <section class="slide-shell">
-    <div class="slide-stage"><div class="slide-fit"><iframe class="slide-frame" src="KX Dual-Page.html" loading="lazy"></iframe></div></div>
-    <div class="mobile-hint"><b>Tip:</b> swipe sideways on each slide for easier reading.</div>
-  </section>
-
-  <section class="slide-shell">
-    <div class="slide-stage"><div class="slide-fit"><iframe class="slide-frame" src="KX Single-Page.html" loading="lazy"></iframe></div></div>
-    <div class="mobile-hint"><b>Tip:</b> swipe sideways on each slide for easier reading.</div>
-  </section>
-
-  <section class="slide-shell">
-    <div class="slide-stage"><div class="slide-fit"><iframe class="slide-frame" src="ES Full Size-Page.html" loading="lazy"></iframe></div></div>
-    <div class="mobile-hint"><b>Tip:</b> swipe sideways on each slide for easier reading.</div>
-  </section>
-
-  <section class="slide-shell">
-    <div class="slide-stage"><div class="slide-fit"><iframe class="slide-frame" src="ES-T1501C-Page.html" loading="lazy"></iframe></div></div>
-    <div class="mobile-hint"><b>Tip:</b> swipe sideways on each slide for easier reading.</div>
-  </section>
-
-  <section class="slide-shell">
-    <div class="slide-stage"><div class="slide-fit"><iframe class="slide-frame" src="MAS-12-Page.html" loading="lazy"></iframe></div></div>
-    <div class="mobile-hint"><b>Tip:</b> swipe sideways on each slide for easier reading.</div>
-  </section>
-
-  <section class="slide-shell">
-    <div class="slide-stage"><div class="slide-fit"><iframe class="slide-frame" src="Sunny 7-Page.html" loading="lazy"></iframe></div></div>
-    <div class="mobile-hint"><b>Tip:</b> swipe sideways on each slide for easier reading.</div>
-  </section>
-
-  <section class="slide-shell">
-    <div class="slide-stage"><div class="slide-fit"><iframe class="slide-frame" src="install-training-page.html" loading="lazy"></iframe></div></div>
-    <div class="mobile-hint"><b>Tip:</b> swipe sideways on each slide for easier reading.</div>
-  </section>
-
-  <section class="slide-shell">
-    <div class="slide-stage"><div class="slide-fit"><iframe class="slide-frame" src="byld-roi-page.html" loading="lazy"></iframe></div></div>
-    <div class="mobile-hint"><b>Tip:</b> swipe sideways on each slide for easier reading.</div>
-  </section>
-
-  <section class="slide-shell">
-    <div class="slide-stage"><div class="slide-fit"><iframe class="slide-frame" src="trade-in-quote-page.html" loading="lazy"></iframe></div></div>
-    <div class="mobile-hint"><b>Tip:</b> swipe sideways on each slide for easier reading.</div>
-  </section>
-
-  <section class="slide-shell">
-    <div class="slide-stage"><div class="slide-fit"><iframe class="slide-frame" src="stitchmaker-page.html" loading="lazy"></iframe></div></div>
-    <div class="mobile-hint"><b>Tip:</b> swipe sideways on each slide for easier reading.</div>
-  </section>
-
-  <section class="slide-shell">
-    <div class="slide-stage"><div class="slide-fit"><iframe class="slide-frame" src="mighty-hoop-Page.html" loading="lazy"></iframe></div></div>
-    <div class="mobile-hint"><b>Tip:</b> swipe sideways on each slide for easier reading.</div>
-  </section>
-
-  <section class="slide-shell">
-    <div class="slide-stage"><div class="slide-fit"><iframe class="slide-frame" src="stitchit-supplies-page.html" loading="lazy"></iframe></div></div>
-    <div class="mobile-hint"><b>Tip:</b> swipe sideways on each slide for easier reading.</div>
-  </section>
+  <section class="slide-shell"><div class="slide-frame-wrap"><iframe class="slide-frame" src="install-training-page.html" loading="lazy"></iframe></div></section>
+  <section class="slide-shell"><div class="slide-frame-wrap"><iframe class="slide-frame" src="byld-roi-page.html" loading="lazy"></iframe></div></section>
+  
+  <section class="slide-shell"><div class="slide-frame-wrap"><iframe class="slide-frame" src="trade-in-quote-page.html" loading="lazy"></iframe></div></section>
+  <section class="slide-shell"><div class="slide-frame-wrap"><iframe class="slide-frame" src="stitchmaker-page.html" loading="lazy"></iframe></div></section>
+  <section class="slide-shell"><div class="slide-frame-wrap"><iframe class="slide-frame" src="mighty-hoop-Page.html" loading="lazy"></iframe></div></section>
+  <section class="slide-shell"><div class="slide-frame-wrap"><iframe class="slide-frame" src="stitchit-supplies-page.html" loading="lazy"></iframe></div></section>
 
 </div>
 
@@ -193,23 +91,13 @@
     const SLIDE_H = 816;
 
     function sizeSlides() {
-      const mobile = window.innerWidth <= 900;
+      document.querySelectorAll('.slide-frame-wrap').forEach((wrap) => {
+        const iframe = wrap.querySelector('.slide-frame');
+        const availableWidth = wrap.clientWidth;
+        const scale = availableWidth / SLIDE_W;
 
-      document.querySelectorAll('.slide-fit').forEach((fit) => {
-        const iframe = fit.querySelector('.slide-frame');
-        const shell = fit.closest('.slide-shell');
-
-        if (mobile) {
-          fit.style.height = SLIDE_H + 'px';
-          iframe.style.transform = 'none';
-          return;
-        }
-
-        const targetWidth = Math.min(shell.clientWidth, 1100);
-        const scale = targetWidth / SLIDE_W;
-
-        fit.style.height = (SLIDE_H * scale) + 'px';
         iframe.style.transform = `scale(${scale})`;
+        wrap.style.height = `${SLIDE_H * scale}px`;
       });
     }
 
