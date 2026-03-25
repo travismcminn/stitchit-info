@@ -1,110 +1,5401 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SWF Sales Deck</title>
-
 <style>
-  :root{
-    --slide-w: 1056; /* 11in at 96dpi */
-    --slide-h: 816;  /* 8.5in at 96dpi */
-  }
 
-  * { box-sizing: border-box; }
-
-  body{
-    margin:0;
-    background:#e9e9e9;
-    font-family:Arial, Helvetica, sans-serif;
-  }
-
+html, body{
+  margin:0;
+  padding:0;
+  background:#e9e9e9;
+}
+body{
+  font-family:Arial, Helvetica, sans-serif;
+}
+.deck{
+  width:100%;
+  padding:20px 0 40px;
+}
+.slide-shell{
+  display:flex;
+  justify-content:center;
+  margin:20px 0;
+}
+.slide-shell > .page{
+  box-shadow:0 8px 24px rgba(0,0,0,.12);
+  background:#fff;
+}
+@media (max-width: 1150px){
   .deck{
-    width:100%;
-    padding:18px 0 40px;
+    padding:12px 0 24px;
   }
-
   .slide-shell{
-    width:min(100%, 1100px);
-    margin:0 auto 18px;
-    background:#fff;
-    border-radius:10px;
-    overflow:hidden;
-    box-shadow:0 8px 24px rgba(0,0,0,.10);
+    margin:12px 0;
+    overflow-x:auto;
+    padding:0 8px;
+    justify-content:flex-start;
   }
+  .slide-shell > .page{
+    box-shadow:none;
+  }
+}
 
-  .slide-frame-wrap{
-    position:relative;
-    width:100%;
+/* KE-page.html */
+#slide-ke{
+    --swf-red:#E31B23;
+    --ink:#101010;
+    --muted:#5a5a5a;
+    --line:#E7E7E7;
+    --soft:#F6F7F9;
+    --green:#39B54A;
+    --shadow: 0 10px 26px rgba(0,0,0,.06);
+  }#slide-ke *{ box-sizing:border-box; }@page{ size: 11in 8.5in; margin:0; }#slide-ke, #slide-ke{
+    margin:0;
+    padding:0;
+    background:#fff;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--ink);
+  }@media print{#slide-ke{
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }}#slide-ke .page{
+    width: 11in;
+    height: 8.5in;
     overflow:hidden;
     background:#fff;
-  }
-
-  .slide-frame{
+  }/* Header */#slide-ke .topbar{
+    height: 0.78in;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding: 0.24in 0.5in 0.14in 0.5in;
+    border-bottom: 1px solid var(--line);
+  }#slide-ke .brand-left{
+    display:flex;
+    align-items:center;
+    gap: 16px;
+    min-width:0;
+  }#slide-ke .logo{
+    height: 0.36in;
+    width:auto;
     display:block;
-    width:calc(var(--slide-w) * 1px);
-    height:calc(var(--slide-h) * 1px);
-    border:0;
-    transform-origin:top left;
-  }
+  }#slide-ke .divider{
+    width:1px;
+    height:0.36in;
+    background:var(--line);
+  }#slide-ke .kicker{
+    font-size: 11px;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    color: var(--muted);
+    margin:0 0 2px 0;
+  }#slide-ke .h1{
+    font-size: 26px;
+    font-weight: 900;
+    margin:0;
+    line-height:1.05;
+  }#slide-ke .h1 span{ color: var(--swf-red); }/* Main grid */#slide-ke .content{
+    height: calc(8.5in - 0.78in);
+    padding: 0.20in 0.5in 0.20in 0.5in;
+    display:grid;
+    grid-template-columns: 1.18fr 1fr;
+    gap: 0.26in;
+  }/* Shared card styling */#slide-ke .card{
+    border:1px solid var(--line);
+    border-radius: 16px;
+    background:#fff;
+    padding: 14px 16px;
+    min-height:0;
+    box-shadow: var(--shadow);
+  }#slide-ke .card h2{
+    margin: 0;
+    padding: 0 0 8px 0;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing:.06em;
+    border-bottom: 1px solid #EFEFEF;
+  }/* LEFT HERO */#slide-ke .hero{
+    height: 100%;
+    border:1px solid var(--line);
+    border-radius: 16px;
+    overflow:hidden;
+    background:#fff;
+    box-shadow: var(--shadow);
+    display:grid;
+    /* tightened to recover vertical space */
+    grid-template-rows: 2.20in auto;
+  }#slide-ke .hero-img{
+    width:100%;
+    height: 100%;
+    object-fit: contain;
+    background:#fff;
+    /* reduced top/bottom padding to make room */
+    padding: 6px 12px;
+    border-bottom: 1px solid var(--line);
+  }#slide-ke .hero-pad{
+    padding: 0.12in 0.16in;
+    display:flex;
+    flex-direction:column;
+    min-height:0;
+  }#slide-ke .desc{
+    font-size: 12px;
+    line-height: 1.45;
+    margin: 0 0 10px 0;
+    color: #1a1a1a;
+  }#slide-ke .bullets{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px 10px;
+    margin-bottom: 8px;
+  }#slide-ke .bullet{
+    background: var(--soft);
+    border: 1px solid #EEF0F3;
+    border-radius: 12px;
+    padding: 9px 10px;
+    font-size: 11.5px;
+    line-height: 1.28;
+    color:#1a1a1a;
+  }#slide-ke .bullet b{
+    display:block;
+    margin-bottom:3px;
+    font-weight: 800;
+  }/* Value strip between bullets and CTAs (tightened) */#slide-ke .value-strip{
+    margin: 2px 0 8px 0;
+    padding: 10px 12px;
+    border: 1px solid #E7E7E7;
+    border-radius: 12px;
+    background: #FAFAFA;
+  }#slide-ke .value-title{
+    font-size: 10.6px;
+    font-weight: 900;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }#slide-ke .value-grid{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5px 12px;
+  }#slide-ke .value-item{
+    font-size: 11.2px;
+    font-weight: 700;
+    line-height: 1.18;
+  }/* CTA buttons bottom left */#slide-ke .cta-row{
+    margin-top: auto; /* keeps buttons pinned to bottom */
+    padding-top: 10px;
+    border-top: 1px solid #EFEFEF;
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }#slide-ke .cta-btn{
+    display:block;
+    text-align:center;
+    padding: 10px 12px;
+    border-radius: 11px;
+    font-size: 11.5px;
+    font-weight: 800;
+    text-decoration:none;
+    border:1px solid #E3E3E3;
+    background:#F7F7F7;
+    color:#111;
+    line-height: 1.15;
+    box-shadow: 0 6px 16px rgba(0,0,0,.06);
+  }#slide-ke .cta-primary{
+    background: var(--green);
+    color:#fff;
+    border: none;
+  }/* RIGHT column layout locked (no financing banner row now) */#slide-ke .right{
+    height: 100%;
+    display:grid;
+    grid-template-rows: 1.72in 1.74in 1fr; /* pricing, specs, accessories */
+    gap: 10px;
+    min-height:0;
+  }/* Pricing card */#slide-ke .pricing-card{
+    overflow:hidden;
+    display:grid;
+    grid-template-rows: auto auto 1fr auto;
+    gap: 8px;
+  }#slide-ke .pill{
+    display:inline-block;
+    background:#111;
+    color:#fff;
+    font-size: 10.5px;
+    font-weight: 900;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    padding: 6px 10px;
+    border-radius: 999px;
+    margin: 0;
+    justify-self: start;
+    align-self: start;
+  }#slide-ke .pricing{
+    display:grid;
+    grid-template-columns: 1fr auto;
+    row-gap: 7px;
+    column-gap: 10px;
+    font-size: 13.2px;
+    align-items: baseline;
+    align-content: start;
+  }#slide-ke .model{
+    font-weight: 800;
+    line-height: 1.15;
+    margin:0;
+  }#slide-ke .price{
+    color: var(--green);
+    font-weight: 900;
+    font-size: 16.5px;
+    line-height: 1.15;
+    margin:0;
+  }#slide-ke .note{
+    font-size: 10.8px;
+    color: var(--muted);
+    line-height: 1.3;
+    margin: 0;
+    align-self: end;
+  }/* Specs */#slide-ke table{
+    width:100%;
+    border-collapse:collapse;
+    font-size: 11.6px;
+    margin-top: 6px;
+  }#slide-ke td{
+    padding: 6px 0;
+    border-top: 1px solid #EFEFEF;
+    vertical-align: top;
+  }#slide-ke td:first-child{
+    color: var(--muted);
+    width: 46%;
+  }/* Accessories */#slide-ke .acc-wrap{
+    height: 100%;
+    overflow: hidden;
+    display:flex;
+    flex-direction: column;
+    gap: 8px;
+    min-height:0;
+    padding-top: 8px;
+  }#slide-ke .acc-item{
+    background: var(--soft);
+    border: 1px solid #EEF0F3;
+    border-radius: 12px;
+    padding: 9px 10px;
+    font-size: 11.1px;
+    line-height: 1.24;
+  }#slide-ke .acc-item b{
+    display:block;
+    margin-bottom:3px;
+    font-weight: 900;
+  }#slide-ke .acc-list{
+    margin: 4px 0 0 16px;
+    padding:0;
+  }#slide-ke .acc-list li{ margin: 2px 0; }
 
-  @media (max-width: 768px){
-    .deck{
-      padding:10px 0 24px;
-    }
+/* KX-page.html */
+#slide-kx{
+  --swf-red:#E31B23;
+  --ink:#101010;
+  --muted:#5a5a5a;
+  --line:#E7E7E7;
+  --soft:#F6F7F9;
+  --green:#39B54A;
+  --shadow:0 8px 22px rgba(0,0,0,.05);
+}#slide-kx *{box-sizing:border-box;}@page{size:11in 8.5in;margin:0;}#slide-kx, #slide-kx{
+  margin:0;
+  padding:0;
+  background:#fff;
+  font-family:Arial,Helvetica,sans-serif;
+  color:var(--ink);
+}#slide-kx .page{
+  width:11in;
+  height:8.5in;
+  overflow:hidden;
+}/* Header */#slide-kx .topbar{
+  height:.75in;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:.22in .5in .12in .5in;
+  border-bottom:1px solid var(--line);
+}#slide-kx .brand-left{
+  display:flex;
+  align-items:center;
+  gap:16px;
+}#slide-kx .logo{height:.34in;}#slide-kx .divider{width:1px;height:.34in;background:var(--line);}#slide-kx .kicker{
+  font-size:10px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:var(--muted);
+  margin-bottom:2px;
+}#slide-kx .h1{
+  font-size:24px;
+  font-weight:900;
+  margin:0;
+}#slide-kx .h1 span{color:var(--swf-red);}/* Layout */#slide-kx .content{
+  height:calc(8.5in - .75in);
+  padding:.18in .5in;
+  display:grid;
+  grid-template-columns:1.18fr 1fr;
+  gap:.22in;
+}/* Cards */#slide-kx .card{
+  border:1px solid var(--line);
+  border-radius:14px;
+  background:#fff;
+  padding:12px 14px;
+  box-shadow:var(--shadow);
+}#slide-kx .card h2{
+  margin:0 0 6px 0;
+  font-size:12px;
+  text-transform:uppercase;
+  letter-spacing:.06em;
+  border-bottom:1px solid #EFEFEF;
+  padding-bottom:5px;
+}/* Hero */#slide-kx .hero{
+  border:1px solid var(--line);
+  border-radius:14px;
+  overflow:hidden;
+  display:grid;
+  grid-template-rows:2.05in auto;
+  box-shadow:var(--shadow);
+}#slide-kx .hero-img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  padding:4px 10px;
+  border-bottom:1px solid var(--line);
+}#slide-kx .hero-pad{
+  padding:10px;
+  display:flex;
+  flex-direction:column;
+}#slide-kx .desc{
+  font-size:11.5px;
+  line-height:1.4;
+  margin:0 0 8px 0;
+}#slide-kx .desc p{ margin:0 0 6px 0; }#slide-kx .desc p:last-child{ margin-bottom:0; }#slide-kx .bullets{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:6px;
+  margin-bottom:6px;
+}#slide-kx .bullet{
+  background:var(--soft);
+  border:1px solid #EEF0F3;
+  border-radius:10px;
+  padding:7px;
+  font-size:11px;
+}#slide-kx .bullet b{
+  display:block;
+  margin-bottom:2px;
+}/* Value strip */#slide-kx .value-strip{
+  margin-bottom:6px;
+  padding:8px 10px;
+  border:1px solid #E7E7E7;
+  border-radius:10px;
+  background:#FAFAFA;
+}#slide-kx .value-title{
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  margin-bottom:4px;
+}#slide-kx .value-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:4px 10px;
+}#slide-kx .value-item{
+  font-size:10.5px;
+  font-weight:700;
+}/* NEW: mid filler (useful, not fluff) */#slide-kx .mid-strip{
+  margin-bottom:6px;
+  padding:8px 10px;
+  border:1px solid #E7E7E7;
+  border-radius:10px;
+  background:var(--soft);
+}#slide-kx .mid-title{
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  margin:0 0 6px 0;
+}#slide-kx .mid-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:6px 10px;
+}#slide-kx .mid-box{
+  background:#fff;
+  border:1px solid #EEF0F3;
+  border-radius:10px;
+  padding:7px 9px;
+  font-size:10.7px;
+  line-height:1.25;
+}#slide-kx .mid-box b{ display:block; margin-bottom:2px; }#slide-kx .mini-list{
+  margin:3px 0 0 14px;
+  padding:0;
+}#slide-kx .mini-list li{ margin:2px 0; }/* CTA */#slide-kx .cta-row{
+  margin-top:auto;
+  padding-top:8px;
+  border-top:1px solid #EFEFEF;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:6px;
+}#slide-kx .cta-btn{
+  display:block;
+  text-align:center;
+  padding:8px;
+  border-radius:9px;
+  font-size:10.8px;
+  font-weight:800;
+  text-decoration:none;
+  border:1px solid #E3E3E3;
+  background:#F7F7F7;
+  color:#111;
+}#slide-kx .cta-primary{
+  background:var(--green);
+  color:#fff;
+  border:none;
+}/* Right */#slide-kx .right{
+  display:grid;
+  grid-template-rows:auto auto 1fr;
+  gap:8px;
+}/* Pricing */#slide-kx .pricing{
+  display:grid;
+  grid-template-columns:1fr auto;
+  row-gap:4px;
+  column-gap:8px;
+  font-size:12.5px;
+}#slide-kx .pricing small{
+  grid-column:1/-1;
+  font-weight:900;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  font-size:9px;
+  color:var(--muted);
+  margin-top:2px;
+}#slide-kx .model{font-weight:800;}#slide-kx .price{
+  color:var(--green);
+  font-weight:900;
+  font-size:15px;
+  text-align:right;
+}/* Specs */#slide-kx table{
+  width:100%;
+  border-collapse:collapse;
+  font-size:11px;
+}#slide-kx td{
+  padding:5px 0;
+  border-top:1px solid #EFEFEF;
+}#slide-kx td:first-child{
+  color:var(--muted);
+  width:46%;
+}/* Accessories */#slide-kx .acc-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:6px;
+}#slide-kx .acc-item{
+  background:var(--soft);
+  border:1px solid #EEF0F3;
+  border-radius:10px;
+  padding:7px 9px;
+  font-size:10.8px;
+  line-height:1.25;
+  min-height:54px;
+}#slide-kx .acc-item b{
+  display:block;
+  margin-bottom:2px;
+}#slide-kx .badge{
+  display:inline-block;
+  font-size:9px;
+  font-weight:900;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  padding:3px 7px;
+  border-radius:999px;
+  border:1px solid #E6E6E6;
+  background:#fff;
+  color:#111;
+  margin-left:6px;
+  vertical-align:middle;
+}#slide-kx .badge.uk{
+  border-color:#D9E7FF;
+  background:#F3F8FF;
+}/* NEW: filler under accessories */#slide-kx .acc-notes{
+  margin-top:6px;
+  padding:8px 10px;
+  border:1px solid #E7E7E7;
+  border-radius:10px;
+  background:#FAFAFA;
+}#slide-kx .acc-notes .t{
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  margin:0 0 5px 0;
+}#slide-kx .acc-notes .p{
+  font-size:10.7px;
+  color:#222;
+  line-height:1.25;
+  margin:0;
+}#slide-kx .acc-notes .p span{
+  color:var(--muted);
+}
 
-    .slide-shell{
-      margin:0 auto 12px;
-      border-radius:0;
-      box-shadow:none;
-    }
-  }
+/* KX Dual-Page.html */
+#slide-kx-dual{
+  --swf-red:#E31B23;
+  --ink:#101010;
+  --muted:#5a5a5a;
+  --line:#E7E7E7;
+  --soft:#F6F7F9;
+  --green:#39B54A;
+  --shadow:0 8px 22px rgba(0,0,0,.05);
+}#slide-kx-dual *{box-sizing:border-box;}@page{size:11in 8.5in;margin:0;}#slide-kx-dual, #slide-kx-dual{
+  margin:0;
+  padding:0;
+  background:#fff;
+  font-family:Arial,Helvetica,sans-serif;
+  color:var(--ink);
+}#slide-kx-dual .page{
+  width:11in;
+  height:8.5in;
+  overflow:hidden;
+}/* Print color fix (keeps green button green in PDF) */@media print{#slide-kx-dual *{ -webkit-print-color-adjust:exact !important; print-color-adjust:exact !important; }#slide-kx-dual a{ color:inherit !important; text-decoration:none !important; }#slide-kx-dual .cta-primary{
+    background:var(--green) !important;
+    color:#fff !important;
+    border:0 !important;
+  }}/* Header */#slide-kx-dual .topbar{
+  height:.75in;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:.22in .5in .12in .5in;
+  border-bottom:1px solid var(--line);
+}#slide-kx-dual .brand-left{
+  display:flex;
+  align-items:center;
+  gap:16px;
+}#slide-kx-dual .logo{height:.34in; width:auto; display:block;}#slide-kx-dual .divider{width:1px;height:.34in;background:var(--line);}#slide-kx-dual .kicker{
+  font-size:10px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:var(--muted);
+  margin-bottom:2px;
+}#slide-kx-dual .h1{
+  font-size:24px;
+  font-weight:900;
+  margin:0;
+}#slide-kx-dual .h1 span{color:var(--swf-red);}/* Layout */#slide-kx-dual .content{
+  height:calc(8.5in - .75in);
+  padding:.18in .5in;
+  display:grid;
+  grid-template-columns:1.18fr 1fr;
+  gap:.22in;
+}/* Cards */#slide-kx-dual .card{
+  border:1px solid var(--line);
+  border-radius:14px;
+  background:#fff;
+  padding:12px 14px;
+  box-shadow:var(--shadow);
+}#slide-kx-dual .card h2{
+  margin:0 0 6px 0;
+  font-size:12px;
+  text-transform:uppercase;
+  letter-spacing:.06em;
+  border-bottom:1px solid #EFEFEF;
+  padding-bottom:5px;
+}/* Hero */#slide-kx-dual .hero{
+  border:1px solid var(--line);
+  border-radius:14px;
+  overflow:hidden;
+  display:grid;
+  grid-template-rows:1.95in auto;
+  box-shadow:var(--shadow);
+}#slide-kx-dual .hero-img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  padding:3px 10px;           /* tightened */
+  border-bottom:1px solid var(--line);
+}#slide-kx-dual .hero-pad{
+  padding:10px;
+  display:flex;
+  flex-direction:column;
+  min-height:0;
+}#slide-kx-dual .desc{
+  font-size:11.5px;
+  line-height:1.4;
+  margin:0 0 8px 0;
+}#slide-kx-dual .desc p{ margin:0 0 6px 0; }#slide-kx-dual .desc p:last-child{ margin-bottom:0; }#slide-kx-dual .bullets{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:6px;
+  margin-bottom:6px;
+}#slide-kx-dual .bullet{
+  background:var(--soft);
+  border:1px solid #EEF0F3;
+  border-radius:10px;
+  padding:7px;
+  font-size:11px;
+}#slide-kx-dual .bullet b{ display:block; margin-bottom:2px; }/* Value strip */#slide-kx-dual .value-strip{
+  margin-bottom:6px;
+  padding:8px 10px;
+  border:1px solid #E7E7E7;
+  border-radius:10px;
+  background:#FAFAFA;
+}#slide-kx-dual .value-title{
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  margin-bottom:4px;
+}#slide-kx-dual .value-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:4px 10px;
+}#slide-kx-dual .value-item{
+  font-size:10.5px;
+  font-weight:700;
+}/* Mid filler */#slide-kx-dual .mid-strip{
+  margin-bottom:6px;
+  padding:8px 10px;
+  border:1px solid #E7E7E7;
+  border-radius:10px;
+  background:var(--soft);
+}#slide-kx-dual .mid-title{
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  margin:0 0 6px 0;
+}#slide-kx-dual .mid-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:6px 10px;
+}#slide-kx-dual .mid-box{
+  background:#fff;
+  border:1px solid #EEF0F3;
+  border-radius:10px;
+  padding:7px 9px;
+  font-size:10.7px;
+  line-height:1.25;
+}#slide-kx-dual .mid-box b{ display:block; margin-bottom:2px; }#slide-kx-dual .mini-list{ margin:3px 0 0 14px; padding:0; }#slide-kx-dual .mini-list li{ margin:2px 0; }/* CTA */#slide-kx-dual .cta-row{
+  margin-top:auto;
+  padding-top:8px;
+  border-top:1px solid #EFEFEF;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:6px;
+}#slide-kx-dual .cta-btn{
+  display:block;
+  text-align:center;
+  padding:8px;
+  border-radius:9px;
+  font-size:10.8px;
+  font-weight:800;
+  text-decoration:none;
+  border:1px solid #E3E3E3;
+  background:#F7F7F7;
+  color:#111;
+}#slide-kx-dual .cta-primary{
+  background:var(--green);
+  color:#fff;
+  border:none;
+}/* Right */#slide-kx-dual .right{
+  display:grid;
+  grid-template-rows:auto auto 1fr;
+  gap:8px;
+  min-height:0;
+}/* Pricing */#slide-kx-dual .pricing{
+  display:grid;
+  grid-template-columns:1fr auto;
+  row-gap:6px;
+  column-gap:8px;
+  font-size:12.8px;
+}#slide-kx-dual .model{font-weight:900;}#slide-kx-dual .price{
+  color:var(--green);
+  font-weight:900;
+  font-size:16px;
+  text-align:right;
+}#slide-kx-dual .subnote{
+  grid-column:1/-1;
+  font-size:10.5px;
+  color:var(--muted);
+  line-height:1.25;
+  margin-top:4px;
+}#slide-kx-dual .subnote a{ color:var(--ink); text-decoration:underline; }/* Specs */#slide-kx-dual table{
+  width:100%;
+  border-collapse:collapse;
+  font-size:11px;
+}#slide-kx-dual td{
+  padding:5px 0;
+  border-top:1px solid #EFEFEF;
+}#slide-kx-dual td:first-child{
+  color:var(--muted);
+  width:52%;
+}/* Features / Options */#slide-kx-dual .acc-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:6px;
+}#slide-kx-dual .acc-item{
+  background:var(--soft);
+  border:1px solid #EEF0F3;
+  border-radius:10px;
+  padding:7px 9px;
+  font-size:10.8px;
+  line-height:1.25;
+  min-height:56px;
+}#slide-kx-dual .acc-item b{ display:block; margin-bottom:2px; }/* Notes box */#slide-kx-dual .acc-notes{
+  margin-top:6px;
+  padding:8px 10px;
+  border:1px solid #E7E7E7;
+  border-radius:10px;
+  background:#FAFAFA;
+}#slide-kx-dual .acc-notes .t{
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  margin:0 0 5px 0;
+}#slide-kx-dual .acc-notes .p{
+  font-size:10.7px;
+  color:#222;
+  line-height:1.25;
+  margin:0;
+}#slide-kx-dual .acc-notes .p span{ color:var(--muted); }/* NEW: Included hoops (fills bottom-right space) */#slide-kx-dual .hoops-box{
+  margin-top:6px;
+  padding:8px 10px;
+  border:1px solid #E7E7E7;
+  border-radius:10px;
+  background:var(--soft);
+}#slide-kx-dual .hoops-box .t{
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  margin:0 0 6px 0;
+}#slide-kx-dual .hoops-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:6px 10px;
+}#slide-kx-dual .hoops-col{
+  background:#fff;
+  border:1px solid #EEF0F3;
+  border-radius:10px;
+  padding:7px 9px;
+  font-size:10.6px;
+  line-height:1.25;
+}#slide-kx-dual .hoops-col b{ display:block; margin-bottom:3px; }#slide-kx-dual .hoops-list{
+  margin:0;
+  padding-left:14px;
+}#slide-kx-dual .hoops-list li{ margin:2px 0; }#slide-kx-dual .hoops-foot{
+  margin-top:6px;
+  font-size:10px;
+  color:var(--muted);
+  line-height:1.25;
+}
+
+/* KX Single-Page.html */
+#slide-kx-single{
+  --swf-red:#E31B23;
+  --ink:#101010;
+  --muted:#5a5a5a;
+  --line:#E7E7E7;
+  --soft:#F6F7F9;
+  --green:#39B54A;
+  --shadow:0 8px 22px rgba(0,0,0,.05);
+}#slide-kx-single *{box-sizing:border-box;}@page{size:11in 8.5in;margin:0;}#slide-kx-single, #slide-kx-single{
+  margin:0;
+  padding:0;
+  background:#fff;
+  font-family:Arial,Helvetica,sans-serif;
+  color:var(--ink);
+}#slide-kx-single .page{
+  width:11in;
+  height:8.5in;
+  overflow:hidden;
+}/* Print color fix (keeps green button green in PDF) */@media print{#slide-kx-single *{ -webkit-print-color-adjust:exact !important; print-color-adjust:exact !important; }#slide-kx-single a{ color:inherit !important; text-decoration:none !important; }#slide-kx-single .cta-primary{
+    background:var(--green) !important;
+    color:#fff !important;
+    border:0 !important;
+  }}/* Header */#slide-kx-single .topbar{
+  height:.75in;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:.22in .5in .12in .5in;
+  border-bottom:1px solid var(--line);
+}#slide-kx-single .brand-left{
+  display:flex;
+  align-items:center;
+  gap:16px;
+  min-width:0;
+}#slide-kx-single .logo{height:.34in; width:auto; display:block;}#slide-kx-single .divider{width:1px;height:.34in;background:var(--line);}#slide-kx-single .kicker{
+  font-size:10px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:var(--muted);
+  margin-bottom:2px;
+}#slide-kx-single .h1{
+  font-size:24px;
+  font-weight:900;
+  margin:0;
+  line-height:1.05;
+}#slide-kx-single .h1 span{color:var(--swf-red);}/* Layout */#slide-kx-single .content{
+  height:calc(8.5in - .75in);
+  padding:.18in .5in;
+  display:grid;
+  grid-template-columns:1.18fr 1fr;
+  gap:.22in;
+}/* Cards */#slide-kx-single .card{
+  border:1px solid var(--line);
+  border-radius:14px;
+  background:#fff;
+  padding:12px 14px;
+  box-shadow:var(--shadow);
+  min-height:0;
+}#slide-kx-single .card h2{
+  margin:0 0 6px 0;
+  font-size:12px;
+  text-transform:uppercase;
+  letter-spacing:.06em;
+  border-bottom:1px solid #EFEFEF;
+  padding-bottom:5px;
+}/* Hero */#slide-kx-single .hero{
+  border:1px solid var(--line);
+  border-radius:14px;
+  overflow:hidden;
+  display:grid;
+  grid-template-rows:1.95in auto;
+  box-shadow:var(--shadow);
+}#slide-kx-single .hero-img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  padding:3px 10px;
+  border-bottom:1px solid var(--line);
+}#slide-kx-single .hero-pad{
+  padding:10px;
+  display:flex;
+  flex-direction:column;
+  min-height:0;
+}#slide-kx-single .desc{
+  font-size:11.5px;
+  line-height:1.4;
+  margin:0 0 8px 0;
+}#slide-kx-single .desc p{ margin:0 0 6px 0; }#slide-kx-single .desc p:last-child{ margin-bottom:0; }#slide-kx-single .bullets{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:6px;
+  margin-bottom:6px;
+}#slide-kx-single .bullet{
+  background:var(--soft);
+  border:1px solid #EEF0F3;
+  border-radius:10px;
+  padding:7px;
+  font-size:11px;
+  line-height:1.25;
+}#slide-kx-single .bullet b{ display:block; margin-bottom:2px; }/* Value strip */#slide-kx-single .value-strip{
+  margin-bottom:6px;
+  padding:8px 10px;
+  border:1px solid #E7E7E7;
+  border-radius:10px;
+  background:#FAFAFA;
+}#slide-kx-single .value-title{
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  margin-bottom:4px;
+}#slide-kx-single .value-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:4px 10px;
+}#slide-kx-single .value-item{
+  font-size:10.5px;
+  font-weight:700;
+}/* Mid filler */#slide-kx-single .mid-strip{
+  margin-bottom:6px;
+  padding:8px 10px;
+  border:1px solid #E7E7E7;
+  border-radius:10px;
+  background:var(--soft);
+}#slide-kx-single .mid-title{
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  margin:0 0 6px 0;
+}#slide-kx-single .mid-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:6px 10px;
+}#slide-kx-single .mid-box{
+  background:#fff;
+  border:1px solid #EEF0F3;
+  border-radius:10px;
+  padding:7px 9px;
+  font-size:10.7px;
+  line-height:1.25;
+}#slide-kx-single .mid-box b{ display:block; margin-bottom:2px; }#slide-kx-single .mini-list{ margin:3px 0 0 14px; padding:0; }#slide-kx-single .mini-list li{ margin:2px 0; }/* CTA */#slide-kx-single .cta-row{
+  margin-top:auto;
+  padding-top:8px;
+  border-top:1px solid #EFEFEF;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:6px;
+}#slide-kx-single .cta-btn{
+  display:block;
+  text-align:center;
+  padding:8px;
+  border-radius:9px;
+  font-size:10.8px;
+  font-weight:800;
+  text-decoration:none;
+  border:1px solid #E3E3E3;
+  background:#F7F7F7;
+  color:#111;
+}#slide-kx-single .cta-primary{
+  background:var(--green);
+  color:#fff;
+  border:none;
+}/* Right */#slide-kx-single .right{
+  display:grid;
+  grid-template-rows:auto auto 1fr;
+  gap:8px;
+  min-height:0;
+}/* Pricing */#slide-kx-single .pricing{
+  display:grid;
+  grid-template-columns:1fr auto;
+  row-gap:6px;
+  column-gap:8px;
+  font-size:12.8px;
+}#slide-kx-single .model{font-weight:900;}#slide-kx-single .price{
+  color:var(--green);
+  font-weight:900;
+  font-size:16px;
+  text-align:right;
+}#slide-kx-single .subnote{
+  grid-column:1/-1;
+  font-size:10.5px;
+  color:var(--muted);
+  line-height:1.25;
+  margin-top:2px;
+}/* Specs */#slide-kx-single table{
+  width:100%;
+  border-collapse:collapse;
+  font-size:11px;
+}#slide-kx-single td{
+  padding:5px 0;
+  border-top:1px solid #EFEFEF;
+}#slide-kx-single td:first-child{
+  color:var(--muted);
+  width:52%;
+}/* Accessories / Features grid */#slide-kx-single .acc-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:6px;
+}#slide-kx-single .acc-item{
+  background:var(--soft);
+  border:1px solid #EEF0F3;
+  border-radius:10px;
+  padding:7px 9px;
+  font-size:10.8px;
+  line-height:1.25;
+  min-height:56px;
+}#slide-kx-single .acc-item b{ display:block; margin-bottom:2px; }#slide-kx-single .acc-item ul{
+  margin:4px 0 0 14px;
+  padding:0;
+}#slide-kx-single .acc-item li{ margin:2px 0; }/* Bottom note */#slide-kx-single .acc-notes{
+  margin-top:6px;
+  padding:8px 10px;
+  border:1px solid #E7E7E7;
+  border-radius:10px;
+  background:#FAFAFA;
+}#slide-kx-single .acc-notes .t{
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  margin:0 0 5px 0;
+}#slide-kx-single .acc-notes .p{
+  font-size:10.7px;
+  color:#222;
+  line-height:1.25;
+  margin:0;
+}#slide-kx-single .acc-notes .p span{ color:var(--muted); }
+
+/* ES Full Size-Page.html */
+#slide-es-full{
+  --swf-red:#E31B23;
+  --ink:#101010;
+  --muted:#5a5a5a;
+  --line:#E7E7E7;
+  --soft:#F6F7F9;
+  --green:#39B54A;
+  --shadow:0 8px 22px rgba(0,0,0,.05);
+}#slide-es-full *{box-sizing:border-box;}@page{size:11in 8.5in;margin:0;}#slide-es-full, #slide-es-full{
+  margin:0;
+  padding:0;
+  background:#fff;
+  font-family:Arial,Helvetica,sans-serif;
+  color:var(--ink);
+}#slide-es-full .page{
+  width:11in;
+  height:8.5in;
+  overflow:hidden;
+}/* Print color fix (keeps green button green in PDF) */@media print{#slide-es-full *{ -webkit-print-color-adjust:exact !important; print-color-adjust:exact !important; }#slide-es-full a{ color:inherit !important; text-decoration:none !important; }#slide-es-full .cta-btn, #slide-es-full .cta-primary{
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }#slide-es-full .cta-primary{
+    background:var(--green) !important;
+    color:#fff !important;
+    border:0 !important;
+  }}/* Header */#slide-es-full .topbar{
+  height:.75in;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:.22in .5in .12in .5in;
+  border-bottom:1px solid var(--line);
+}#slide-es-full .brand-left{
+  display:flex;
+  align-items:center;
+  gap:16px;
+}#slide-es-full .logo{height:.34in; width:auto; display:block;}#slide-es-full .divider{width:1px;height:.34in;background:var(--line);}#slide-es-full .kicker{
+  font-size:10px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:var(--muted);
+  margin-bottom:2px;
+}#slide-es-full .h1{
+  font-size:24px;
+  font-weight:900;
+  margin:0;
+}#slide-es-full .h1 span{color:var(--swf-red);}/* Layout */#slide-es-full .content{
+  height:calc(8.5in - .75in);
+  padding:.18in .5in;
+  display:grid;
+  grid-template-columns:1.18fr 1fr;
+  gap:.22in;
+}/* Cards */#slide-es-full .card{
+  border:1px solid var(--line);
+  border-radius:14px;
+  background:#fff;
+  padding:12px 14px;
+  box-shadow:var(--shadow);
+}#slide-es-full .card h2{
+  margin:0 0 6px 0;
+  font-size:12px;
+  text-transform:uppercase;
+  letter-spacing:.06em;
+  border-bottom:1px solid #EFEFEF;
+  padding-bottom:5px;
+}/* Hero */#slide-es-full .hero{
+  border:1px solid var(--line);
+  border-radius:14px;
+  overflow:hidden;
+  display:grid;
+  grid-template-rows:1.95in auto;
+  box-shadow:var(--shadow);
+}#slide-es-full .hero-img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  padding:3px 10px;
+  border-bottom:1px solid var(--line);
+}#slide-es-full .hero-pad{
+  padding:10px;
+  display:flex;
+  flex-direction:column;
+  min-height:0;
+}#slide-es-full .desc{
+  font-size:11.5px;
+  line-height:1.4;
+  margin:0 0 8px 0;
+}#slide-es-full .desc p{ margin:0 0 6px 0; }#slide-es-full .desc p:last-child{ margin-bottom:0; }#slide-es-full .bullets{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:6px;
+  margin-bottom:6px;
+}#slide-es-full .bullet{
+  background:var(--soft);
+  border:1px solid #EEF0F3;
+  border-radius:10px;
+  padding:7px;
+  font-size:11px;
+}#slide-es-full .bullet b{ display:block; margin-bottom:2px; }/* Value strip */#slide-es-full .value-strip{
+  margin-bottom:6px;
+  padding:8px 10px;
+  border:1px solid #E7E7E7;
+  border-radius:10px;
+  background:#FAFAFA;
+}#slide-es-full .value-title{
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  margin-bottom:4px;
+}#slide-es-full .value-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:4px 10px;
+}#slide-es-full .value-item{
+  font-size:10.5px;
+  font-weight:700;
+}/* Mid filler */#slide-es-full .mid-strip{
+  margin-bottom:6px;
+  padding:8px 10px;
+  border:1px solid #E7E7E7;
+  border-radius:10px;
+  background:var(--soft);
+}#slide-es-full .mid-title{
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  margin:0 0 6px 0;
+}#slide-es-full .mid-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:6px 10px;
+}#slide-es-full .mid-box{
+  background:#fff;
+  border:1px solid #EEF0F3;
+  border-radius:10px;
+  padding:7px 9px;
+  font-size:10.7px;
+  line-height:1.25;
+}#slide-es-full .mid-box b{ display:block; margin-bottom:2px; }#slide-es-full .mini-list{ margin:3px 0 0 14px; padding:0; }#slide-es-full .mini-list li{ margin:2px 0; }/* CTA */#slide-es-full .cta-row{
+  margin-top:auto;
+  padding-top:8px;
+  border-top:1px solid #EFEFEF;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:6px;
+}#slide-es-full .cta-btn{
+  display:block;
+  text-align:center;
+  padding:8px;
+  border-radius:9px;
+  font-size:10.8px;
+  font-weight:800;
+  text-decoration:none;
+  border:1px solid #E3E3E3;
+  background:#F7F7F7;
+  color:#111;
+}#slide-es-full .cta-primary{
+  background:var(--green);
+  color:#fff;
+  border:none;
+}/* Right */#slide-es-full .right{
+  display:grid;
+  grid-template-rows:auto auto 1fr;
+  gap:8px;
+  min-height:0;
+}/* Pricing */#slide-es-full .pricing{
+  display:grid;
+  grid-template-columns:1fr auto;
+  row-gap:6px;
+  column-gap:8px;
+  font-size:12.8px;
+}#slide-es-full .model{font-weight:900;}#slide-es-full .price{
+  color:var(--green);
+  font-weight:900;
+  font-size:16px;
+  text-align:right;
+}#slide-es-full .subnote{
+  grid-column:1/-1;
+  font-size:10.5px;
+  color:var(--muted);
+  line-height:1.25;
+  margin-top:4px;
+}/* Specs */#slide-es-full table{
+  width:100%;
+  border-collapse:collapse;
+  font-size:11px;
+}#slide-es-full td{
+  padding:5px 0;
+  border-top:1px solid #EFEFEF;
+}#slide-es-full td:first-child{
+  color:var(--muted);
+  width:52%;
+}/* Accessories / highlights */#slide-es-full .acc-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:6px;
+}#slide-es-full .acc-item{
+  background:var(--soft);
+  border:1px solid #EEF0F3;
+  border-radius:10px;
+  padding:7px 9px;
+  font-size:10.8px;
+  line-height:1.25;
+  min-height:56px;
+}#slide-es-full .acc-item b{ display:block; margin-bottom:2px; }/* Included accessories list */#slide-es-full .incl{
+  margin-top:6px;
+  padding:8px 10px;
+  border:1px solid #E7E7E7;
+  border-radius:10px;
+  background:#FAFAFA;
+}#slide-es-full .incl .t{
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  margin:0 0 6px 0;
+}#slide-es-full .incl-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:6px 10px;
+}#slide-es-full .incl-box{
+  background:#fff;
+  border:1px solid #EEF0F3;
+  border-radius:10px;
+  padding:7px 9px;
+  font-size:10.6px;
+  line-height:1.25;
+}#slide-es-full .incl-box b{ display:block; margin-bottom:2px; }#slide-es-full .incl-list{ margin:3px 0 0 14px; padding:0; }#slide-es-full .incl-list li{ margin:2px 0; }/* Bottom note */#slide-es-full .acc-notes{
+  margin-top:6px;
+  padding:8px 10px;
+  border:1px solid #E7E7E7;
+  border-radius:10px;
+  background:#FAFAFA;
+}#slide-es-full .acc-notes .t{
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  margin:0 0 5px 0;
+}#slide-es-full .acc-notes .p{
+  font-size:10.7px;
+  color:#222;
+  line-height:1.25;
+  margin:0;
+}#slide-es-full .acc-notes .p span{ color:var(--muted); }
+
+/* ES-T1501C-Page.html */
+#slide-es-compact{
+  --swf-red:#E31B23;
+  --ink:#101010;
+  --muted:#5a5a5a;
+  --line:#E7E7E7;
+  --soft:#F6F7F9;
+  --green:#39B54A;
+  --shadow:0 8px 22px rgba(0,0,0,.05);
+}#slide-es-compact *{box-sizing:border-box;}@page{size:11in 8.5in;margin:0;}#slide-es-compact, #slide-es-compact{
+  margin:0;
+  padding:0;
+  background:#fff;
+  font-family:Arial,Helvetica,sans-serif;
+  color:var(--ink);
+}#slide-es-compact .page{
+  width:11in;
+  height:8.5in;
+  overflow:hidden;
+}/* Print color fix (keeps green button green in PDF) */@media print{#slide-es-compact *{ -webkit-print-color-adjust:exact !important; print-color-adjust:exact !important; }#slide-es-compact a{ color:inherit !important; text-decoration:none !important; }#slide-es-compact .cta-btn, #slide-es-compact .cta-primary{
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }#slide-es-compact .cta-primary{
+    background:var(--green) !important;
+    color:#fff !important;
+    border:0 !important;
+  }}/* Header */#slide-es-compact .topbar{
+  height:.75in;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:.22in .5in .12in .5in;
+  border-bottom:1px solid var(--line);
+}#slide-es-compact .brand-left{
+  display:flex;
+  align-items:center;
+  gap:16px;
+}#slide-es-compact .logo{height:.34in; width:auto; display:block;}#slide-es-compact .divider{width:1px;height:.34in;background:var(--line);}#slide-es-compact .kicker{
+  font-size:10px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:var(--muted);
+  margin-bottom:2px;
+}#slide-es-compact .h1{
+  font-size:24px;
+  font-weight:900;
+  margin:0;
+}#slide-es-compact .h1 span{color:var(--swf-red);}/* Layout */#slide-es-compact .content{
+  height:calc(8.5in - .75in);
+  padding:.18in .5in;
+  display:grid;
+  grid-template-columns:1.18fr 1fr;
+  gap:.22in;
+}/* Cards */#slide-es-compact .card{
+  border:1px solid var(--line);
+  border-radius:14px;
+  background:#fff;
+  padding:12px 14px;
+  box-shadow:var(--shadow);
+}#slide-es-compact .card h2{
+  margin:0 0 6px 0;
+  font-size:12px;
+  text-transform:uppercase;
+  letter-spacing:.06em;
+  border-bottom:1px solid #EFEFEF;
+  padding-bottom:5px;
+}/* Hero */#slide-es-compact .hero{
+  border:1px solid var(--line);
+  border-radius:14px;
+  overflow:hidden;
+  display:grid;
+  grid-template-rows:1.95in auto;
+  box-shadow:var(--shadow);
+}#slide-es-compact .hero-img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  padding:3px 10px;
+  border-bottom:1px solid var(--line);
+}#slide-es-compact .hero-pad{
+  padding:10px;
+  display:flex;
+  flex-direction:column;
+  min-height:0;
+}#slide-es-compact .desc{
+  font-size:11.5px;
+  line-height:1.4;
+  margin:0 0 8px 0;
+}#slide-es-compact .desc p{ margin:0 0 6px 0; }#slide-es-compact .desc p:last-child{ margin-bottom:0; }#slide-es-compact .bullets{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:6px;
+  margin-bottom:6px;
+}#slide-es-compact .bullet{
+  background:var(--soft);
+  border:1px solid #EEF0F3;
+  border-radius:10px;
+  padding:7px;
+  font-size:11px;
+}#slide-es-compact .bullet b{ display:block; margin-bottom:2px; }/* Value strip */#slide-es-compact .value-strip{
+  margin-bottom:6px;
+  padding:8px 10px;
+  border:1px solid #E7E7E7;
+  border-radius:10px;
+  background:#FAFAFA;
+}#slide-es-compact .value-title{
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  margin-bottom:4px;
+}#slide-es-compact .value-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:4px 10px;
+}#slide-es-compact .value-item{
+  font-size:10.5px;
+  font-weight:700;
+}/* Mid filler */#slide-es-compact .mid-strip{
+  margin-bottom:6px;
+  padding:8px 10px;
+  border:1px solid #E7E7E7;
+  border-radius:10px;
+  background:var(--soft);
+}#slide-es-compact .mid-title{
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  margin:0 0 6px 0;
+}#slide-es-compact .mid-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:6px 10px;
+}#slide-es-compact .mid-box{
+  background:#fff;
+  border:1px solid #EEF0F3;
+  border-radius:10px;
+  padding:7px 9px;
+  font-size:10.7px;
+  line-height:1.25;
+}#slide-es-compact .mid-box b{ display:block; margin-bottom:2px; }#slide-es-compact .mini-list{ margin:3px 0 0 14px; padding:0; }#slide-es-compact .mini-list li{ margin:2px 0; }/* CTA */#slide-es-compact .cta-row{
+  margin-top:auto;
+  padding-top:8px;
+  border-top:1px solid #EFEFEF;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:6px;
+}#slide-es-compact .cta-btn{
+  display:block;
+  text-align:center;
+  padding:8px;
+  border-radius:9px;
+  font-size:10.8px;
+  font-weight:800;
+  text-decoration:none;
+  border:1px solid #E3E3E3;
+  background:#F7F7F7;
+  color:#111;
+}#slide-es-compact .cta-primary{
+  background:var(--green);
+  color:#fff;
+  border:none;
+}/* Right */#slide-es-compact .right{
+  display:grid;
+  grid-template-rows:auto auto 1fr;
+  gap:8px;
+  min-height:0;
+}/* Pricing */#slide-es-compact .pricing{
+  display:grid;
+  grid-template-columns:1fr auto;
+  row-gap:6px;
+  column-gap:8px;
+  font-size:12.8px;
+}#slide-es-compact .model{font-weight:900;}#slide-es-compact .price{
+  color:var(--green);
+  font-weight:900;
+  font-size:16px;
+  text-align:right;
+}#slide-es-compact .subnote{
+  grid-column:1/-1;
+  font-size:10.5px;
+  color:var(--muted);
+  line-height:1.25;
+  margin-top:4px;
+}/* Specs */#slide-es-compact table{
+  width:100%;
+  border-collapse:collapse;
+  font-size:11px;
+}#slide-es-compact td{
+  padding:5px 0;
+  border-top:1px solid #EFEFEF;
+}#slide-es-compact td:first-child{
+  color:var(--muted);
+  width:52%;
+}/* Highlights */#slide-es-compact .acc-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:6px;
+}#slide-es-compact .acc-item{
+  background:var(--soft);
+  border:1px solid #EEF0F3;
+  border-radius:10px;
+  padding:7px 9px;
+  font-size:10.8px;
+  line-height:1.25;
+  min-height:56px;
+}#slide-es-compact .acc-item b{ display:block; margin-bottom:2px; }/* Included accessories list */#slide-es-compact .incl{
+  margin-top:6px;
+  padding:8px 10px;
+  border:1px solid #E7E7E7;
+  border-radius:10px;
+  background:#FAFAFA;
+}#slide-es-compact .incl .t{
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  margin:0 0 6px 0;
+}#slide-es-compact .incl-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:6px 10px;
+}#slide-es-compact .incl-box{
+  background:#fff;
+  border:1px solid #EEF0F3;
+  border-radius:10px;
+  padding:7px 9px;
+  font-size:10.6px;
+  line-height:1.25;
+}#slide-es-compact .incl-box b{ display:block; margin-bottom:2px; }#slide-es-compact .incl-list{ margin:3px 0 0 14px; padding:0; }#slide-es-compact .incl-list li{ margin:2px 0; }
+
+/* MAS-12-Page.html */
+#slide-mas-12{
+  --swf-red:#E31B23;
+  --ink:#101010;
+  --muted:#5a5a5a;
+  --line:#E7E7E7;
+  --soft:#F6F7F9;
+  --green:#39B54A;
+  --shadow:0 8px 22px rgba(0,0,0,.05);
+}#slide-mas-12 *{box-sizing:border-box;}@page{size:11in 8.5in;margin:0;}#slide-mas-12, #slide-mas-12{
+  margin:0;
+  padding:0;
+  background:#fff;
+  font-family:Arial,Helvetica,sans-serif;
+  color:var(--ink);
+}#slide-mas-12 .page{
+  width:11in;
+  height:8.5in;
+  overflow:hidden;
+}/* Print color fix (keeps green button green in PDF) */@media print{#slide-mas-12 *{ -webkit-print-color-adjust:exact !important; print-color-adjust:exact !important; }#slide-mas-12 a{ color:inherit !important; text-decoration:none !important; }#slide-mas-12 .cta-btn, #slide-mas-12 .cta-primary{
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }#slide-mas-12 .cta-primary{
+    background:var(--green) !important;
+    color:#fff !important;
+    border:0 !important;
+  }}/* Header */#slide-mas-12 .topbar{
+  height:.75in;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:.22in .5in .12in .5in;
+  border-bottom:1px solid var(--line);
+}#slide-mas-12 .brand-left{
+  display:flex;
+  align-items:center;
+  gap:16px;
+}#slide-mas-12 .logo{height:.34in; width:auto; display:block;}#slide-mas-12 .divider{width:1px;height:.34in;background:var(--line);}#slide-mas-12 .kicker{
+  font-size:10px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:var(--muted);
+  margin-bottom:2px;
+}#slide-mas-12 .h1{
+  font-size:24px;
+  font-weight:900;
+  margin:0;
+}#slide-mas-12 .h1 span{color:var(--swf-red);}/* Layout */#slide-mas-12 .content{
+  height:calc(8.5in - .75in);
+  padding:.18in .5in;
+  display:grid;
+  grid-template-columns:1.18fr 1fr;
+  gap:.22in;
+}/* Cards */#slide-mas-12 .card{
+  border:1px solid var(--line);
+  border-radius:14px;
+  background:#fff;
+  padding:12px 14px;
+  box-shadow:var(--shadow);
+}#slide-mas-12 .card h2{
+  margin:0 0 6px 0;
+  font-size:12px;
+  text-transform:uppercase;
+  letter-spacing:.06em;
+  border-bottom:1px solid #EFEFEF;
+  padding-bottom:5px;
+}/* Hero */#slide-mas-12 .hero{
+  border:1px solid var(--line);
+  border-radius:14px;
+  overflow:hidden;
+  display:grid;
+  grid-template-rows:1.95in auto;
+  box-shadow:var(--shadow);
+}#slide-mas-12 .hero-img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  padding:3px 10px;
+  border-bottom:1px solid var(--line);
+}#slide-mas-12 .hero-pad{
+  padding:10px;
+  display:flex;
+  flex-direction:column;
+  min-height:0;
+}#slide-mas-12 .desc{
+  font-size:11.5px;
+  line-height:1.4;
+  margin:0 0 8px 0;
+}#slide-mas-12 .desc p{ margin:0 0 6px 0; }#slide-mas-12 .desc p:last-child{ margin-bottom:0; }#slide-mas-12 .bullets{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:6px;
+  margin-bottom:6px;
+}#slide-mas-12 .bullet{
+  background:var(--soft);
+  border:1px solid #EEF0F3;
+  border-radius:10px;
+  padding:7px;
+  font-size:11px;
+}#slide-mas-12 .bullet b{ display:block; margin-bottom:2px; }/* Value strip */#slide-mas-12 .value-strip{
+  margin-bottom:6px;
+  padding:8px 10px;
+  border:1px solid #E7E7E7;
+  border-radius:10px;
+  background:#FAFAFA;
+}#slide-mas-12 .value-title{
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  margin-bottom:4px;
+}#slide-mas-12 .value-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:4px 10px;
+}#slide-mas-12 .value-item{
+  font-size:10.5px;
+  font-weight:700;
+}/* Mid filler */#slide-mas-12 .mid-strip{
+  margin-bottom:6px;
+  padding:8px 10px;
+  border:1px solid #E7E7E7;
+  border-radius:10px;
+  background:var(--soft);
+}#slide-mas-12 .mid-title{
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  margin:0 0 6px 0;
+}#slide-mas-12 .mid-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:6px 10px;
+}#slide-mas-12 .mid-box{
+  background:#fff;
+  border:1px solid #EEF0F3;
+  border-radius:10px;
+  padding:7px 9px;
+  font-size:10.7px;
+  line-height:1.25;
+}#slide-mas-12 .mid-box b{ display:block; margin-bottom:2px; }#slide-mas-12 .mini-list{ margin:3px 0 0 14px; padding:0; }#slide-mas-12 .mini-list li{ margin:2px 0; }/* CTA */#slide-mas-12 .cta-row{
+  margin-top:auto;
+  padding-top:8px;
+  border-top:1px solid #EFEFEF;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:6px;
+}#slide-mas-12 .cta-btn{
+  display:block;
+  text-align:center;
+  padding:8px;
+  border-radius:9px;
+  font-size:10.8px;
+  font-weight:800;
+  text-decoration:none;
+  border:1px solid #E3E3E3;
+  background:#F7F7F7;
+  color:#111;
+}#slide-mas-12 .cta-primary{
+  background:var(--green);
+  color:#fff;
+  border:none;
+}/* Right */#slide-mas-12 .right{
+  display:grid;
+  grid-template-rows:auto auto 1fr;
+  gap:8px;
+  min-height:0;
+}/* Pricing */#slide-mas-12 .pricing{
+  display:grid;
+  grid-template-columns:1fr auto;
+  row-gap:6px;
+  column-gap:8px;
+  font-size:12.8px;
+}#slide-mas-12 .model{font-weight:900;}#slide-mas-12 .price{
+  color:var(--green);
+  font-weight:900;
+  font-size:16px;
+  text-align:right;
+}#slide-mas-12 .subnote{
+  grid-column:1/-1;
+  font-size:10.5px;
+  color:var(--muted);
+  line-height:1.25;
+  margin-top:4px;
+}/* Specs */#slide-mas-12 table{
+  width:100%;
+  border-collapse:collapse;
+  font-size:11px;
+}#slide-mas-12 td{
+  padding:5px 0;
+  border-top:1px solid #EFEFEF;
+}#slide-mas-12 td:first-child{
+  color:var(--muted);
+  width:52%;
+}/* Highlights */#slide-mas-12 .acc-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:6px;
+}#slide-mas-12 .acc-item{
+  background:var(--soft);
+  border:1px solid #EEF0F3;
+  border-radius:10px;
+  padding:7px 9px;
+  font-size:10.8px;
+  line-height:1.25;
+  min-height:56px;
+}#slide-mas-12 .acc-item b{ display:block; margin-bottom:2px; }/* Included accessories list */#slide-mas-12 .incl{
+  margin-top:6px;
+  padding:8px 10px;
+  border:1px solid #E7E7E7;
+  border-radius:10px;
+  background:#FAFAFA;
+}#slide-mas-12 .incl .t{
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  margin:0 0 6px 0;
+}#slide-mas-12 .incl-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:6px 10px;
+}#slide-mas-12 .incl-box{
+  background:#fff;
+  border:1px solid #EEF0F3;
+  border-radius:10px;
+  padding:7px 9px;
+  font-size:10.6px;
+  line-height:1.25;
+}#slide-mas-12 .incl-box b{ display:block; margin-bottom:2px; }#slide-mas-12 .incl-list{ margin:3px 0 0 14px; padding:0; }#slide-mas-12 .incl-list li{ margin:2px 0; }
+
+/* Sunny 7-Page.html */
+#slide-sunny-7{
+  --swf-red:#E31B23;
+  --ink:#101010;
+  --muted:#5a5a5a;
+  --line:#E7E7E7;
+  --soft:#F6F7F9;
+  --green:#39B54A;
+  --shadow:0 8px 22px rgba(0,0,0,.05);
+}#slide-sunny-7 *{box-sizing:border-box;}@page{size:11in 8.5in;margin:0;}#slide-sunny-7, #slide-sunny-7{
+  margin:0;
+  padding:0;
+  background:#fff;
+  font-family:Arial,Helvetica,sans-serif;
+  color:var(--ink);
+}#slide-sunny-7 .page{
+  width:11in;
+  height:8.5in;
+  overflow:hidden;
+}/* Print color fix (keeps green button green in PDF) */@media print{#slide-sunny-7 *{ -webkit-print-color-adjust:exact !important; print-color-adjust:exact !important; }#slide-sunny-7 a{ color:inherit !important; text-decoration:none !important; }#slide-sunny-7 .cta-btn, #slide-sunny-7 .cta-primary{
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }#slide-sunny-7 .cta-primary{
+    background:var(--green) !important;
+    color:#fff !important;
+    border:0 !important;
+  }}/* Header */#slide-sunny-7 .topbar{
+  height:.75in;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:.22in .5in .12in .5in;
+  border-bottom:1px solid var(--line);
+}#slide-sunny-7 .brand-left{
+  display:flex;
+  align-items:center;
+  gap:16px;
+}#slide-sunny-7 .logo{height:.34in; width:auto; display:block;}#slide-sunny-7 .divider{width:1px;height:.34in;background:var(--line);}#slide-sunny-7 .kicker{
+  font-size:10px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:var(--muted);
+  margin-bottom:2px;
+}#slide-sunny-7 .h1{
+  font-size:24px;
+  font-weight:900;
+  margin:0;
+}#slide-sunny-7 .h1 span{color:var(--swf-red);}/* Layout */#slide-sunny-7 .content{
+  height:calc(8.5in - .75in);
+  padding:.18in .5in;
+  display:grid;
+  grid-template-columns:1.18fr 1fr;
+  gap:.22in;
+}/* Cards */#slide-sunny-7 .card{
+  border:1px solid var(--line);
+  border-radius:14px;
+  background:#fff;
+  padding:12px 14px;
+  box-shadow:var(--shadow);
+}#slide-sunny-7 .card h2{
+  margin:0 0 6px 0;
+  font-size:12px;
+  text-transform:uppercase;
+  letter-spacing:.06em;
+  border-bottom:1px solid #EFEFEF;
+  padding-bottom:5px;
+}/* Hero */#slide-sunny-7 .hero{
+  border:1px solid var(--line);
+  border-radius:14px;
+  overflow:hidden;
+  display:grid;
+  grid-template-rows:1.95in auto;
+  box-shadow:var(--shadow);
+}#slide-sunny-7 .hero-img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  padding:3px 10px;
+  border-bottom:1px solid var(--line);
+}#slide-sunny-7 .hero-pad{
+  padding:10px;
+  display:flex;
+  flex-direction:column;
+  min-height:0;
+}#slide-sunny-7 .desc{
+  font-size:11.5px;
+  line-height:1.4;
+  margin:0 0 8px 0;
+}#slide-sunny-7 .desc p{ margin:0 0 6px 0; }#slide-sunny-7 .desc p:last-child{ margin-bottom:0; }#slide-sunny-7 .bullets{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:6px;
+  margin-bottom:6px;
+}#slide-sunny-7 .bullet{
+  background:var(--soft);
+  border:1px solid #EEF0F3;
+  border-radius:10px;
+  padding:7px;
+  font-size:11px;
+}#slide-sunny-7 .bullet b{ display:block; margin-bottom:2px; }/* Value strip */#slide-sunny-7 .value-strip{
+  margin-bottom:6px;
+  padding:8px 10px;
+  border:1px solid #E7E7E7;
+  border-radius:10px;
+  background:#FAFAFA;
+}#slide-sunny-7 .value-title{
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  margin-bottom:4px;
+}#slide-sunny-7 .value-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:4px 10px;
+}#slide-sunny-7 .value-item{
+  font-size:10.5px;
+  font-weight:700;
+}/* Mid filler */#slide-sunny-7 .mid-strip{
+  margin-bottom:6px;
+  padding:8px 10px;
+  border:1px solid #E7E7E7;
+  border-radius:10px;
+  background:var(--soft);
+}#slide-sunny-7 .mid-title{
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  margin:0 0 6px 0;
+}#slide-sunny-7 .mid-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:6px 10px;
+}#slide-sunny-7 .mid-box{
+  background:#fff;
+  border:1px solid #EEF0F3;
+  border-radius:10px;
+  padding:7px 9px;
+  font-size:10.7px;
+  line-height:1.25;
+}#slide-sunny-7 .mid-box b{ display:block; margin-bottom:2px; }#slide-sunny-7 .mini-list{ margin:3px 0 0 14px; padding:0; }#slide-sunny-7 .mini-list li{ margin:2px 0; }/* CTA */#slide-sunny-7 .cta-row{
+  margin-top:auto;
+  padding-top:8px;
+  border-top:1px solid #EFEFEF;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:6px;
+}#slide-sunny-7 .cta-btn{
+  display:block;
+  text-align:center;
+  padding:8px;
+  border-radius:9px;
+  font-size:10.8px;
+  font-weight:800;
+  text-decoration:none;
+  border:1px solid #E3E3E3;
+  background:#F7F7F7;
+  color:#111;
+}#slide-sunny-7 .cta-primary{
+  background:var(--green);
+  color:#fff;
+  border:none;
+}/* Right */#slide-sunny-7 .right{
+  display:grid;
+  grid-template-rows:auto auto 1fr;
+  gap:8px;
+  min-height:0;
+}/* Pricing */#slide-sunny-7 .pricing{
+  display:grid;
+  grid-template-columns:1fr auto;
+  row-gap:6px;
+  column-gap:8px;
+  font-size:12.8px;
+}#slide-sunny-7 .model{font-weight:900;}#slide-sunny-7 .price{
+  color:var(--green);
+  font-weight:900;
+  font-size:16px;
+  text-align:right;
+}#slide-sunny-7 .subnote{
+  grid-column:1/-1;
+  font-size:10.5px;
+  color:var(--muted);
+  line-height:1.25;
+  margin-top:4px;
+}/* Specs */#slide-sunny-7 table{
+  width:100%;
+  border-collapse:collapse;
+  font-size:11px;
+}#slide-sunny-7 td{
+  padding:5px 0;
+  border-top:1px solid #EFEFEF;
+}#slide-sunny-7 td:first-child{
+  color:var(--muted);
+  width:52%;
+}/* Highlights / included */#slide-sunny-7 .acc-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:6px;
+}#slide-sunny-7 .acc-item{
+  background:var(--soft);
+  border:1px solid #EEF0F3;
+  border-radius:10px;
+  padding:7px 9px;
+  font-size:10.8px;
+  line-height:1.25;
+  min-height:56px;
+}#slide-sunny-7 .acc-item b{ display:block; margin-bottom:2px; }/* Included accessories list */#slide-sunny-7 .incl{
+  margin-top:6px;
+  padding:8px 10px;
+  border:1px solid #E7E7E7;
+  border-radius:10px;
+  background:#FAFAFA;
+}#slide-sunny-7 .incl .t{
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  margin:0 0 6px 0;
+}#slide-sunny-7 .incl-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:6px 10px;
+}#slide-sunny-7 .incl-box{
+  background:#fff;
+  border:1px solid #EEF0F3;
+  border-radius:10px;
+  padding:7px 9px;
+  font-size:10.6px;
+  line-height:1.25;
+}#slide-sunny-7 .incl-box b{ display:block; margin-bottom:2px; }#slide-sunny-7 .incl-list{ margin:3px 0 0 14px; padding:0; }#slide-sunny-7 .incl-list li{ margin:2px 0; }/* Bottom note */#slide-sunny-7 .acc-notes{
+  margin-top:6px;
+  padding:8px 10px;
+  border:1px solid #E7E7E7;
+  border-radius:10px;
+  background:#FAFAFA;
+}#slide-sunny-7 .acc-notes .t{
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  margin:0 0 5px 0;
+}#slide-sunny-7 .acc-notes .p{
+  font-size:10.7px;
+  color:#222;
+  line-height:1.25;
+  margin:0;
+}#slide-sunny-7 .acc-notes .p span{ color:var(--muted); }
+
+/* install-training-page.html */
+#slide-install{
+  --swf-red:#E31B23;
+  --ink:#101010;
+  --muted:#5a5a5a;
+  --line:#E7E7E7;
+  --soft:#F6F7F9;
+  --green:#39B54A;
+  --shadow:0 8px 22px rgba(0,0,0,.05);
+}#slide-install *{box-sizing:border-box;}@page{size:11in 8.5in;margin:0;}#slide-install, #slide-install{
+  margin:0;
+  padding:0;
+  background:#fff;
+  font-family:Arial,Helvetica,sans-serif;
+  color:var(--ink);
+}#slide-install .page{
+  width:11in;
+  height:8.5in;
+  overflow:hidden;
+}/* PRINT FIX */@media print{#slide-install *{ -webkit-print-color-adjust:exact !important; print-color-adjust:exact !important; }#slide-install .cta-primary{
+    background:var(--green) !important;
+    color:#fff !important;
+    border:0 !important;
+  }#slide-install .highlight{
+    background:#EEF8F0 !important;
+    border-color:#CFE8D3 !important;
+  }}/* HEADER */#slide-install .topbar{
+  height:.75in;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:.22in .5in .12in .5in;
+  border-bottom:1px solid var(--line);
+}#slide-install .brand-left{
+  display:flex;
+  align-items:center;
+  gap:16px;
+}#slide-install .logo{height:.34in;}#slide-install .divider{width:1px;height:.34in;background:var(--line);}#slide-install .kicker{
+  font-size:10px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:var(--muted);
+}#slide-install .h1{
+  font-size:24px;
+  font-weight:900;
+  margin:0;
+}#slide-install .h1 span{color:var(--swf-red);}/* LAYOUT */#slide-install .content{
+  height:calc(8.5in - .75in);
+  padding:.18in .5in;
+  display:grid;
+  grid-template-columns:1.2fr 1fr;
+  gap:.22in;
+  align-items:stretch;
+}/* CARDS */#slide-install .card{
+  border:1px solid var(--line);
+  border-radius:14px;
+  background:#fff;
+  padding:14px;
+  box-shadow:var(--shadow);
+}#slide-install .section-title{
+  font-size:12px;
+  text-transform:uppercase;
+  letter-spacing:.06em;
+  border-bottom:1px solid #EFEFEF;
+  padding-bottom:6px;
+  margin-bottom:8px;
+  font-weight:900;
+}#slide-install .desc{
+  font-size:12px;
+  line-height:1.4;
+  margin-bottom:10px;
+}/* GRID */#slide-install .grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:8px;
+}#slide-install .box{
+  background:var(--soft);
+  border:1px solid #EEF0F3;
+  border-radius:10px;
+  padding:10px;
+  font-size:11px;
+  line-height:1.3;
+}#slide-install .box b{
+  display:block;
+  margin-bottom:4px;
+}/* VALUE STRIP */#slide-install .value{
+  margin-top:10px;
+  padding:10px;
+  border:1px solid #E7E7E7;
+  border-radius:10px;
+  background:#FAFAFA;
+}#slide-install .value-title{
+  font-size:10px;
+  font-weight:900;
+  text-transform:uppercase;
+  margin-bottom:6px;
+  letter-spacing:.08em;
+}#slide-install .value-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:6px;
+  font-size:11px;
+  font-weight:700;
+}/* RIGHT SIDE */#slide-install .right{
+  display:grid;
+  grid-template-rows:auto auto 1fr auto;
+  gap:10px;
+  height:100%;
+}/* RIGHT COLUMN CARDS */#slide-install .right .card:last-of-type{
+  display:flex;
+  flex-direction:column;
+  height:100%;
+}#slide-install .pricing{
+  display:grid;
+  grid-template-columns:1fr auto;
+  gap:6px 8px;
+  font-size:13px;
+}#slide-install .model{font-weight:900;}#slide-install .price{
+  color:var(--green);
+  font-weight:900;
+  font-size:16px;
+  text-align:right;
+}#slide-install .sub{
+  grid-column:1/-1;
+  font-size:10.5px;
+  color:var(--muted);
+  margin-top:-2px;
+  line-height:1.25;
+}/* HIGHLIGHT */#slide-install .highlight{
+  margin-top:10px;
+  padding:10px;
+  border:1px solid #CFE8D3;
+  border-radius:10px;
+  background:#EEF8F0;
+}#slide-install .highlight .label{
+  font-size:10px;
+  font-weight:900;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+  color:#1E5D2A;
+  margin-bottom:4px;
+}#slide-install .highlight .title{
+  font-size:13px;
+  font-weight:900;
+  margin-bottom:4px;
+}#slide-install .highlight .copy{
+  font-size:11px;
+  line-height:1.3;
+}/* COMPARISON TABLE */#slide-install .compare-table{
+  width:100%;
+  border-collapse:collapse;
+  font-size:10.5px;
+}#slide-install .compare-table th, #slide-install .compare-table td{
+  border-top:1px solid #EFEFEF;
+  padding:7px 6px;
+  text-align:center;
+  vertical-align:middle;
+}#slide-install .compare-table th:first-child, #slide-install .compare-table td:first-child{
+  text-align:left;
+  width:40%;
+}#slide-install .compare-table th{
+  font-size:10px;
+  text-transform:uppercase;
+  letter-spacing:.04em;
+  color:var(--muted);
+}#slide-install .yes{font-weight:900;}#slide-install .no{color:var(--muted);}/* CTA */#slide-install .cta-row{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:8px;
+  margin-top:10px;
+}#slide-install .cta{
+  text-align:center;
+  padding:10px;
+  border-radius:10px;
+  font-weight:800;
+  text-decoration:none;
+  font-size:11px;
+}#slide-install .cta-primary{
+  background:var(--green);
+  color:#fff;
+}#slide-install .cta-secondary{
+  background:#F3F3F3;
+  border:1px solid #E3E3E3;
+  color:#111;
+}/* NOTE */#slide-install .note{
+  margin-top:8px;
+  font-size:10px;
+  color:var(--muted);
+  line-height:1.3;
+}
+
+/* byld-roi-page.html */
+#slide-roi{
+  --byld-green:#449F50;
+  --ink:#101010;
+  --muted:#5b5b5b;
+  --line:#E7E7E7;
+  --soft:#F6F7F9;
+  --shadow:0 8px 22px rgba(0,0,0,.05);
+}#slide-roi *{box-sizing:border-box;}@page{size:11in 8.5in;margin:0;}#slide-roi, #slide-roi{
+  margin:0;
+  padding:0;
+  background:#fff;
+  font-family:Arial,Helvetica,sans-serif;
+  color:var(--ink);
+}#slide-roi .page{
+  width:11in;
+  height:8.5in;
+  overflow:hidden;
+  background:#fff;
+}@media print{#slide-roi *{
+    -webkit-print-color-adjust:exact !important;
+    print-color-adjust:exact !important;
+  }#slide-roi a{
+    color:inherit !important;
+    text-decoration:none !important;
+  }#slide-roi .cta-primary{
+    background:var(--byld-green) !important;
+    color:#fff !important;
+    border:0 !important;
+  }}/* Header */#slide-roi .topbar{
+  height:.80in;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:.20in .5in .12in .5in;
+  border-bottom:1px solid var(--line);
+}#slide-roi .brand-left{
+  display:flex;
+  align-items:center;
+  gap:16px;
+}#slide-roi .logo-stitch{
+  height:.34in;
+  width:auto;
+  display:block;
+}#slide-roi .logo-byld{
+  height:.60in;
+  width:auto;
+  display:block;
+}#slide-roi .divider{
+  width:1px;
+  height:.34in;
+  background:var(--line);
+}#slide-roi .kicker{
+  font-size:10px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:var(--muted);
+  margin-bottom:2px;
+}#slide-roi .h1{
+  font-size:25px;
+  font-weight:900;
+  margin:0;
+  line-height:1.05;
+}#slide-roi .h1 span{color:var(--byld-green);}/* Layout */#slide-roi .content{
+  height:calc(8.5in - .80in);
+  padding:.16in .5in;
+  display:grid;
+  grid-template-columns:1.02fr 1fr;
+  gap:.22in;
+}/* Cards */#slide-roi .card{
+  border:1px solid var(--line);
+  border-radius:14px;
+  background:#fff;
+  padding:11px 13px;
+  box-shadow:var(--shadow);
+}#slide-roi .card h2{
+  margin:0 0 6px 0;
+  font-size:12px;
+  text-transform:uppercase;
+  letter-spacing:.06em;
+  border-bottom:1px solid #EFEFEF;
+  padding-bottom:5px;
+}/* Left column */#slide-roi .left{
+  display:grid;
+  grid-template-rows:auto auto auto 1fr auto;
+  gap:8px;
+  min-height:0;
+}#slide-roi .hero{
+  border:1px solid var(--line);
+  border-radius:14px;
+  background:#fff;
+  box-shadow:var(--shadow);
+  overflow:hidden;
+}#slide-roi .hero-inner{
+  padding:12px 14px;
+}#slide-roi .desc{
+  font-size:11.7px;
+  line-height:1.42;
+  margin:0 0 8px 0;
+}#slide-roi .desc p{margin:0 0 7px 0;}#slide-roi .desc p:last-child{margin-bottom:0;}#slide-roi .bullets{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:6px;
+  margin-top:8px;
+}#slide-roi .bullet{
+  background:var(--soft);
+  border:1px solid #EEF0F3;
+  border-radius:10px;
+  padding:7px 8px;
+  font-size:10.9px;
+  line-height:1.24;
+}#slide-roi .bullet b{
+  display:block;
+  margin-bottom:2px;
+}#slide-roi .machine-box{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:6px;
+}#slide-roi .machine-mini{
+  background:var(--soft);
+  border:1px solid #EEF0F3;
+  border-radius:10px;
+  padding:8px 9px;
+}#slide-roi .machine-mini .label{
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:.05em;
+  text-transform:uppercase;
+  color:var(--muted);
+  margin-bottom:3px;
+}#slide-roi .machine-mini .value{
+  font-size:15px;
+  font-weight:900;
+  line-height:1.08;
+}#slide-roi .assumption-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:6px;
+}#slide-roi .assump{
+  background:var(--soft);
+  border:1px solid #EEF0F3;
+  border-radius:10px;
+  padding:8px 9px;
+}#slide-roi .assump .label{
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:.05em;
+  text-transform:uppercase;
+  color:var(--muted);
+  margin-bottom:3px;
+}#slide-roi .assump .value{
+  font-size:13px;
+  font-weight:900;
+  line-height:1.1;
+}#slide-roi .cta-row{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:6px;
+  padding-top:8px;
+  border-top:1px solid #EFEFEF;
+}#slide-roi .cta-btn{
+  display:block;
+  text-align:center;
+  padding:10px 8px;
+  border-radius:9px;
+  font-size:11px;
+  font-weight:900;
+  text-decoration:none;
+  border:1px solid #E3E3E3;
+  background:#F7F7F7;
+  color:#111;
+}#slide-roi .cta-primary{
+  background:var(--byld-green);
+  color:#fff;
+  border:none;
+}/* Right column */#slide-roi .right{
+  display:grid;
+  grid-template-rows:auto auto 1fr;
+  gap:8px;
+  min-height:0;
+}#slide-roi .summary-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:6px;
+}#slide-roi .summary-box{
+  background:var(--soft);
+  border:1px solid #EEF0F3;
+  border-radius:10px;
+  padding:8px 9px;
+  min-height:58px;
+}#slide-roi .summary-box .label{
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:.05em;
+  text-transform:uppercase;
+  color:var(--muted);
+  margin-bottom:3px;
+}#slide-roi .summary-box .value{
+  font-size:18px;
+  font-weight:900;
+  line-height:1.1;
+}#slide-roi .summary-box .sub{
+  font-size:10px;
+  color:var(--muted);
+  margin-top:3px;
+}#slide-roi .roi-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+  gap:6px;
+}#slide-roi .roi-col{
+  background:var(--soft);
+  border:1px solid #EEF0F3;
+  border-radius:12px;
+  padding:8px 9px;
+}#slide-roi .roi-title{
+  font-size:11px;
+  font-weight:900;
+  text-transform:uppercase;
+  letter-spacing:.06em;
+  margin-bottom:6px;
+}#slide-roi .metric{
+  border-top:1px solid #E6E6E6;
+  padding-top:5px;
+  margin-top:5px;
+}#slide-roi .metric:first-of-type{
+  border-top:0;
+  padding-top:0;
+  margin-top:0;
+}#slide-roi .metric .m-label{
+  font-size:10px;
+  color:var(--muted);
+  margin-bottom:2px;
+}#slide-roi .metric .m-value{
+  font-size:15px;
+  font-weight:900;
+  line-height:1.08;
+}#slide-roi .metric .m-value.small{
+  font-size:13px;
+}#slide-roi .foot{
+  margin-top:6px;
+  padding:8px 10px;
+  border:1px solid #E7E7E7;
+  border-radius:10px;
+  background:#FAFAFA;
+  font-size:10.5px;
+  line-height:1.22;
+  color:#222;
+}#slide-roi .foot span{color:var(--muted);}#slide-roi .green{color:var(--byld-green);}
+
+/* trade-in-quote-page.html */
+#slide-tradein{
+  --swf-red:#E31B23;
+  --ink:#101010;
+  --muted:#5a5a5a;
+  --line:#E7E7E7;
+  --soft:#F6F7F9;
+  --green:#39B54A;
+  --shadow:0 8px 22px rgba(0,0,0,.05);
+}#slide-tradein *{box-sizing:border-box;}@page{size:11in 8.5in;margin:0;}#slide-tradein, #slide-tradein{
+  margin:0;
+  padding:0;
+  background:#fff;
+  font-family:Arial,Helvetica,sans-serif;
+  color:var(--ink);
+}#slide-tradein .page{
+  width:11in;
+  height:8.5in;
+  overflow:hidden;
+  background:#fff;
+}@media print{#slide-tradein *{
+    -webkit-print-color-adjust:exact !important;
+    print-color-adjust:exact !important;
+  }#slide-tradein a{
+    color:inherit !important;
+    text-decoration:none !important;
+  }#slide-tradein .cta-primary{
+    background:var(--swf-red) !important;
+    color:#fff !important;
+    border:0 !important;
+  }}/* Header */#slide-tradein .topbar{
+  height:.78in;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:.22in .5in .12in .5in;
+  border-bottom:1px solid var(--line);
+}#slide-tradein .brand-left{
+  display:flex;
+  align-items:center;
+  gap:16px;
+}#slide-tradein .logo{
+  height:.36in;
+  width:auto;
+  display:block;
+}#slide-tradein .kicker{
+  font-size:10px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:var(--muted);
+  margin-bottom:2px;
+}#slide-tradein .h1{
+  font-size:25px;
+  font-weight:900;
+  margin:0;
+  line-height:1.05;
+}#slide-tradein .h1 span{
+  color:var(--swf-red);
+}/* Layout */#slide-tradein .content{
+  height:calc(8.5in - .78in);
+  padding:.18in .5in;
+  display:grid;
+  grid-template-columns:1.05fr 1fr;
+  gap:.22in;
+}/* Cards */#slide-tradein .card{
+  border:1px solid var(--line);
+  border-radius:14px;
+  background:#fff;
+  padding:12px 14px;
+  box-shadow:var(--shadow);
+}#slide-tradein .card h2{
+  margin:0 0 6px 0;
+  font-size:12px;
+  text-transform:uppercase;
+  letter-spacing:.06em;
+  border-bottom:1px solid #EFEFEF;
+  padding-bottom:5px;
+}/* Left */#slide-tradein .left{
+  display:grid;
+  grid-template-rows:auto auto 1fr auto;
+  gap:8px;
+  min-height:0;
+}#slide-tradein .hero{
+  border:1px solid var(--line);
+  border-radius:14px;
+  background:#fff;
+  box-shadow:var(--shadow);
+  overflow:hidden;
+}#slide-tradein .hero-inner{
+  padding:14px 16px;
+}#slide-tradein .desc{
+  font-size:12px;
+  line-height:1.45;
+  margin:0 0 8px 0;
+}#slide-tradein .desc p{margin:0 0 8px 0;}#slide-tradein .desc p:last-child{margin-bottom:0;}#slide-tradein .bullets{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:6px;
+  margin-top:10px;
+}#slide-tradein .bullet{
+  background:var(--soft);
+  border:1px solid #EEF0F3;
+  border-radius:10px;
+  padding:8px 9px;
+  font-size:11px;
+  line-height:1.26;
+}#slide-tradein .bullet b{
+  display:block;
+  margin-bottom:2px;
+}#slide-tradein .value-strip{
+  padding:9px 10px;
+  border:1px solid #E7E7E7;
+  border-radius:10px;
+  background:#FAFAFA;
+}#slide-tradein .value-title{
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  margin-bottom:4px;
+}#slide-tradein .value-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:4px 10px;
+}#slide-tradein .value-item{
+  font-size:10.7px;
+  font-weight:700;
+}#slide-tradein .cta-box{
+  border:1px solid #F0D6D7;
+  border-radius:12px;
+  background:#FFF7F7;
+  padding:12px 12px;
+}#slide-tradein .cta-box .t{
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  margin-bottom:5px;
+}#slide-tradein .cta-box .p{
+  font-size:11.2px;
+  line-height:1.32;
+  margin:0 0 10px 0;
+}#slide-tradein .cta-row{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:6px;
+}#slide-tradein .cta-btn{
+  display:block;
+  text-align:center;
+  padding:11px 10px;
+  border-radius:10px;
+  font-size:12px;
+  font-weight:900;
+  text-decoration:none;
+  border:1px solid #E3E3E3;
+  background:#F7F7F7;
+  color:#111;
+}#slide-tradein .cta-primary{
+  background:var(--swf-red);
+  color:#fff;
+  border:none;
+}/* Right */#slide-tradein .right{
+  display:grid;
+  grid-template-rows:auto auto 1fr;
+  gap:8px;
+  min-height:0;
+}#slide-tradein .grid2{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:6px;
+}#slide-tradein .info-box{
+  background:var(--soft);
+  border:1px solid #EEF0F3;
+  border-radius:10px;
+  padding:8px 9px;
+  min-height:64px;
+}#slide-tradein .info-box .label{
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:.05em;
+  text-transform:uppercase;
+  color:var(--muted);
+  margin-bottom:3px;
+}#slide-tradein .info-box .value{
+  font-size:12px;
+  font-weight:700;
+  line-height:1.25;
+}#slide-tradein .step-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:6px;
+}#slide-tradein .step{
+  background:var(--soft);
+  border:1px solid #EEF0F3;
+  border-radius:12px;
+  padding:9px 10px;
+  min-height:72px;
+}#slide-tradein .step-num{
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:var(--swf-red);
+  margin-bottom:4px;
+}#slide-tradein .step-text{
+  font-size:11px;
+  line-height:1.28;
+}#slide-tradein .note{
+  margin-top:6px;
+  padding:9px 10px;
+  border:1px solid #E7E7E7;
+  border-radius:10px;
+  background:#FAFAFA;
+  font-size:10.8px;
+  line-height:1.28;
+  color:#222;
+}#slide-tradein .note span{color:var(--muted);}#slide-tradein .list-card{
+  background:#fff;
+  border:1px solid #EEF0F3;
+  border-radius:12px;
+  padding:10px 11px;
+}#slide-tradein .list-card b{
+  display:block;
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  margin-bottom:6px;
+}#slide-tradein .clean-list{
+  margin:0;
+  padding-left:16px;
+}#slide-tradein .clean-list li{
+  margin:4px 0;
+  font-size:11px;
+  line-height:1.24;
+}
+
+/* stitchmaker-page.html */
+#slide-stitchmaker{
+  --swf-red:#E31B23;
+  --ink:#101010;
+  --muted:#5a5a5a;
+  --line:#E7E7E7;
+  --soft:#F6F7F9;
+  --green:#39B54A;
+  --shadow:0 8px 22px rgba(0,0,0,.05);
+}#slide-stitchmaker *{box-sizing:border-box;}@page{size:11in 8.5in;margin:0;}#slide-stitchmaker, #slide-stitchmaker{
+  margin:0;
+  padding:0;
+  background:#fff;
+  font-family:Arial,Helvetica,sans-serif;
+  color:var(--ink);
+}#slide-stitchmaker .page{
+  width:11in;
+  height:8.5in;
+  overflow:hidden;
+}/* Print color fix */@media print{#slide-stitchmaker *{ -webkit-print-color-adjust:exact !important; print-color-adjust:exact !important; }#slide-stitchmaker a{ color:inherit !important; text-decoration:none !important; }#slide-stitchmaker .cta-btn, #slide-stitchmaker .cta-primary{
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }#slide-stitchmaker .cta-primary{
+    background:var(--green) !important;
+    color:#fff !important;
+    border:0 !important;
+  }}/* Header */#slide-stitchmaker .topbar{
+  height:.75in;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:.22in .5in .12in .5in;
+  border-bottom:1px solid var(--line);
+}#slide-stitchmaker .brand-left{
+  display:flex;
+  align-items:center;
+  gap:16px;
+}#slide-stitchmaker .logo{height:.34in; width:auto; display:block;}#slide-stitchmaker .divider{width:1px;height:.34in;background:var(--line);}#slide-stitchmaker .kicker{
+  font-size:10px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:var(--muted);
+  margin-bottom:2px;
+}#slide-stitchmaker .h1{
+  font-size:24px;
+  font-weight:900;
+  margin:0;
+}#slide-stitchmaker .h1 span{color:var(--swf-red);}/* Layout */#slide-stitchmaker .content{
+  height:calc(8.5in - .75in);
+  padding:.16in .5in;
+  display:grid;
+  grid-template-columns:1.18fr 1fr;
+  gap:.22in;
+}/* Cards */#slide-stitchmaker .card{
+  border:1px solid var(--line);
+  border-radius:14px;
+  background:#fff;
+  padding:11px 13px;
+  box-shadow:var(--shadow);
+}#slide-stitchmaker .card h2{
+  margin:0 0 6px 0;
+  font-size:12px;
+  text-transform:uppercase;
+  letter-spacing:.06em;
+  border-bottom:1px solid #EFEFEF;
+  padding-bottom:5px;
+}/* Hero */#slide-stitchmaker .hero{
+  border:1px solid var(--line);
+  border-radius:14px;
+  overflow:hidden;
+  display:grid;
+  grid-template-rows:1.82in auto;
+  box-shadow:var(--shadow);
+}#slide-stitchmaker .hero-img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  padding:6px 10px;
+  border-bottom:1px solid var(--line);
+  background:#fff;
+}#slide-stitchmaker .hero-pad{
+  padding:10px;
+  display:flex;
+  flex-direction:column;
+  min-height:0;
+}#slide-stitchmaker .desc{
+  font-size:11.4px;
+  line-height:1.38;
+  margin:0 0 7px 0;
+}#slide-stitchmaker .desc p{ margin:0 0 6px 0; }#slide-stitchmaker .desc p:last-child{ margin-bottom:0; }#slide-stitchmaker .bullets{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:6px;
+  margin-bottom:6px;
+}#slide-stitchmaker .bullet{
+  background:var(--soft);
+  border:1px solid #EEF0F3;
+  border-radius:10px;
+  padding:7px;
+  font-size:11px;
+}#slide-stitchmaker .bullet b{ display:block; margin-bottom:2px; }/* Mid filler */#slide-stitchmaker .mid-strip{
+  margin-bottom:6px;
+  padding:8px 10px;
+  border:1px solid #E7E7E7;
+  border-radius:10px;
+  background:var(--soft);
+}#slide-stitchmaker .mid-title{
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  margin:0 0 6px 0;
+}#slide-stitchmaker .mid-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:6px 10px;
+}#slide-stitchmaker .mid-box{
+  background:#fff;
+  border:1px solid #EEF0F3;
+  border-radius:10px;
+  padding:7px 9px;
+  font-size:10.6px;
+  line-height:1.22;
+}#slide-stitchmaker .mid-box b{ display:block; margin-bottom:2px; }#slide-stitchmaker .mini-list{ margin:3px 0 0 14px; padding:0; }#slide-stitchmaker .mini-list li{ margin:2px 0; }/* Training (moved to left column space) */#slide-stitchmaker .training{
+  margin-top:6px;
+  padding:8px 10px;
+  border:1px solid #DDE9FF;
+  border-radius:10px;
+  background:#F3F8FF;
+}#slide-stitchmaker .training .t{
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  margin:0 0 5px 0;
+}#slide-stitchmaker .training .p{
+  margin:0;
+  font-size:10.6px;
+  line-height:1.22;
+  color:#111;
+}#slide-stitchmaker .training .p span{ color:var(--muted); }/* CTA (2 only) */#slide-stitchmaker .cta-row{
+  margin-top:auto;
+  padding-top:8px;
+  border-top:1px solid #EFEFEF;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:6px;
+}#slide-stitchmaker .cta-btn{
+  display:block;
+  text-align:center;
+  padding:8px;
+  border-radius:9px;
+  font-size:10.8px;
+  font-weight:800;
+  text-decoration:none;
+  border:1px solid #E3E3E3;
+  background:#F7F7F7;
+  color:#111;
+}#slide-stitchmaker .cta-primary{
+  background:var(--green);
+  color:#fff;
+  border:none;
+}/* Right column layout */#slide-stitchmaker .right{
+  display:grid;
+  grid-template-rows:auto 1fr 1fr; /* gives more breathing room */
+  gap:8px;
+  min-height:0;
+}/* Pricing */#slide-stitchmaker .pricing{
+  display:grid;
+  grid-template-columns:1fr auto;
+  row-gap:6px;
+  column-gap:10px;
+  font-size:12.6px;
+  align-items:start;
+}#slide-stitchmaker .model{font-weight:900;}#slide-stitchmaker .price{
+  color:var(--green);
+  font-weight:900;
+  font-size:16px;
+  text-align:right;
+  white-space:nowrap;
+}#slide-stitchmaker .subnote{
+  grid-column:1/-1;
+  font-size:10.5px;
+  color:var(--muted);
+  line-height:1.25;
+  margin-top:2px;
+}#slide-stitchmaker .pill-row{
+  grid-column:1/-1;
+  display:flex;
+  flex-wrap:wrap;
+  gap:6px;
+  margin-top:2px;
+}#slide-stitchmaker .pill{
+  display:inline-block;
+  font-size:9px;
+  font-weight:900;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  padding:3px 8px;
+  border-radius:999px;
+  border:1px solid #E6E6E6;
+  background:#fff;
+  color:#111;
+}/* Capability grid */#slide-stitchmaker .acc-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:6px;
+}#slide-stitchmaker .acc-item{
+  background:var(--soft);
+  border:1px solid #EEF0F3;
+  border-radius:10px;
+  padding:7px 9px;
+  font-size:10.5px;
+  line-height:1.2;
+  min-height:52px;
+}#slide-stitchmaker .acc-item b{ display:block; margin-bottom:2px; }#slide-stitchmaker .acc-item ul{
+  margin:4px 0 0 14px;
+  padding:0;
+}#slide-stitchmaker .acc-item li{ margin:2px 0; }/* Breakdown */#slide-stitchmaker .incl{
+  margin-top:0; /* tighter since it's its own card now */
+  padding:0;
+  border:0;
+  border-radius:0;
+  background:transparent;
+}#slide-stitchmaker .incl-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:6px 10px;
+}#slide-stitchmaker .incl-box{
+  background:#fff;
+  border:1px solid #EEF0F3;
+  border-radius:10px;
+  padding:7px 9px;
+  font-size:10.4px;
+  line-height:1.2;
+}#slide-stitchmaker .incl-box b{ display:block; margin-bottom:2px; }#slide-stitchmaker .incl-list{ margin:3px 0 0 14px; padding:0; }#slide-stitchmaker .incl-list li{ margin:2px 0; }
+
+/* mighty-hoop-Page.html */
+#slide-mighty-hoop{
+  --swf-red:#E31B23;
+  --ink:#101010;
+  --muted:#5a5a5a;
+  --line:#E7E7E7;
+  --soft:#F6F7F9;
+  --green:#39B54A;
+  --shadow:0 8px 22px rgba(0,0,0,.05);
+}#slide-mighty-hoop *{box-sizing:border-box;}@page{size:11in 8.5in;margin:0;}#slide-mighty-hoop, #slide-mighty-hoop{
+  margin:0;
+  padding:0;
+  background:#fff;
+  font-family:Arial,Helvetica,sans-serif;
+  color:var(--ink);
+}#slide-mighty-hoop .page{
+  width:11in;
+  height:8.5in;
+  overflow:hidden;
+}/* Print color fix */@media print{#slide-mighty-hoop *{ -webkit-print-color-adjust:exact !important; print-color-adjust:exact !important; }#slide-mighty-hoop a{ color:inherit !important; text-decoration:none !important; }#slide-mighty-hoop .cta-btn, #slide-mighty-hoop .cta-primary{
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }#slide-mighty-hoop .cta-primary{
+    background:var(--green) !important;
+    color:#fff !important;
+    border:0 !important;
+  }}/* Header */#slide-mighty-hoop .topbar{
+  height:.75in;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:.22in .5in .12in .5in;
+  border-bottom:1px solid var(--line);
+}#slide-mighty-hoop .brand-left{
+  display:flex;
+  align-items:center;
+  gap:16px;
+}#slide-mighty-hoop .logo{height:.34in; width:auto; display:block;}#slide-mighty-hoop .divider{width:1px;height:.34in;background:var(--line);}#slide-mighty-hoop .kicker{
+  font-size:10px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:var(--muted);
+  margin-bottom:2px;
+}#slide-mighty-hoop .h1{
+  font-size:24px;
+  font-weight:900;
+  margin:0;
+}#slide-mighty-hoop .h1 span{color:var(--swf-red);}/* Layout */#slide-mighty-hoop .content{
+  height:calc(8.5in - .75in);
+  padding:.16in .5in;
+  display:grid;
+  grid-template-columns:1.18fr 1fr;
+  gap:.22in;
+}/* Cards */#slide-mighty-hoop .card{
+  border:1px solid var(--line);
+  border-radius:14px;
+  background:#fff;
+  padding:12px 14px;
+  box-shadow:var(--shadow);
+}#slide-mighty-hoop .card h2{
+  margin:0 0 6px 0;
+  font-size:12px;
+  text-transform:uppercase;
+  letter-spacing:.06em;
+  border-bottom:1px solid #EFEFEF;
+  padding-bottom:5px;
+}/* Hero */#slide-mighty-hoop .hero{
+  border:1px solid var(--line);
+  border-radius:14px;
+  overflow:hidden;
+  display:grid;
+  grid-template-rows:1.85in auto;
+  box-shadow:var(--shadow);
+}#slide-mighty-hoop .hero-img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  padding:8px 10px;
+  border-bottom:1px solid var(--line);
+  background:#fff;
+}#slide-mighty-hoop .hero-pad{
+  padding:10px;
+  display:flex;
+  flex-direction:column;
+  min-height:0;
+}#slide-mighty-hoop .desc{
+  font-size:11.5px;
+  line-height:1.4;
+  margin:0 0 8px 0;
+}#slide-mighty-hoop .desc p{ margin:0 0 6px 0; }#slide-mighty-hoop .desc p:last-child{ margin-bottom:0; }#slide-mighty-hoop .bullets{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:6px;
+  margin-bottom:6px;
+}#slide-mighty-hoop .bullet{
+  background:var(--soft);
+  border:1px solid #EEF0F3;
+  border-radius:10px;
+  padding:7px;
+  font-size:11px;
+}#slide-mighty-hoop .bullet b{ display:block; margin-bottom:2px; }/* Mid strip */#slide-mighty-hoop .mid-strip{
+  margin-bottom:6px;
+  padding:8px 10px;
+  border:1px solid #E7E7E7;
+  border-radius:10px;
+  background:var(--soft);
+}#slide-mighty-hoop .mid-title{
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  margin:0 0 6px 0;
+}#slide-mighty-hoop .mid-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:6px 10px;
+}#slide-mighty-hoop .mid-box{
+  background:#fff;
+  border:1px solid #EEF0F3;
+  border-radius:10px;
+  padding:7px 9px;
+  font-size:10.7px;
+  line-height:1.25;
+}#slide-mighty-hoop .mid-box b{ display:block; margin-bottom:2px; }#slide-mighty-hoop .mini-list{ margin:3px 0 0 14px; padding:0; }#slide-mighty-hoop .mini-list li{ margin:2px 0; }/* Pricing screenshot block above CTAs */#slide-mighty-hoop .left-shot{
+  margin-top:6px;
+  border:1px solid #E7E7E7;
+  border-radius:12px;
+  background:#fff;
+  overflow:hidden;
+}#slide-mighty-hoop .left-shot .t{
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  padding:7px 10px;
+  border-bottom:1px solid #EFEFEF;
+  background:#FAFAFA;
+}#slide-mighty-hoop .left-shot img{
+  width:100%;
+  height:1.15in;   /* tuned so it fits above CTAs cleanly */
+  object-fit:contain;
+  display:block;
+  padding:6px 10px;
+  background:#fff;
+}/* CTA */#slide-mighty-hoop .cta-row{
+  margin-top:auto;
+  padding-top:8px;
+  border-top:1px solid #EFEFEF;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  grid-template-rows:auto auto;
+  gap:6px;
+}#slide-mighty-hoop .cta-btn{
+  display:block;
+  text-align:center;
+  padding:8px;
+  border-radius:9px;
+  font-size:10.8px;
+  font-weight:800;
+  text-decoration:none;
+  border:1px solid #E3E3E3;
+  background:#F7F7F7;
+  color:#111;
+}#slide-mighty-hoop .cta-primary{
+  background:var(--green);
+  color:#fff;
+  border:none;
+}/* Right */#slide-mighty-hoop .right{
+  display:grid;
+  grid-template-rows:auto auto 1fr;
+  gap:8px;
+  min-height:0;
+}/* Pricing */#slide-mighty-hoop .pricing{
+  display:grid;
+  grid-template-columns:1fr auto;
+  row-gap:6px;
+  column-gap:10px;
+  font-size:12.8px;
+}#slide-mighty-hoop .model{font-weight:900;}#slide-mighty-hoop .price{
+  color:var(--green);
+  font-weight:900;
+  font-size:16px;
+  text-align:right;
+  white-space:nowrap;
+}#slide-mighty-hoop .subnote{
+  grid-column:1/-1;
+  font-size:10.5px;
+  color:var(--muted);
+  line-height:1.25;
+  margin-top:2px;
+}#slide-mighty-hoop .subnote a{ color:var(--ink); text-decoration:underline; }/* Grid boxes */#slide-mighty-hoop .acc-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:6px;
+}#slide-mighty-hoop .acc-item{
+  background:var(--soft);
+  border:1px solid #EEF0F3;
+  border-radius:10px;
+  padding:7px 9px;
+  font-size:10.8px;
+  line-height:1.25;
+  min-height:56px;
+}#slide-mighty-hoop .acc-item b{ display:block; margin-bottom:2px; }/* Notes */#slide-mighty-hoop .note{
+  margin-top:6px;
+  padding:8px 10px;
+  border:1px solid #E7E7E7;
+  border-radius:10px;
+  background:#FAFAFA;
+}#slide-mighty-hoop .note .t{
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  margin:0 0 5px 0;
+}#slide-mighty-hoop .note .p{
+  font-size:10.7px;
+  color:#222;
+  line-height:1.25;
+  margin:0;
+}#slide-mighty-hoop .note .p span{ color:var(--muted); }#slide-mighty-hoop .note a{ color:var(--ink); text-decoration:underline; }
+
+/* stitchit-supplies-page.html */
+#slide-supplies{
+  --swf-red:#E31B23;
+  --ink:#101010;
+  --muted:#5a5a5a;
+  --line:#E7E7E7;
+  --soft:#F6F7F9;
+  --green:#39B54A;
+  --shadow:0 8px 22px rgba(0,0,0,.05);
+}#slide-supplies *{box-sizing:border-box;}@page{size:11in 8.5in;margin:0;}#slide-supplies, #slide-supplies{
+  margin:0;
+  padding:0;
+  background:#fff;
+  font-family:Arial,Helvetica,sans-serif;
+  color:var(--ink);
+}#slide-supplies .page{
+  width:11in;
+  height:8.5in;
+  overflow:hidden;
+  background:#fff;
+}@media print{#slide-supplies *{
+    -webkit-print-color-adjust:exact !important;
+    print-color-adjust:exact !important;
+  }#slide-supplies a{
+    color:inherit !important;
+    text-decoration:none !important;
+  }#slide-supplies .cta-primary{
+    background:var(--swf-red) !important;
+    color:#fff !important;
+    border:0 !important;
+  }}/* Header */#slide-supplies .topbar{
+  height:.78in;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:.22in .5in .12in .5in;
+  border-bottom:1px solid var(--line);
+}#slide-supplies .brand-left{
+  display:flex;
+  align-items:center;
+  gap:16px;
+}#slide-supplies .logo{
+  height:.36in;
+  width:auto;
+  display:block;
+}#slide-supplies .kicker{
+  font-size:10px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:var(--muted);
+  margin-bottom:2px;
+}#slide-supplies .h1{
+  font-size:25px;
+  font-weight:900;
+  margin:0;
+  line-height:1.05;
+}#slide-supplies .h1 span{
+  color:var(--swf-red);
+}/* Layout */#slide-supplies .content{
+  height:calc(8.5in - .78in);
+  padding:.18in .5in;
+  display:grid;
+  grid-template-columns:1.05fr 1fr;
+  gap:.22in;
+}/* Cards */#slide-supplies .card{
+  border:1px solid var(--line);
+  border-radius:14px;
+  background:#fff;
+  padding:12px 14px;
+  box-shadow:var(--shadow);
+}#slide-supplies .card h2{
+  margin:0 0 6px 0;
+  font-size:12px;
+  text-transform:uppercase;
+  letter-spacing:.06em;
+  border-bottom:1px solid #EFEFEF;
+  padding-bottom:5px;
+}/* Left */#slide-supplies .left{
+  display:grid;
+  grid-template-rows:auto auto auto 1fr;
+  gap:8px;
+  min-height:0;
+}#slide-supplies .hero{
+  border:1px solid var(--line);
+  border-radius:14px;
+  background:#fff;
+  box-shadow:var(--shadow);
+  overflow:hidden;
+}#slide-supplies .hero-inner{
+  padding:14px 16px;
+}#slide-supplies .desc{
+  font-size:12px;
+  line-height:1.45;
+  margin:0 0 8px 0;
+}#slide-supplies .desc p{margin:0 0 8px 0;}#slide-supplies .desc p:last-child{margin-bottom:0;}#slide-supplies .bullets{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:6px;
+  margin-top:10px;
+}#slide-supplies .bullet{
+  background:var(--soft);
+  border:1px solid #EEF0F3;
+  border-radius:10px;
+  padding:8px 9px;
+  font-size:11px;
+  line-height:1.26;
+}#slide-supplies .bullet b{
+  display:block;
+  margin-bottom:2px;
+}#slide-supplies .value-strip{
+  padding:9px 10px;
+  border:1px solid #E7E7E7;
+  border-radius:10px;
+  background:#FAFAFA;
+}#slide-supplies .value-title{
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  margin-bottom:4px;
+}#slide-supplies .value-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:4px 10px;
+}#slide-supplies .value-item{
+  font-size:10.7px;
+  font-weight:700;
+}#slide-supplies .cta-box{
+  border:1px solid #F0D6D7;
+  border-radius:12px;
+  background:#FFF7F7;
+  padding:12px 12px;
+}#slide-supplies .cta-box .t{
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  margin-bottom:5px;
+}#slide-supplies .cta-box .p{
+  font-size:11.2px;
+  line-height:1.32;
+  margin:0 0 10px 0;
+}#slide-supplies .cta-row{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:6px;
+}#slide-supplies .cta-btn{
+  display:block;
+  text-align:center;
+  padding:11px 10px;
+  border-radius:10px;
+  font-size:12px;
+  font-weight:900;
+  text-decoration:none;
+  border:1px solid #E3E3E3;
+  background:#F7F7F7;
+  color:#111;
+}#slide-supplies .cta-primary{
+  background:var(--swf-red);
+  color:#fff;
+  border:none;
+}/* Right */#slide-supplies .right{
+  display:grid;
+  grid-template-rows:auto auto 1fr;
+  gap:8px;
+  min-height:0;
+}#slide-supplies .grid2{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:6px;
+}#slide-supplies .info-box{
+  background:var(--soft);
+  border:1px solid #EEF0F3;
+  border-radius:10px;
+  padding:8px 9px;
+  min-height:64px;
+}#slide-supplies .info-box .label{
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:.05em;
+  text-transform:uppercase;
+  color:var(--muted);
+  margin-bottom:3px;
+}#slide-supplies .info-box .value{
+  font-size:12px;
+  font-weight:700;
+  line-height:1.25;
+}#slide-supplies .step-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:6px;
+}#slide-supplies .step{
+  background:var(--soft);
+  border:1px solid #EEF0F3;
+  border-radius:12px;
+  padding:9px 10px;
+  min-height:72px;
+}#slide-supplies .step-num{
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:var(--swf-red);
+  margin-bottom:4px;
+}#slide-supplies .step-text{
+  font-size:11px;
+  line-height:1.28;
+}#slide-supplies .note{
+  margin-top:6px;
+  padding:9px 10px;
+  border:1px solid #E7E7E7;
+  border-radius:10px;
+  background:#FAFAFA;
+  font-size:10.8px;
+  line-height:1.28;
+  color:#222;
+}#slide-supplies .note span{color:var(--muted);}#slide-supplies .list-card{
+  background:#fff;
+  border:1px solid #EEF0F3;
+  border-radius:12px;
+  padding:10px 11px;
+}#slide-supplies .list-card b{
+  display:block;
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  margin-bottom:6px;
+}#slide-supplies .clean-list{
+  margin:0;
+  padding-left:16px;
+}#slide-supplies .clean-list li{
+  margin:4px 0;
+  font-size:11px;
+  line-height:1.24;
+}
+
 </style>
 </head>
 <body>
-
 <div class="deck">
-
-  <section class="slide-shell"><div class="slide-frame-wrap"><iframe class="slide-frame" src="KE-page.html" loading="lazy"></iframe></div></section>
-  <section class="slide-shell"><div class="slide-frame-wrap"><iframe class="slide-frame" src="KX-page.html" loading="lazy"></iframe></div></section>
-  <section class="slide-shell"><div class="slide-frame-wrap"><iframe class="slide-frame" src="KX Dual-Page.html" loading="lazy"></iframe></div></section>
-  <section class="slide-shell"><div class="slide-frame-wrap"><iframe class="slide-frame" src="KX Single-Page.html" loading="lazy"></iframe></div></section>
-
-  <section class="slide-shell"><div class="slide-frame-wrap"><iframe class="slide-frame" src="ES Full Size-Page.html" loading="lazy"></iframe></div></section>
-  <section class="slide-shell"><div class="slide-frame-wrap"><iframe class="slide-frame" src="ES-T1501C-Page.html" loading="lazy"></iframe></div></section>
-  <section class="slide-shell"><div class="slide-frame-wrap"><iframe class="slide-frame" src="MAS-12-Page.html" loading="lazy"></iframe></div></section>
-  <section class="slide-shell"><div class="slide-frame-wrap"><iframe class="slide-frame" src="Sunny 7-Page.html" loading="lazy"></iframe></div></section>
-
-  <section class="slide-shell"><div class="slide-frame-wrap"><iframe class="slide-frame" src="install-training-page.html" loading="lazy"></iframe></div></section>
-  <section class="slide-shell"><div class="slide-frame-wrap"><iframe class="slide-frame" src="byld-roi-page.html" loading="lazy"></iframe></div></section>
-  
-  <section class="slide-shell"><div class="slide-frame-wrap"><iframe class="slide-frame" src="trade-in-quote-page.html" loading="lazy"></iframe></div></section>
-  <section class="slide-shell"><div class="slide-frame-wrap"><iframe class="slide-frame" src="stitchmaker-page.html" loading="lazy"></iframe></div></section>
-  <section class="slide-shell"><div class="slide-frame-wrap"><iframe class="slide-frame" src="mighty-hoop-Page.html" loading="lazy"></iframe></div></section>
-  <section class="slide-shell"><div class="slide-frame-wrap"><iframe class="slide-frame" src="stitchit-supplies-page.html" loading="lazy"></iframe></div></section>
-
+<section class="slide-shell"><div id="slide-ke"><div class="page">
+<!-- HEADER -->
+<div class="topbar">
+<div class="brand-left">
+<img alt="SWF" class="logo" src="https://cdn.shopify.com/s/files/1/1236/6284/files/swfnobg.png?v=1759258611"/>
+<div class="divider"></div>
+<div>
+<div class="kicker">Multi-head embroidery</div>
+<h1 class="h1"><span>KE</span> Series (Tubular)</h1>
 </div>
-
-<script>
-  (function () {
-    const SLIDE_W = 1056;
-    const SLIDE_H = 816;
-
-    function sizeSlides() {
-      document.querySelectorAll('.slide-frame-wrap').forEach((wrap) => {
-        const iframe = wrap.querySelector('.slide-frame');
-        const availableWidth = wrap.clientWidth;
-        const scale = availableWidth / SLIDE_W;
-
-        iframe.style.transform = `scale(${scale})`;
-        wrap.style.height = `${SLIDE_H * scale}px`;
-      });
-    }
-
-    window.addEventListener('load', sizeSlides);
-    window.addEventListener('resize', sizeSlides);
-  })();
-</script>
-
+</div>
+<img alt="Stitch It International" class="logo" src="https://cdn.shopify.com/s/files/1/1236/6284/files/new_sii_logo_1_1_f7596205-751d-425c-ba49-acfe68d36dea.png?v=1771362816"/>
+</div>
+<!-- CONTENT -->
+<div class="content">
+<!-- LEFT -->
+<div class="hero">
+<img alt="SWF KE Series" class="hero-img" src="https://cdn.shopify.com/s/files/1/1236/6284/files/Ke_Series.jpg?v=1759259733"/>
+<div class="hero-pad">
+<p class="desc">
+          The SWF KE Tubular Series is a reliable, smart, automatic multi-head embroidery machine designed for efficient production and consistent, high-quality results. Built for versatility, the KE Series supports tubular, cap, and flat embroidery applications while featuring a large 15.1-inch full-touch operation panel for intuitive control, quick design selection, and easy monitoring.
+        </p>
+<div class="bullets">
+<div class="bullet"><b>Built for production</b>Productivity-focused systems to keep your shop running smoothly with reduced downtime.</div>
+<div class="bullet"><b>Versatile applications</b>Tubular, cap, and flat support with quick switching between setups.</div>
+<div class="bullet"><b>Easy operation</b>15.1-inch full-touch LCD for settings, design selection, and monitoring.</div>
+<div class="bullet"><b>Scalable lineup</b>Choose 4-head, 6-head, or 8-head based on production volume.</div>
+</div>
+<!-- WHY BUY STRIP -->
+<div class="value-strip">
+<div class="value-title">Why buy from Stitch It International</div>
+<div class="value-grid">
+<div class="value-item">✔ Authorized SWF Distributor</div>
+<div class="value-item">✔ 7 Year Limited SWF Factory Warranty</div>
+<div class="value-item">✔ Financing available through BYLD Finance</div>
+<div class="value-item">✔ Installation, training and support available</div>
+</div>
+</div>
+<!-- CTA Buttons -->
+<div class="cta-row">
+<a class="cta-btn cta-primary" href="https://byldfinance.com/pages/apply-now" rel="noopener" target="_blank">
+            Get Pre-Approved for Financing
+          </a>
+<a class="cta-btn" href="https://form.jotform.com/260635331558054" rel="noopener" target="_blank">
+  Get a Freight Quote
+</a>
+<a class="cta-btn" href="https://www.youtube.com/watch?v=650irwOZM4A" rel="noopener" target="_blank">
+            Watch Demonstration Video
+          </a>
+<a class="cta-btn" href="https://cdn.shopify.com/s/files/1/1236/6284/files/KE_TUBULAR_1.pdf?v=1743451926" rel="noopener" target="_blank">
+            Request Live Demo
+          </a>
+</div>
+</div>
+</div>
+<!-- RIGHT -->
+<div class="right">
+<div class="card pricing-card">
+<div class="pill">Special Pricing</div>
+<h2>Lineup and pricing</h2>
+<div class="pricing">
+<div class="model">KE-UH1504-45</div><div class="price">$32,500</div>
+<div class="model">KE-UH1506-45</div><div class="price">$39,900</div>
+<div class="model">KE-UH1508-45</div><div class="price">$49,900</div>
+</div>
+<div class="note">
+          Ask about freight, install and training options. Financing available through BYLD Finance.
+        </div>
+</div>
+<div class="card">
+<h2>Machine specifications</h2>
+<table>
+<tr><td>Max speed</td><td><b>1,000 SPM</b></td></tr>
+<tr><td>Embroidery field (Cap)</td><td><b>360 x 75 mm</b></td></tr>
+<tr><td>Embroidery field (Border)</td><td><b>400 x 450 mm</b></td></tr>
+<tr><td>Memory capacity</td><td><b>40,000,000 stitches</b></td></tr>
+</table>
+</div>
+<div class="card">
+<h2>Included accessories</h2>
+<div class="acc-wrap">
+<div class="acc-item">
+<b>Hoops</b>
+<ul class="acc-list">
+<li>30 x 30cm (12.3 x 12.3")</li>
+<li>32 x 44cm (12.5 x 17.1")</li>
+<li>12cm round</li>
+<li>15cm round</li>
+<li>18cm round</li>
+</ul>
+</div>
+<div class="acc-item">
+<b>Cap system</b>
+            Redesigned 270 degree cap frame that is stronger and lighter with quick switching between cap and tubular frames.
+          </div>
+<div class="acc-item">
+<b>15.1" full touch LCD</b>
+            Touch screen operation panel for easy settings and embroidery status monitoring.
+          </div>
+</div>
+</div>
+</div>
+</div>
+</div></div></section><section class="slide-shell"><div id="slide-kx"><div class="page">
+<div class="topbar">
+<div class="brand-left">
+<img alt="SWF" class="logo" src="https://cdn.shopify.com/s/files/1/1236/6284/files/swfnobg.png?v=1759258611"/>
+<div class="divider"></div>
+<div>
+<div class="kicker">MULTI-HEAD EMBROIDERY</div>
+<h1 class="h1"><span>KX</span> Series (Tubular)</h1>
+</div>
+</div>
+<img alt="Stitch It International" class="logo" src="https://cdn.shopify.com/s/files/1/1236/6284/files/new_sii_logo_1_1_f7596205-751d-425c-ba49-acfe68d36dea.png?v=1771362816"/>
+</div>
+<div class="content">
+<!-- LEFT -->
+<div class="hero">
+<img alt="SWF KX Series" class="hero-img" src="https://cdn.shopify.com/s/files/1/1236/6284/files/KX_6_head.png?v=1771959407"/>
+<div class="hero-pad">
+<div class="desc">
+<p>
+            The SWF KX Tubular Series is a smart, automatic multi-head embroidery solution built for high-volume production, precision, and versatility. Designed to handle tubular, cap, and specialty embroidery, the KX Series features a large 15.1" full-touch LCD control panel for intuitive operation, fast design selection, and real-time monitoring.
+          </p>
+<p>
+            Advanced systems like Smart Tension and an improved cap-focused design help maintain consistently high-quality results while reducing setup time. It’s a strong fit for shops looking to scale efficiently and deliver premium embroidery output at speed.
+          </p>
+</div>
+<div class="bullets">
+<div class="bullet"><b>High-volume platform</b>Built for daily production output.</div>
+<div class="bullet"><b>15.1" LCD control</b>Fast design selection and monitoring.</div>
+<div class="bullet"><b>Smart tension system</b>Auto-adjusts for consistent stitching.</div>
+<div class="bullet"><b>EZ-Change cap system</b>Quickly switch between cap and tubular.</div>
+</div>
+<div class="value-strip">
+<div class="value-title">WHY BUY FROM STITCH IT INTERNATIONAL</div>
+<div class="value-grid">
+<div class="value-item">✔ Authorized SWF Distributor</div>
+<div class="value-item">✔ 7 Year Limited Factory Warranty</div>
+<div class="value-item">✔ Financing through BYLD Finance</div>
+<div class="value-item">✔ Installation and training available</div>
+</div>
+</div>
+<!-- NEW: fills left-side dead space and helps sell -->
+<div class="mid-strip">
+<div class="mid-title">QUICK SNAPSHOT</div>
+<div class="mid-grid">
+<div class="mid-box">
+<b>Best for</b>
+<ul class="mini-list">
+<li>Growing production shops</li>
+<li>Cap-heavy embroidery work</li>
+<li>Consistent high volume output</li>
+</ul>
+</div>
+<div class="mid-box">
+<b>What to decide</b>
+<ul class="mini-list">
+<li>UH vs UK sewing field</li>
+<li>4, 6, or 8 head lineup</li>
+<li>Freight and install timing</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cta-row">
+<a class="cta-btn cta-primary" href="https://byldfinance.com/pages/apply-now" rel="noopener" target="_blank">Get Pre-Approved</a>
+<a class="cta-btn" href="https://form.jotform.com/260635331558054" rel="noopener" target="_blank">Freight Quote</a>
+<a class="cta-btn" href="https://www.youtube.com/watch?v=qaDz0VXBX3M" rel="noopener" target="_blank">Watch Demo</a>
+<a class="cta-btn" href="https://form.jotform.com/260636305618154" rel="noopener" target="_blank">Request Live Demo</a>
+</div>
+</div>
+</div>
+<!-- RIGHT -->
+<div class="right">
+<div class="card">
+<h2>Lineup and Pricing</h2>
+<div class="pricing">
+<small>STANDARD SEWING FIELD (UH)</small>
+<div class="model">KX-UH1504-45</div><div class="price">$52,500</div>
+<div class="model">KX-UH1506-45</div><div class="price">$65,500</div>
+<div class="model">KX-UH1508-45</div><div class="price">$77,900</div>
+<small>EXPANDED SEWING FIELD (UK)</small>
+<div class="model">KX-UK1504-45</div><div class="price">$54,500</div>
+<div class="model">KX-UK1506-45</div><div class="price">$67,500</div>
+<div class="model">KX-UK1508-45</div><div class="price">$79,900</div>
+</div>
+</div>
+<div class="card">
+<h2>Machine Specifications</h2>
+<table>
+<tr><td>Max speed</td><td><b>1,200 SPM</b></td></tr>
+<tr><td>Embroidery field (Cap)</td><td><b>360 x 75 mm</b></td></tr>
+<tr><td>Embroidery field (Flat)</td><td><b>UH: 400x450 mm | UK: 500x450mm</b></td></tr>
+<tr><td>Memory capacity</td><td><b>40,000,000 stitches</b></td></tr>
+</table>
+</div>
+<div class="card">
+<h2>Included Accessories</h2>
+<div class="acc-grid">
+<div class="acc-item">
+<b>Square Hoops</b>
+            30 x 30cm, 32 x 44cm
+          </div>
+<div class="acc-item">
+<b>Round Hoops</b>
+            12cm, 15cm, 18cm
+          </div>
+<div class="acc-item">
+<b>Wide Field Hoop <span class="badge uk">UK only</span></b>
+            45 x 44cm (16.6 x 17.1")
+          </div>
+<div class="acc-item">
+<b>EZ Change Cap System</b>
+            Stronger, lighter cap frame for quick switching.
+          </div>
+<div class="acc-item">
+<b>Smart Tension System</b>
+            Automatically adjusts tension in real time for consistent results.
+          </div>
+<div class="acc-item">
+<b>15-inch Touch LCD</b>
+            Fast settings, design selection, and monitoring.
+          </div>
+</div>
+<!-- NEW: fills remaining white space, reads premium, does not overpromise -->
+<div class="acc-notes">
+<div class="t">NOTES AND OPTIONS</div>
+<p class="p">Most customers ask about: freight timing, installation and training scheduling, Use the buttons on the left to get pre-approved, request freight, watch the demo, or download the brochure.
+          </p>
+</div>
+</div>
+</div>
+</div>
+</div></div></section><section class="slide-shell"><div id="slide-kx-dual"><div class="page">
+<!-- HEADER -->
+<div class="topbar">
+<div class="brand-left">
+<img alt="SWF" class="logo" src="https://cdn.shopify.com/s/files/1/1236/6284/files/swfnobg.png?v=1759258611"/>
+<div class="divider"></div>
+<div>
+<div class="kicker">MULTI-HEAD EMBROIDERY</div>
+<h1 class="h1"><span>KX</span> Dual Function (KX-T1502D)</h1>
+</div>
+</div>
+<img alt="Stitch It International" class="logo" src="https://cdn.shopify.com/s/files/1/1236/6284/files/new_sii_logo_1_1_f7596205-751d-425c-ba49-acfe68d36dea.png?v=1771362816"/>
+</div>
+<div class="content">
+<!-- LEFT -->
+<div class="hero">
+<img alt="SWF KX Dual Function 2 Head" class="hero-img" src="https://cdn.shopify.com/s/files/1/1236/6284/files/KX-1X1-e1739525153532-1024x916.png?v=1772740296"/>
+<div class="hero-pad">
+<div class="desc">
+<p>
+            The SWF KX-T1502D is a smart dual function, two head embroidery machine designed to run as one unit or as two independent heads from a single control panel. It is built for shops that want maximum flexibility, better workflow, and the ability to run two jobs at once without adding extra floor space.
+          </p>
+</div>
+<div class="bullets">
+<div class="bullet"><b>Dual function workflow</b>Run as one unit or split into two independent heads.</div>
+<div class="bullet"><b>15.1" full touch LCD</b>Fast settings, design selection, and status monitoring.</div>
+<div class="bullet"><b>Cap focused design</b>Quick switching between cap and tubular frames.</div>
+<div class="bullet"><b>Smart automation options</b>NEW Smart Tension and Smart Action Presser Foot.</div>
+</div>
+<div class="value-strip">
+<div class="value-title">WHY BUY FROM STITCH IT INTERNATIONAL</div>
+<div class="value-grid">
+<div class="value-item">✔ Authorized SWF Distributor</div>
+<div class="value-item">✔ 7 Year Limited Factory Warranty</div>
+<div class="value-item">✔ Financing available through BYLD Finance</div>
+<div class="value-item">✔ Installation and training available</div>
+</div>
+</div>
+<div class="mid-strip">
+<div class="mid-title">QUICK SNAPSHOT</div>
+<div class="mid-grid">
+<div class="mid-box">
+<b>Best for</b>
+<ul class="mini-list">
+<li>Cap heavy production</li>
+<li>Two jobs at once</li>
+<li>Growing shops short on space</li>
+</ul>
+</div>
+<div class="mid-box">
+<b>What to decide</b>
+<ul class="mini-list">
+<li>How you will split head usage</li>
+<li>Optional accessories or software</li>
+<li>Freight and install timing</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cta-row">
+<a class="cta-btn cta-primary" href="https://byldfinance.com/pages/apply-now" rel="noopener" target="_blank">Get Pre-Approved</a>
+<a class="cta-btn" href="https://form.jotform.com/260635331558054" rel="noopener" target="_blank">Freight Quote</a>
+<a class="cta-btn" href="https://www.youtube.com/watch?v=qaDz0VXBX3M" rel="noopener" target="_blank">View Demo Video</a>
+<a class="cta-btn" href="https://form.jotform.com/260636305618154" rel="noopener" target="_blank">Request Live Demo</a>
+</div>
+</div>
+</div>
+<!-- RIGHT -->
+<div class="right">
+<div class="card">
+<h2>Lineup and Pricing</h2>
+<div class="pricing">
+<div class="model">KX-T1502D (Dual Function 2 Head)</div>
+<div class="price">$36,250</div>
+<div class="subnote">
+<span>Includes dual function operation from one control panel.</span>
+</div>
+</div>
+</div>
+<div class="card">
+<h2>Machine Specifications</h2>
+<table>
+<tr><td>Max speed (Normal)</td><td><b>1,200 SPM</b></td></tr>
+<tr><td>Max speed (Cap)</td><td><b>1,000 SPM</b></td></tr>
+<tr><td>Embroidery field (Cap)</td><td><b>360 x 75 mm</b></td></tr>
+<tr><td>Embroidery field (Tubular / Border)</td><td><b>520 x 360 mm</b></td></tr>
+<tr><td>Memory capacity</td><td><b>40,000,000 stitches</b></td></tr>
+</table>
+</div>
+<div class="card">
+<h2>Key Features and Options</h2>
+<div class="acc-grid">
+<div class="acc-item">
+<b>Dual Function</b>
+            Operate as one unit or two separate units from one LCD panel.
+          </div>
+<div class="acc-item">
+<b>SWNS Wireless Networking</b>
+            Send and download designs over WiFi to reduce downtime.
+          </div>
+<div class="acc-item">
+<b>Smart Action Presser Foot</b>
+            Auto adjusts presser foot height for consistent quality across materials.
+          </div>
+<div class="acc-item">
+<b>Slim Cylinder Arm</b>
+            Redesigned arm for improved access and quality on products.
+          </div>
+<div class="acc-item">
+<b>Smart Tension System</b>
+            Auto adjusts thread tension based on stitch type and speed.
+          </div>
+<div class="acc-item">
+<b>EZ-Change Cap System</b>
+            Faster switching between cap and tubular frames with no tools.
+          </div>
+</div>
+<!-- NEW: INCLUDED HOOPS -->
+<div class="hoops-box">
+<div class="t">INCLUDED HOOPS</div>
+<div class="hoops-grid">
+<div class="hoops-col">
+<b>Tubular Round Frames (2 pcs per head)</b>
+<ul class="hoops-list">
+<li>TRF 12 (4.25")</li>
+<li>TRF 15 (5.4")</li>
+<li>TRF 18 (6.6")</li>
+</ul>
+</div>
+<div class="hoops-col">
+<b>Tubular Square Frames (2 pcs per head)</b>
+<ul class="hoops-list">
+<li>TSF 30 x 30cm (12.3" x 12.3")</li>
+<li>TSF 45 x 44cm (16.6" x 17.1")</li>
+</ul>
+</div>
+</div>
+<div class="hoops-foot">Hoops listed above are per head, as shown in the included accessory list.</div>
+</div>
+</div>
+</div>
+</div>
+</div></div></section><section class="slide-shell"><div id="slide-kx-single"><div class="page">
+<!-- HEADER -->
+<div class="topbar">
+<div class="brand-left">
+<img alt="SWF" class="logo" src="https://cdn.shopify.com/s/files/1/1236/6284/files/swfnobg.png?v=1759258611"/>
+<div class="divider"></div>
+<div>
+<div class="kicker">SINGLE HEAD EMBROIDERY</div>
+<h1 class="h1"><span>KX</span> Single Head (KX-T1501)</h1>
+</div>
+</div>
+<img alt="Stitch It International" class="logo" src="https://cdn.shopify.com/s/files/1/1236/6284/files/new_sii_logo_1_1_f7596205-751d-425c-ba49-acfe68d36dea.png?v=1771362816"/>
+</div>
+<div class="content">
+<!-- LEFT -->
+<div class="hero">
+<img alt="SWF KX-T1501 Single Head" class="hero-img" src="https://cdn.shopify.com/s/files/1/1236/6284/files/KX_single.jpg?v=1759260196"/>
+<div class="hero-pad">
+<div class="desc">
+<p>
+            The SWF KX-T1501 is a high performance single head, 15 needle commercial embroidery machine built for professional shops that want precision, speed, and consistent stitch quality.
+          </p>
+<p>
+            With speeds up to 1,200 stitches per minute and advanced automation options like Smart Tension and Smart Action Presser Foot, the KX-T1501 is a strong fit for caps, pockets, and detailed multi color logos while keeping workflow smooth and efficient.
+          </p>
+</div>
+<div class="bullets">
+<div class="bullet"><b>1,200 SPM performance</b>Fast production speed with clean results.</div>
+<div class="bullet"><b>15.1" touch LCD</b>Quick settings, design selection, and monitoring.</div>
+<div class="bullet"><b>Smart Tension option</b>Auto adjusts thread tension in real time.</div>
+<div class="bullet"><b>Cap focused setup</b>EZ change cap system included.</div>
+</div>
+<div class="value-strip">
+<div class="value-title">WHY BUY FROM STITCH IT INTERNATIONAL</div>
+<div class="value-grid">
+<div class="value-item">✔ Authorized SWF Distributor</div>
+<div class="value-item">✔ 7 Year Limited Factory Warranty</div>
+<div class="value-item">✔ Financing available through BYLD Finance</div>
+<div class="value-item">✔ Installation and training available</div>
+</div>
+</div>
+<div class="mid-strip">
+<div class="mid-title">QUICK SNAPSHOT</div>
+<div class="mid-grid">
+<div class="mid-box">
+<b>Best for</b>
+<ul class="mini-list">
+<li>Cap and 3d puff embroidery</li>
+<li>Detailed and large embroidery logos</li>
+<li>Shops adding in house embroidery</li>
+</ul>
+</div>
+<div class="mid-box">
+<b>What to decide</b>
+<ul class="mini-list">
+<li>Cap focus vs mixed production</li>
+<li>Optional accessories or software</li>
+<li>Freight and install timing</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cta-row">
+<a class="cta-btn cta-primary" href="https://byldfinance.com/pages/apply-now" rel="noopener" target="_blank">Get Pre-Approved</a>
+<a class="cta-btn" href="https://form.jotform.com/260635331558054" rel="noopener" target="_blank">Freight Quote</a>
+<a class="cta-btn" href="https://www.youtube.com/watch?v=JGvx7qR-Z8c" rel="noopener" target="_blank">View Demo Video</a>
+<a class="cta-btn" href="https://form.jotform.com/260636305618154" rel="noopener" target="_blank">Request Live Demo</a>
+</div>
+</div>
+</div>
+<!-- RIGHT -->
+<div class="right">
+<div class="card">
+<h2>Lineup and Pricing</h2>
+<div class="pricing">
+<div class="model">KX-T1501 (Single Head)</div>
+<div class="price">$22,269</div>
+<div class="subnote">Special pricing shown. Ask about freight, installation, and training options.</div>
+</div>
+</div>
+<div class="card">
+<h2>Machine Specifications</h2>
+<table>
+<tr><td>Max speed</td><td><b>1,200 SPM</b></td></tr>
+<tr><td>Embroidery field (Cap)</td><td><b>360 x 75 mm</b></td></tr>
+<tr><td>Embroidery field (Border)</td><td><b>520 x 360 mm</b></td></tr>
+<tr><td>Memory capacity</td><td><b>40,000,000 stitches</b></td></tr>
+</table>
+</div>
+<div class="card">
+<h2>Included Accessories and Highlights</h2>
+<div class="acc-grid">
+<div class="acc-item">
+<b>EZ-Change Cap Frame Set</b>
+<ul>
+<li>Cap frames (2 pcs per head)</li>
+<li>Cap frame drivers (1 pc)</li>
+<li>Cap frame holder (1 pc)</li>
+</ul>
+</div>
+<div class="acc-item">
+<b>Tubular Round Frames (2 pcs per head)</b>
+            TRF 12 (4.25"), TRF 15 (5.4"), TRF 18 (6.6")
+          </div>
+<div class="acc-item">
+<b>Tubular Square Frames (2 pcs per head)</b>
+            TSF-30x30cm (12.3" x 12.3"), TSF-45x44cm (16.6" x 17.1")
+          </div>
+<div class="acc-item">
+<b>Smart Tension System (STS)</b>
+            Automatically adjusts thread tension in real time for consistent results.
+          </div>
+<div class="acc-item">
+<b>Smart Action Presser Foot (SAP)</b>
+            Auto adjusts presser foot height to match materials and reduce rework.
+          </div>
+<div class="acc-item">
+<b>15.1 inch Touch LCD</b>
+            Fast settings, quick design selection, and clear status monitoring.
+          </div>
+</div>
+<div class="acc-notes">
+<div class="t">NOTES</div>
+<p class="p"><span>Most customers ask about:</span> cap setup options, what hoops they will use most, and how quickly we can schedule freight, installation, and training. Use the buttons on the left to get pre-approved, request freight, watch the demo, or request a live demo.</p>
+</div>
+</div>
+</div>
+</div>
+</div></div></section><section class="slide-shell"><div id="slide-es-full"><div class="page">
+<!-- HEADER -->
+<div class="topbar">
+<div class="brand-left">
+<img alt="SWF" class="logo" src="https://cdn.shopify.com/s/files/1/1236/6284/files/swfnobg.png?v=1759258611"/>
+<div class="divider"></div>
+<div>
+<div class="kicker">SINGLE HEAD EMBROIDERY</div>
+<h1 class="h1"><span>ES</span>-T1501 (Full Size Single Head)</h1>
+</div>
+</div>
+<img alt="Stitch It International" class="logo" src="https://cdn.shopify.com/s/files/1/1236/6284/files/new_sii_logo_1_1_f7596205-751d-425c-ba49-acfe68d36dea.png?v=1771362816"/>
+</div>
+<div class="content">
+<!-- LEFT -->
+<div class="hero">
+<img alt="SWF ES-T1501 Full Size Single Head" class="hero-img" src="https://cdn.shopify.com/s/files/1/1236/6284/files/es_full_size.jpg?v=1759260197"/>
+<div class="hero-pad">
+<div class="desc">
+<p>
+            The SWF ES-T1501 is a full size, 15 needle single head built for shops that want reliable day to day production plus the flexibility to handle flats, tubular, and caps.
+            It is a great fit for growing decorators who want a true commercial single head footprint without stepping up to multi head.
+          </p>
+<p>
+            This is the ES-T1501 full size model, not the compact type. If you want the larger sewing area and a more traditional stand setup, this is the one.
+          </p>
+</div>
+<div class="bullets">
+<div class="bullet"><b>Full size single head</b>Commercial footprint and workflow.</div>
+<div class="bullet"><b>15 needle platform</b>Fast color changes and versatility.</div>
+<div class="bullet"><b>Border and tubular ready</b>520 x 360 border and 520 x 360 tubular.</div>
+<div class="bullet"><b>Quick-change cap system</b>Cap setup included for production workflows.</div>
+</div>
+<div class="value-strip">
+<div class="value-title">WHY BUY FROM STITCH IT INTERNATIONAL</div>
+<div class="value-grid">
+<div class="value-item">✔ Authorized SWF Distributor</div>
+<div class="value-item">✔ 7 Year Limited Factory Warranty</div>
+<div class="value-item">✔ Financing available through BYLD Finance</div>
+<div class="value-item">✔ Installation and training available</div>
+</div>
+</div>
+<div class="mid-strip">
+<div class="mid-title">QUICK SNAPSHOT</div>
+<div class="mid-grid">
+<div class="mid-box">
+<b>Best for</b>
+<ul class="mini-list">
+<li>Startups and small shops</li>
+<li>In-house embroidery add on</li>
+<li>Hats plus flats and jackets</li>
+</ul>
+</div>
+<div class="mid-box">
+<b>What to decide</b>
+<ul class="mini-list">
+<li>Freight and setup timing</li>
+<li>Install and training schedule</li>
+<li>Any add-on hoops needed</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cta-row">
+<a class="cta-btn cta-primary" href="https://byldfinance.com/pages/apply-now" rel="noopener" target="_blank">Get Pre-Approved</a>
+<a class="cta-btn" href="https://form.jotform.com/260635331558054" rel="noopener" target="_blank">Freight Quote</a>
+<a class="cta-btn" href="https://www.youtube.com/watch?v=SXF3pEDHqn0" rel="noopener" target="_blank">Watch Demo</a>
+<a class="cta-btn" href="https://form.jotform.com/260636305618154" rel="noopener" target="_blank">Request Live Demo</a>
+</div>
+</div>
+</div>
+<!-- RIGHT -->
+<div class="right">
+<div class="card">
+<h2>Lineup and Pricing</h2>
+<div class="pricing">
+<div class="model">ES-T1501 (Full Size Single Head)</div>
+<div class="price">$18,549</div>
+<div class="subnote">
+            Ask about freight, install and training options.
+          </div>
+</div>
+</div>
+<div class="card">
+<h2>Machine Specifications</h2>
+<table>
+<tr><td>Max speed</td><td><b>1,200 rpm</b></td></tr>
+<tr><td>Embroidery field (Border)</td><td><b>520 x 360 mm</b></td></tr>
+<tr><td>Embroidery field (Tubular)</td><td><b>520 x 360 mm</b></td></tr>
+<tr><td>Embroidery field (Cap)</td><td><b>360 x 75 mm</b></td></tr>
+<tr><td>Memory capacity</td><td><b>40,000,000 stitches</b></td></tr>
+<tr><td>Machine size</td><td><b>1,191 x 1,113 x 1,408 mm</b></td></tr>
+</table>
+</div>
+<div class="card">
+<h2>Highlights and Included Accessories</h2>
+<div class="acc-grid">
+<div class="acc-item">
+<b>Full size commercial setup</b>
+            Traditional stand and workflow for daily production.
+          </div>
+<div class="acc-item">
+<b>Large sewing fields</b>
+            Border plus tubular support for diverse products.
+          </div>
+<div class="acc-item">
+<b>Cap ready</b>
+            Quick-change cap system included.
+          </div>
+<div class="acc-item">
+<b>15 needle versatility</b>
+            Fast color changes across job types.
+          </div>
+</div>
+<div class="incl">
+<div class="t">INCLUDED ACCESSORIES</div>
+<div class="incl-grid">
+<div class="incl-box">
+<b>Tubular Round Frames (2 pcs per head)</b>
+<ul class="incl-list">
+<li>TRF 12 (4.25")</li>
+<li>TRF 15 (5.4")</li>
+<li>TRF 18 (6.6")</li>
+</ul>
+</div>
+<div class="incl-box">
+<b>Tubular Square Frames (2 pcs per head)</b>
+<ul class="incl-list">
+<li>TSF-30x30 (12.3" x 12.3")</li>
+<li>TSF-41x27 (16.4" x 13.8")</li>
+</ul>
+</div>
+<div class="incl-box">
+<b>Border Frame Sash (1 pc per head)</b>
+<ul class="incl-list">
+<li>BFS-520x360 (20.47" x 14.17")</li>
+</ul>
+</div>
+<div class="incl-box">
+<b>Quick-Change Cap System</b>
+<ul class="incl-list">
+<li>Cap frames (2 pcs per head)</li>
+<li>Cap frame driver (1 pc)</li>
+<li>Cap frame holder (1 pc)</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div></div></section><section class="slide-shell"><div id="slide-es-compact"><div class="page">
+<!-- HEADER -->
+<div class="topbar">
+<div class="brand-left">
+<img alt="SWF" class="logo" src="https://cdn.shopify.com/s/files/1/1236/6284/files/swfnobg.png?v=1759258611"/>
+<div class="divider"></div>
+<div>
+<div class="kicker">SINGLE HEAD EMBROIDERY</div>
+<h1 class="h1"><span>ES</span>-T1501C (Compact Single Head)</h1>
+</div>
+</div>
+<img alt="Stitch It International" class="logo" src="https://cdn.shopify.com/s/files/1/1236/6284/files/new_sii_logo_1_1_f7596205-751d-425c-ba49-acfe68d36dea.png?v=1771362816"/>
+</div>
+<div class="content">
+<!-- LEFT -->
+<div class="hero">
+<img alt="SWF MAS-15 Compact Single Head" class="hero-img" src="https://cdn.shopify.com/s/files/1/1236/6284/files/es_compact_ce76207c-a665-4f6f-8335-a67fc84e26c4.jpg?v=1759260197"/>
+<div class="hero-pad">
+<div class="desc">
+<p>
+            The SWF/ES-T1501C is a compact, 15 needle single head built for shops that want true commercial embroidery capability with a smaller footprint.
+            It is a strong fit for startups, home based businesses, and growing decorators who want to produce caps and flats in house without dedicating a large floor area.
+          </p>
+<p>
+            You still get the SWF workflow, fast color changes, and a production ready cap system, while keeping the machine size and layout simple and efficient.
+          </p>
+</div>
+<div class="bullets">
+<div class="bullet"><b>Compact single head</b>Smaller footprint for tight spaces.</div>
+<div class="bullet"><b>15 needle platform</b>Fast color changes and versatility.</div>
+<div class="bullet"><b>Cap ready</b>Quick-change cap system included.</div>
+<div class="bullet"><b>Everyday production</b>Built for reliable daily output.</div>
+</div>
+<div class="value-strip">
+<div class="value-title">WHY BUY FROM STITCH IT INTERNATIONAL</div>
+<div class="value-grid">
+<div class="value-item">✔ Authorized SWF Distributor</div>
+<div class="value-item">✔ 7 Year Limited Factory Warranty</div>
+<div class="value-item">✔ Financing available through BYLD Finance</div>
+<div class="value-item">✔ Installation and training available</div>
+</div>
+</div>
+<div class="mid-strip">
+<div class="mid-title">QUICK SNAPSHOT</div>
+<div class="mid-grid">
+<div class="mid-box">
+<b>Best for</b>
+<ul class="mini-list">
+<li>Startups and small shops</li>
+<li>Home based embroidery</li>
+<li>Cap and flat production</li>
+</ul>
+</div>
+<div class="mid-box">
+<b>What to decide</b>
+<ul class="mini-list">
+<li>Freight and setup timing</li>
+<li>Install and training schedule</li>
+<li>Any add-on hoops needed</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cta-row">
+<a class="cta-btn cta-primary" href="https://byldfinance.com/pages/apply-now" rel="noopener" target="_blank">Get Pre-Approved</a>
+<a class="cta-btn" href="https://form.jotform.com/260635331558054" rel="noopener" target="_blank">Freight Quote</a>
+<a class="cta-btn" href="https://www.youtube.com/watch?v=jMvpN7zj3Vo" rel="noopener" target="_blank">Watch Demo</a>
+<a class="cta-btn" href="https://form.jotform.com/260636305618154" rel="noopener" target="_blank">Request Live Demo</a>
+</div>
+</div>
+</div>
+<!-- RIGHT -->
+<div class="right">
+<div class="card">
+<h2>Lineup and Pricing</h2>
+<div class="pricing">
+<div class="model">ES-T1501C (Compact Single Head)</div>
+<div class="price">$17,549</div>
+<div class="subnote">
+            Ask about freight, install and training options.
+          </div>
+</div>
+</div>
+<div class="card">
+<h2>Machine Specifications</h2>
+<table>
+<tr><td>Max speed</td><td><b>1,200 rpm</b></td></tr>
+<tr><td>Embroidery field (Tubular)</td><td><b>460 x 300 mm</b></td></tr>
+<tr><td>Embroidery field (Cap)</td><td><b>360 x 75 mm</b></td></tr>
+<tr><td>Memory capacity</td><td><b>40,000,000 stitches</b></td></tr>
+<tr><td>Machine type</td><td><b>Compact stand</b></td></tr>
+</table>
+</div>
+<div class="card">
+<h2>Highlights and Included Accessories</h2>
+<div class="acc-grid">
+<div class="acc-item">
+<b>Compact footprint</b>
+            Built to fit tight spaces without sacrificing capability.
+          </div>
+<div class="acc-item">
+<b>Cap plus tubular support</b>
+            Set up quickly for hats and tubular jobs.
+          </div>
+<div class="acc-item">
+<b>Quick-change cap system</b>
+            Included for production workflows.
+          </div>
+<div class="acc-item">
+<b>15 needle versatility</b>
+            Fast color changes across job types.
+          </div>
+</div>
+<div class="incl">
+<div class="t">INCLUDED ACCESSORIES</div>
+<div class="incl-grid">
+<div class="incl-box">
+<b>Tubular Round Frames (2 pcs per head)</b>
+<ul class="incl-list">
+<li>TRF 12 (4.25")</li>
+<li>TRF 15 (5.4")</li>
+<li>TRF 18 (6.6")</li>
+</ul>
+</div>
+<div class="incl-box">
+<b>Tubular Square Frames (2 pcs per head)</b>
+<ul class="incl-list">
+<li>TSF-30x30 (12.3" x 12.3")</li>
+<li>TSF-41x27 (16.7" x 10.9")</li>
+</ul>
+</div>
+<div class="incl-box">
+<b>Quick-Change Cap System</b>
+<ul class="incl-list">
+<li>Cap frames (2 pcs per head)</li>
+<li>Cap frame driver (1 pc per head)</li>
+<li>Cap frame holder (1 pc)</li>
+</ul>
+</div>
+<div class="incl-box">
+<b>Notes</b>
+<ul class="incl-list">
+<li>Ask about optional add-on hoops</li>
+<li>We can help schedule freight and setup</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div></div></section><section class="slide-shell"><div id="slide-mas-12"><div class="page">
+<!-- HEADER -->
+<div class="topbar">
+<div class="brand-left">
+<img alt="SWF" class="logo" src="https://cdn.shopify.com/s/files/1/1236/6284/files/swfnobg.png?v=1759258611"/>
+<div class="divider"></div>
+<div>
+<div class="kicker">SINGLE HEAD EMBROIDERY</div>
+<h1 class="h1"><span>MAS</span>-12 (Compact Single Head)</h1>
+</div>
+</div>
+<img alt="Stitch It International" class="logo" src="https://cdn.shopify.com/s/files/1/1236/6284/files/new_sii_logo_1_1_f7596205-751d-425c-ba49-acfe68d36dea.png?v=1771362816"/>
+</div>
+<div class="content">
+<!-- LEFT -->
+<div class="hero">
+<img alt="SWF MAS-12 Compact Single Head" class="hero-img" src="https://cdn.shopify.com/s/files/1/1236/6284/files/MAS-12.jpg?v=1759260197"/>
+<div class="hero-pad">
+<div class="desc">
+<p>
+            The SWF MAS-12 is a compact single head built for shops that want a true commercial embroidery platform without taking up a full size footprint.
+            With a 12 needle head, a clean workflow, and a space saving setup, it is an easy fit for startups, home based decorators, and tight production floors.
+          </p>
+<p>
+            It is a strong option for hats, flats, and everyday production work when you want dependable performance in a smaller package.
+          </p>
+</div>
+<div class="bullets">
+<div class="bullet"><b>Compact footprint</b>Great for small spaces and home based shops.</div>
+<div class="bullet"><b>12 needle platform</b>Fast color changes and versatility.</div>
+<div class="bullet"><b>Cap ready</b>Quick change cap system included.</div>
+<div class="bullet"><b>Easy daily production</b>Built for consistent results and workflow.</div>
+</div>
+<div class="value-strip">
+<div class="value-title">WHY BUY FROM STITCH IT INTERNATIONAL</div>
+<div class="value-grid">
+<div class="value-item">✔ Authorized SWF Distributor</div>
+<div class="value-item">✔ 7 Year Limited Factory Warranty</div>
+<div class="value-item">✔ Financing available through BYLD Finance</div>
+<div class="value-item">✔ Installation and training available</div>
+</div>
+</div>
+<div class="mid-strip">
+<div class="mid-title">QUICK SNAPSHOT</div>
+<div class="mid-grid">
+<div class="mid-box">
+<b>Best for</b>
+<ul class="mini-list">
+<li>Startups and small shops</li>
+<li>Hats and everyday flats</li>
+<li>Limited floor space</li>
+</ul>
+</div>
+<div class="mid-box">
+<b>What to decide</b>
+<ul class="mini-list">
+<li>Freight and setup timing</li>
+<li>Install and training schedule</li>
+<li>Any add on hoops needed</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cta-row">
+<a class="cta-btn cta-primary" href="https://byldfinance.com/pages/apply-now" rel="noopener" target="_blank">Get Pre-Approved</a>
+<a class="cta-btn" href="https://form.jotform.com/260635331558054" rel="noopener" target="_blank">Freight Quote</a>
+<a class="cta-btn" href="https://www.youtube.com/watch?v=FXqivUu4cfo" rel="noopener" target="_blank">Watch Demo</a>
+<a class="cta-btn" href="https://form.jotform.com/260636305618154" rel="noopener" target="_blank">Request Live Demo</a>
+</div>
+</div>
+</div>
+<!-- RIGHT -->
+<div class="right">
+<div class="card">
+<h2>Lineup and Pricing</h2>
+<div class="pricing">
+<div class="model">MAS-12 (Compact Single Head)</div>
+<div class="price">$12,999</div>
+<div class="subnote">
+            Ask about freight, install and training options.
+          </div>
+</div>
+</div>
+<div class="card">
+<h2>Machine Specifications</h2>
+<table>
+<tr><td>Max speed</td><td><b>1,000 rpm</b></td></tr>
+<tr><td>Needles</td><td><b>12</b></td></tr>
+<tr><td>Embroidery field (Flat)</td><td><b>14 x 9" (310 x 180 mm)</b></td></tr>
+<tr><td>Embroidery field (Cap)</td><td><b>360 x 75 mm</b></td></tr>
+<tr><td>LCD panel</td><td><b>10.4 inch color</b></td></tr>
+<tr><td>Design memory</td><td><b>4,000,000 stitches</b></td></tr>
+</table>
+</div>
+<div class="card">
+<h2>Highlights and Included Accessories</h2>
+<div class="acc-grid">
+<div class="acc-item">
+<b>Compact commercial setup</b>
+            A smaller footprint that still feels like a real production machine.
+          </div>
+<div class="acc-item">
+<b>Cap plus tubular ready</b>
+            Cap system included, plus tubular hoops for daily use.
+          </div>
+<div class="acc-item">
+<b>Simple workflow</b>
+            Easy operation, fast design selection, and clean monitoring.
+          </div>
+<div class="acc-item">
+<b>Great starter package</b>
+            Solid included accessories to get going right away.
+          </div>
+</div>
+<div class="incl">
+<div class="t">INCLUDED ACCESSORIES</div>
+<div class="incl-grid">
+<div class="incl-box">
+<b>Tubular Round Frames (2 pcs per head)</b>
+<ul class="incl-list">
+<li>TRF 12 (4.25")</li>
+<li>TRF 15 (5.4")</li>
+<li>TRF 18 (6.6")</li>
+</ul>
+</div>
+<div class="incl-box">
+<b>Tubular Square Frames (2 pcs per head)</b>
+<ul class="incl-list">
+<li>TSF-24x24 (8.9" x 8.9")</li>
+<li>TSF-39x26 (14.7" x 9.4")</li>
+</ul>
+</div>
+<div class="incl-box">
+<b>Quick-Change Cap System</b>
+<ul class="incl-list">
+<li>Cap frames (2 pcs per head)</li>
+<li>Cap frame driver (1 pc)</li>
+<li>Cap frame holder (1 pc)</li>
+</ul>
+</div>
+<div class="incl-box">
+<b>Notes</b>
+              Need additional hoops or accesories?
+              Ask your salesperson for more info and we will dial it in.
+            </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div></div></section><section class="slide-shell"><div id="slide-sunny-7"><div class="page">
+<!-- HEADER -->
+<div class="topbar">
+<div class="brand-left">
+<img alt="SWF" class="logo" src="https://cdn.shopify.com/s/files/1/1236/6284/files/swfnobg.png?v=1759258611"/>
+<div class="divider"></div>
+<div>
+<div class="kicker">SINGLE HEAD EMBROIDERY</div>
+<h1 class="h1"><span>Sunny</span> 7-Needle Compact</h1>
+</div>
+</div>
+<img alt="Stitch It International" class="logo" src="https://cdn.shopify.com/s/files/1/1236/6284/files/new_sii_logo_1_1_f7596205-751d-425c-ba49-acfe68d36dea.png?v=1771362816"/>
+</div>
+<div class="content">
+<!-- LEFT -->
+<div class="hero">
+<img alt="SWF Sunny 7-Needle Compact Single Head" class="hero-img" src="https://cdn.shopify.com/s/files/1/1236/6284/files/Sunny_6.jpg?v=1759260197"/>
+<div class="hero-pad">
+<div class="desc">
+<p>
+            The SWF Sunny is a compact, 7 needle single head built for creators and small shops that want an affordable, easy to run embroidery setup for day to day work.
+            It is a strong fit for beginners, craft shows, side hustles, and smaller production needs where simplicity matters.
+          </p>
+<p>
+            This machine focuses on flat embroidery workflows and portability, and it does not include a cap system.
+          </p>
+</div>
+<div class="bullets">
+<div class="bullet"><b>Compact 7 needle platform</b>Simple operation for everyday embroidery.</div>
+<div class="bullet"><b>Portable setup</b>Great for events and small workspaces.</div>
+<div class="bullet"><b>Creative friendly features</b>Built in designs, fonts, and photo stitch support.</div>
+<div class="bullet"><b>Flat hoop workflow</b>Includes multiple flat hoop sizes.</div>
+</div>
+<div class="value-strip">
+<div class="value-title">WHY BUY FROM STITCH IT INTERNATIONAL</div>
+<div class="value-grid">
+<div class="value-item">✔ Authorized SWF Distributor</div>
+<div class="value-item">✔ 7 Year Limited Factory Warranty</div>
+<div class="value-item">✔ Financing available through BYLD Finance</div>
+<div class="value-item">✔ Installation and training available</div>
+</div>
+</div>
+<div class="mid-strip">
+<div class="mid-title">QUICK SNAPSHOT</div>
+<div class="mid-grid">
+<div class="mid-box">
+<b>Best for</b>
+<ul class="mini-list">
+<li>Beginners and startups</li>
+<li>Craft shows and events</li>
+<li>Flat goods and small runs</li>
+</ul>
+</div>
+<div class="mid-box">
+<b>What to decide</b>
+<ul class="mini-list">
+<li>Freight and setup timing</li>
+<li>Thread and starter supplies</li>
+<li>Any extra hoops needed</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cta-row">
+<a class="cta-btn cta-primary" href="https://byldfinance.com/pages/apply-now" rel="noopener" target="_blank">Get Pre-Approved</a>
+<a class="cta-btn" href="https://form.jotform.com/260635331558054" rel="noopener" target="_blank">Freight Quote</a>
+<a class="cta-btn" href="https://www.youtube.com/watch?v=42-Y5YTWTiE" rel="noopener" target="_blank">Watch Demo</a>
+<a class="cta-btn" href="https://form.jotform.com/260636305618154" rel="noopener" target="_blank">Request Live Demo</a>
+</div>
+</div>
+</div>
+<!-- RIGHT -->
+<div class="right">
+<div class="card">
+<h2>Lineup and Pricing</h2>
+<div class="pricing">
+<div class="model">Sunny 7-Needle Compact Single Head)</div>
+<div class="price">$6,499</div>
+<div class="subnote">
+            Ask about freight, install and training options.
+          </div>
+</div>
+</div>
+<div class="card">
+<h2>Machine Specifications</h2>
+<table>
+<tr><td>Needles</td><td><b>7</b></td></tr>
+<tr><td>LCD Panel</td><td><b>8" color touch screen</b></td></tr>
+<tr><td>Max Speed</td><td><b>800 rpm</b></td></tr>
+<tr><td>Embroidery Field (Flat)</td><td><b>240 x 200 mm</b></td></tr>
+<tr><td>Cap System</td><td><b>Included</b></td></tr>
+</table>
+</div>
+<div class="card">
+<h2>Highlights and Included Accessories</h2>
+<div class="acc-grid">
+<div class="acc-item">
+<b>Compact and approachable</b>
+            Great entry point for embroidery without a big footprint.
+          </div>
+<div class="acc-item">
+<b>Creator focused</b>
+            Built in designs and lettering support for fast starts.
+          </div>
+<div class="acc-item">
+<b>Event friendly</b>
+            Easy to transport for shows and on the go setups.
+          </div>
+<div class="acc-item">
+<b>Flat hoop workflow</b>
+            Includes multiple flat hoop sizes out of the box.
+          </div>
+</div>
+<div class="incl">
+<div class="t">INCLUDED ACCESSORIES</div>
+<div class="incl-grid">
+<div class="incl-box">
+<b>Flat hoops (qty 1 each)</b>
+<ul class="incl-list">
+<li>10" x 8" flat hoop</li>
+<li>5" x 4" flat hoop</li>
+<li>2" x 2" flat hoop</li>
+</ul>
+</div>
+<div class="incl-box">
+<b>Notes</b>
+<ul class="incl-list">
+<li>Cap system included</li>
+<li>Ask us about optional add ons</li>
+<li>Freight and setup help available</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="acc-notes">
+<div class="t">NOTES</div>
+<p class="p"><span>Most customers ask about:</span> freight timing, training, starter supplies, accessories, software, and what hoop sizes they will use most. Use the buttons on the left to get pre-approved, request freight, watch the demo, or request a live demo.</p>
+</div>
+</div>
+</div>
+</div>
+</div></div></section><section class="slide-shell"><div id="slide-install"><div class="page">
+<!-- HEADER -->
+<div class="topbar">
+<div class="brand-left">
+<img alt="SWF" class="logo" src="https://cdn.shopify.com/s/files/1/1236/6284/files/swfnobg.png?v=1759258611"/>
+<div class="divider"></div>
+<div>
+<div class="kicker">SUPPORT &amp; COVERAGE</div>
+<h1 class="h1"><span>Installation</span> &amp; Protection</h1>
+</div>
+</div>
+<img alt="Stitch It International" class="logo" src="https://cdn.shopify.com/s/files/1/1236/6284/files/new_sii_logo_1_1_f7596205-751d-425c-ba49-acfe68d36dea.png?v=1771362816"/>
+</div>
+<div class="content">
+<!-- LEFT -->
+<div class="card">
+<div class="section-title">Installation &amp; Training</div>
+<div class="desc">
+      Professional setup, calibration, and hands-on operator training designed to get your machine running correctly from day one. Installation and training also activate Stitch It’s 90-Day Operational Guarantee.
+    </div>
+<div class="grid">
+<div class="box">
+<b>1 Day Installation</b>
+        Single head machines<br/>
+        Setup and calibration<br/>
+        Operator training<br/>
+        Basic troubleshooting instruction
+      </div>
+<div class="box">
+<b>2 Day Installation</b>
+        KX-T1502D and all multi-head machines<br/>
+        Extended setup and calibration<br/>
+        More in-depth operator training<br/>
+        Basic troubleshooting instruction
+      </div>
+</div>
+<div class="section-title" style="margin-top:12px;">90-Day Operational Guarantee</div>
+<div class="desc">
+      Included automatically when installation and training are purchased. Coverage applies to qualifying machine-related issues and starts on the date of installation.
+    </div>
+<div class="grid">
+<div class="box">
+<b>What’s Covered</b>
+        Qualifying parts<br/>
+        Labor<br/>
+        Technician travel<br/>
+        Remote troubleshooting support
+      </div>
+<div class="box">
+<b>How It Works</b>
+        Remote support first<br/>
+        One covered on-site technician visit if needed<br/>
+        Comparable replacement unit if qualifying issue cannot be resolved
+      </div>
+</div>
+<div class="value">
+<div class="value-title">WHY IT MATTERS</div>
+<div class="value-grid">
+<div>✔ Full support from day one</div>
+<div>✔ Reduces startup risk</div>
+<div>✔ Faster service resolution</div>
+<div>✔ Stronger long-term peace of mind</div>
+</div>
+</div>
+<div class="value">
+<div class="value-title">SERVICE PROCESS</div>
+<div class="value-grid">
+<div>1. Remote troubleshooting first</div>
+<div>2. Qualifying issue review</div>
+<div>3. Covered on-site visit if needed</div>
+<div>4. Replacement if unresolved</div>
+</div>
+</div>
+<div class="box" style="background:#FAFAFA; margin-top:10px;">
+<b>What Happens If You Skip Installation?</b>
+      If installation and training are waived, the customer assumes responsibility for setup, calibration, operation, and troubleshooting. Qualifying warranty parts may still be covered, but labor and technician travel are the customer’s responsibility, and the 90-Day Operational Guarantee does not apply.
+    </div>
+</div>
+<!-- RIGHT -->
+<div class="right">
+<div class="card">
+<div class="section-title">Installation Pricing</div>
+<div class="pricing">
+<div class="model">1 Day Installation</div>
+<div class="price">$1,500</div>
+<div class="sub">For single head machines</div>
+<div class="model">2 Day Installation</div>
+<div class="price">$3,000</div>
+<div class="sub">For dual and multi-head machines</div>
+</div>
+</div>
+<div class="card">
+<div class="section-title">Protection Plans</div>
+<div class="pricing">
+<div class="model">1 Year Plan</div>
+<div class="price">$1,995</div>
+<div class="model">2 Year Premium Plan</div>
+<div class="price">$3,495</div>
+</div>
+<div class="highlight">
+<div class="label">Most Customers Choose</div>
+<div class="title">2 Year Premium Protection</div>
+<div class="copy">
+          Best for customers who want longer-term confidence and protection without worrying about labor or travel costs on qualifying issues.
+        </div>
+</div>
+</div>
+<div class="card">
+<div class="section-title">Coverage Comparison</div>
+<table class="compare-table">
+<tr>
+<th>Coverage</th>
+<th>90-Day</th>
+<th>1 Year</th>
+<th>2 Year</th>
+<th>No Install</th>
+</tr>
+<tr>
+<td>Parts</td>
+<td class="yes">✔</td>
+<td class="yes">✔</td>
+<td class="yes">✔</td>
+<td class="yes">✔</td>
+</tr>
+<tr>
+<td>Labor</td>
+<td class="yes">✔</td>
+<td class="yes">✔</td>
+<td class="yes">✔</td>
+<td class="no">Customer Pays</td>
+</tr>
+<tr>
+<td>Travel</td>
+<td class="yes">✔</td>
+<td class="yes">✔</td>
+<td class="yes">✔</td>
+<td class="no">Customer Pays</td>
+</tr>
+<tr>
+<td>On-Site Visit</td>
+<td class="yes">✔</td>
+<td class="yes">✔</td>
+<td class="yes">✔</td>
+<td class="no">Not Included</td>
+</tr>
+<tr>
+<td>Replacement</td>
+<td class="yes">✔</td>
+<td class="yes">✔</td>
+<td class="yes">✔</td>
+<td class="no">Not Included</td>
+</tr>
+</table>
+<div class="cta-row">
+<a class="cta cta-primary" href="https://form.jotform.com/93356006387158" rel="noopener" target="_blank">Request Info</a>
+<a class="cta cta-secondary" href="https://form.jotform.com/260635331558054" rel="noopener" target="_blank">Request Freight Quote</a>
+</div>
+<div class="note" style="padding-top:8px; margin-top:auto;">
+        Qualifying coverage is determined by Stitch It International based on whether the issue is machine-related or customer-caused.
+      </div>
+</div>
+</div>
+</div>
+</div></div></section><section class="slide-shell"><div id="slide-roi"><div class="page">
+<div class="topbar">
+<div class="brand-left">
+<img alt="Stitch It International" class="logo-stitch" src="https://cdn.shopify.com/s/files/1/1236/6284/files/new_sii_logo_1_1_f7596205-751d-425c-ba49-acfe68d36dea.png?v=1771362816"/>
+<div class="divider"></div>
+<div>
+<div class="kicker">Equipment Financing + ROI Example</div>
+<h1 class="h1"><span>Can this machine</span> pay for itself?</h1>
+</div>
+</div>
+<img alt="BYLD Finance" class="logo-byld" src="https://cdn.shopify.com/s/files/1/0878/0608/3384/files/4_1_black_text_5.png?v=1762451516"/>
+</div>
+<div class="content">
+<!-- LEFT -->
+<div class="left">
+<div class="hero">
+<div class="hero-inner">
+<div class="desc">
+<p>
+              This example shows how financing can turn a machine purchase into a monthly cash flow decision instead of one large upfront expense.
+            </p>
+<p>
+              Below is a static ROI example for the <b>SWF KX-UH1506-45</b>, using average production assumptions based on caps only.
+            </p>
+</div>
+<div class="bullets">
+<div class="bullet"><b>Soft credit pull</b>Fast pre-approval without a hard inquiry up front.</div>
+<div class="bullet"><b>Cash flow focused</b>Compare estimated payment against production potential.</div>
+</div>
+</div>
+</div>
+<div class="card">
+<h2>Selected Machine</h2>
+<div class="machine-box">
+<div class="machine-mini">
+<div class="label">Model</div>
+<div class="value">KX-UH1506-45</div>
+</div>
+<div class="machine-mini">
+<div class="label">Heads</div>
+<div class="value">6 Head Setup</div>
+</div>
+</div>
+</div>
+<div class="card">
+<h2>Assumptions Used</h2>
+<div class="assumption-grid">
+<div class="assump">
+<div class="label">Machine Price</div>
+<div class="value">$65,500</div>
+</div>
+<div class="assump">
+<div class="label">Estimated Monthly Payment</div>
+<div class="value">$1,458</div>
+</div>
+<div class="assump">
+<div class="label">Gross Profit Per Cap</div>
+<div class="value">$8.00</div>
+</div>
+<div class="assump">
+<div class="label">Workdays Per Month</div>
+<div class="value">22 Days</div>
+</div>
+<div class="assump">
+<div class="label">Low Output</div>
+<div class="value">8 Caps / Head / Day</div>
+</div>
+<div class="assump">
+<div class="label">Average Output</div>
+<div class="value">15 Caps / Head / Day</div>
+</div>
+<div class="assump" style="grid-column:1 / -1;">
+<div class="label">High Output</div>
+<div class="value">25 Caps / Head / Day</div>
+</div>
+</div>
+</div>
+<div class="card">
+<h2>Financing Options</h2>
+<div style="font-size:12px;line-height:1.45;margin-bottom:10px;">
+          Get pre-approved with BYLD Finance in minutes using a soft credit check.
+          Approval lets you review financing options before finalizing your machine purchase.
+        </div>
+<div class="cta-row" style="padding-top:0;border-top:0;">
+<a class="cta-btn cta-primary" href="https://byldfinance.com/pages/apply-now" rel="noopener" target="_blank">Get Pre-Approved</a>
+<a class="cta-btn" href="https://byldfinance.com/pages/apply-now" rel="noopener" target="_blank">Apply Now</a>
+</div>
+</div>
+<div class="card">
+<h2>Next Step</h2>
+<a class="cta-btn cta-primary" href="https://byldfinance.com/pages/swf-roi-interactive-calculator" rel="noopener" target="_blank">Open Interactive ROI Calculator</a>
+</div>
+</div>
+<!-- RIGHT -->
+<div class="right">
+<div class="card">
+<h2>Monthly ROI Snapshot</h2>
+<div class="summary-grid">
+<div class="summary-box">
+<div class="label">Machine Price</div>
+<div class="value">$65,500</div>
+<div class="sub">Estimated selling price</div>
+</div>
+<div class="summary-box">
+<div class="label">Estimated Payment</div>
+<div class="value">$1,458</div>
+<div class="sub">Illustration only</div>
+</div>
+<div class="summary-box">
+<div class="label">Break-Even Caps / Month</div>
+<div class="value">183</div>
+<div class="sub">At $8 gross profit per cap</div>
+</div>
+<div class="summary-box">
+<div class="label">Machine</div>
+<div class="value" style="font-size:16px;">KX-UH1506-45</div>
+<div class="sub">6 head production setup</div>
+</div>
+</div>
+</div>
+<div class="card">
+<h2>Production Example</h2>
+<div class="roi-grid">
+<div class="roi-col">
+<div class="roi-title">Low Output</div>
+<div class="metric">
+<div class="m-label">Caps / Month</div>
+<div class="m-value">1,056</div>
+</div>
+<div class="metric">
+<div class="m-label">Gross Profit</div>
+<div class="m-value">$8,448</div>
+</div>
+<div class="metric">
+<div class="m-label">After Payment</div>
+<div class="m-value small green">$6,990</div>
+</div>
+</div>
+<div class="roi-col">
+<div class="roi-title">Average Output</div>
+<div class="metric">
+<div class="m-label">Caps / Month</div>
+<div class="m-value">1,980</div>
+</div>
+<div class="metric">
+<div class="m-label">Gross Profit</div>
+<div class="m-value">$15,840</div>
+</div>
+<div class="metric">
+<div class="m-label">After Payment</div>
+<div class="m-value small green">$14,382</div>
+</div>
+</div>
+<div class="roi-col">
+<div class="roi-title">High Output</div>
+<div class="metric">
+<div class="m-label">Caps / Month</div>
+<div class="m-value">3,300</div>
+</div>
+<div class="metric">
+<div class="m-label">Gross Profit</div>
+<div class="m-value">$26,400</div>
+</div>
+<div class="metric">
+<div class="m-label">After Payment</div>
+<div class="m-value small green">$24,942</div>
+</div>
+</div>
+</div>
+<div class="foot">
+<span>Illustration only:</span> This example is based on cap production assumptions and should be treated as a directional ROI tool, not a guarantee of performance or profitability.
+        </div>
+</div>
+<div class="card">
+<h2>Why Financing Works</h2>
+<div class="summary-grid">
+<div class="summary-box">
+<div class="label">1</div>
+<div class="sub" style="font-size:12px;color:#111;">Turns a large purchase into a monthly cash flow decision</div>
+</div>
+<div class="summary-box">
+<div class="label">2</div>
+<div class="sub" style="font-size:12px;color:#111;">Matches estimated payment against real production potential</div>
+</div>
+<div class="summary-box">
+<div class="label">3</div>
+<div class="sub" style="font-size:12px;color:#111;">Lets BYLD structure the deal around the shop’s growth plan</div>
+</div>
+<div class="summary-box">
+<div class="label">4</div>
+<div class="sub" style="font-size:12px;color:#111;">Gives the customer a clear path to pre-approval first</div>
+</div>
+</div>
+<div class="foot">
+<span>Disclaimer:</span> Actual terms, rates, and payments are subject to credit approval, equipment type, vendor approval, and lender program availability.
+        </div>
+</div>
+</div>
+</div>
+</div></div></section><section class="slide-shell"><div id="slide-tradein"><div class="page">
+<div class="topbar">
+<div class="brand-left">
+<img alt="Stitch It International" class="logo" src="https://cdn.shopify.com/s/files/1/1236/6284/files/new_sii_logo_1_1_f7596205-751d-425c-ba49-acfe68d36dea.png?v=1771362816"/>
+<div>
+<div class="kicker">Used Equipment + Upgrade Program</div>
+<h1 class="h1"><span>We Accept</span> Trade-Ins</h1>
+</div>
+</div>
+<img alt="SWF" class="logo" src="https://cdn.shopify.com/s/files/1/1236/6284/files/swfnobg.png?v=1759258611"/>
+</div>
+<div class="content">
+<!-- LEFT -->
+<div class="left">
+<div class="hero">
+<div class="hero-inner">
+<div class="desc">
+<p>
+              We evaluate used equipment based on brand, model, age, condition, stitch count, included accessories, and current market demand. The more complete and accurate the information, the faster we can review it.
+            </p>
+</div>
+<div class="bullets">
+<div class="bullet"><b>Upgrade easier</b>Use existing equipment to help offset your next purchase.</div>
+<div class="bullet"><b>Simple process</b>Submit your machine details and photos online.</div>
+<div class="bullet"><b>Faster review</b>Complete information helps us quote more accurately.</div>
+<div class="bullet"><b>Works with financing</b>Trade value can help reduce the amount financed.</div>
+</div>
+</div>
+</div>
+<div class="card">
+<h2>What Helps Maximize Trade Value</h2>
+<div class="value-strip">
+<div class="value-title">Best Information To Include</div>
+<div class="value-grid">
+<div class="value-item">✔ Clear machine photos</div>
+<div class="value-item">✔ Exact model number</div>
+<div class="value-item">✔ Age / purchase year</div>
+<div class="value-item">✔ Working condition</div>
+<div class="value-item">✔ Stitch count if available</div>
+<div class="value-item">✔ Included hoops / accessories</div>
+</div>
+</div>
+</div>
+<div class="card">
+<h2>Common Trade-In Candidates</h2>
+<div class="grid2">
+<div class="info-box">
+<div class="label">Single Head Machines</div>
+<div class="value">Great for customers moving into multi-head production.</div>
+</div>
+<div class="info-box">
+<div class="label">Older Multi-Head Units</div>
+<div class="value">A strong option when upgrading to newer, faster equipment.</div>
+</div>
+<div class="info-box">
+<div class="label">Running Equipment</div>
+<div class="value">Operational machines with photos and details are easiest to evaluate.</div>
+</div>
+<div class="info-box">
+<div class="label">Complete Packages</div>
+<div class="value">Machines with hoops, cap systems, and extras can be more attractive.</div>
+</div>
+</div>
+</div>
+<div class="cta-box">
+<div class="t">Request A Trade-In Review</div>
+<p class="p">
+          Fill out the trade-in form with your contact information and machine details, and our team will review it and follow up with next steps.
+        </p>
+<div class="cta-row">
+<a class="cta-btn cta-primary" href="https://form.jotform.com/260695056141153" rel="noopener" target="_blank">Get Trade-In Value</a>
+</div>
+</div>
+</div>
+<!-- RIGHT -->
+<div class="right">
+<div class="card">
+<h2>How It Works</h2>
+<div class="step-grid">
+<div class="step">
+<div class="step-num">Step 1</div>
+<div class="step-text">Submit your machine information and photos through our trade-in form.</div>
+</div>
+<div class="step">
+<div class="step-num">Step 2</div>
+<div class="step-text">We review the equipment details, condition, and marketability.</div>
+</div>
+<div class="step">
+<div class="step-num">Step 3</div>
+<div class="step-text">Our team follows up with valuation guidance and next-step options.</div>
+</div>
+<div class="step">
+<div class="step-num">Step 4</div>
+<div class="step-text">Apply the trade-in toward your next machine purchase, when approved.</div>
+</div>
+</div>
+</div>
+<div class="card">
+<h2>What To Submit</h2>
+<div class="list-card">
+<b>Recommended Information</b>
+<ul class="clean-list">
+<li>Machine brand and exact model</li>
+<li>Number of heads and needles</li>
+<li>Approximate year of purchase</li>
+<li>Overall condition and any issues</li>
+<li>Photos of front, side, control panel, and sewing area</li>
+<li>List of included hoops, cap system, or accessories</li>
+<li>Any known service history or major repairs</li>
+</ul>
+</div>
+</div>
+<div class="card">
+<h2>Why Customers Trade In</h2>
+<div class="grid2">
+<div class="info-box">
+<div class="label">Move Up In Production</div>
+<div class="value">Go from a single head into a 4, 6, or 8 head setup.</div>
+</div>
+<div class="info-box">
+<div class="label">Reduce Out Of Pocket Cost</div>
+<div class="value">Trade value can help lower the size of the next investment.</div>
+</div>
+<div class="info-box">
+<div class="label">Simplify The Upgrade</div>
+<div class="value">One transaction is often easier than selling privately first.</div>
+</div>
+<div class="info-box">
+<div class="label">Pair With Financing</div>
+<div class="value">A trade-in plus financing can make the next machine more manageable.</div>
+</div>
+</div>
+<div class="note">
+<span>Next step:</span> Submit your machine through the form and let us review the trade-in opportunity.
+        </div>
+</div>
+</div>
+</div>
+</div></div></section><section class="slide-shell"><div id="slide-stitchmaker"><div class="page">
+<!-- HEADER -->
+<div class="topbar">
+<div class="brand-left">
+<img alt="Stitch It International" class="logo" src="https://cdn.shopify.com/s/files/1/1236/6284/files/new_sii_logo_1_1_f7596205-751d-425c-ba49-acfe68d36dea.png?v=1771362816"/>
+<div class="divider"></div>
+<div>
+<div class="kicker">DIGITIZING SOFTWARE</div>
+<h1 class="h1"><span>StitchMaker</span> Digitizing PRO</h1>
+</div>
+</div>
+<img alt="SWF" class="logo" src="https://cdn.shopify.com/s/files/1/1236/6284/files/StitchMaker_DP_Logo_1_abe93edb-40d6-46d1-843c-dedceedf4250.png?v=1772752805"/>
+</div>
+<div class="content">
+<!-- LEFT -->
+<div class="hero">
+<img alt="StitchMaker Digitizing PRO" class="hero-img" src="https://cdn.shopify.com/s/files/1/1236/6284/files/200_Built-In_Fonts_3_1_1.png?v=1772750225"/>
+<div class="hero-pad">
+<div class="desc">
+<p>
+            StitchMaker Digitizing PRO is a full featured embroidery digitizing suite built for shops that want speed, control, and clean production ready files.
+            Create designs from scratch, auto digitize artwork, refine stitch paths, and export reliably for real world sewing.
+          </p>
+<p>
+            Instead of multiple add ons and upgrades, StitchMaker Digitizing PRO delivers a comprehensive all in one digitizing solution that includes Applique Fonts Upgrade, Puffy Fonts Upgrade, Micro Fonts Upgrade, Digitizing Upgrade, and Lettering and Editing in one package.
+          </p>
+</div>
+<div class="bullets">
+<div class="bullet"><b>All in one package</b>Digitizing + lettering + editing, no add ons.</div>
+<div class="bullet"><b>Built in fonts</b>Applique, puffy, and micro fonts included.</div>
+<div class="bullet"><b>3D realistic preview</b>See how it will sew before you run it.</div>
+<div class="bullet"><b>Production tools</b>Batch conversion, analysis, optimization.</div>
+</div>
+<div class="mid-strip">
+<div class="mid-title">QUICK SNAPSHOT</div>
+<div class="mid-grid">
+<div class="mid-box">
+<b>Best for</b>
+<ul class="mini-list">
+<li>Embroidery shops digitizing daily</li>
+<li>Bringing digitizing in house</li>
+<li>Better control of stitch quality</li>
+</ul>
+</div>
+<div class="mid-box">
+<b>What you will love</b>
+<ul class="mini-list">
+<li>Auto digitize + manual control</li>
+<li>3D view and design sequence</li>
+<li>Clean exports for production</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- MOVED HERE -->
+<div class="training">
+<div class="t">TRAINING AVAILABLE</div>
+<p class="p"><span>One on one online training class:</span> 30 minute sessions via Zoom. Perfect for setup, workflow, and getting your first files production ready.</p>
+</div>
+<div class="cta-row">
+<a class="cta-btn cta-primary" href="https://stitchitintl.com/products/stitchmaker-digitizing-software?_pos=1&amp;_sid=32b6c1f25&amp;_ss=r" rel="noopener" target="_blank">Buy Now</a>
+<a class="cta-btn" href="https://www.youtube.com/watch?v=sD-qpvT3Jsg" rel="noopener" target="_blank">View Demo</a>
+</div>
+</div>
+</div>
+<!-- RIGHT -->
+<div class="right">
+<div class="card">
+<h2>Pricing</h2>
+<div class="pricing">
+<div class="model">StitchMaker Digitizing PRO</div>
+<div class="price">$2,999.99</div>
+<div class="subnote">
+            One time purchase. Includes bundled upgrades in one package.
+          </div>
+<div class="pill-row">
+<span class="pill">Applique Fonts</span>
+<span class="pill">Puffy Fonts</span>
+<span class="pill">Micro Fonts</span>
+<span class="pill">Digitizing Upgrade</span>
+<span class="pill">Lettering + Editing</span>
+</div>
+</div>
+</div>
+<div class="card">
+<h2>Top Capabilities</h2>
+<div class="acc-grid">
+<div class="acc-item">
+<b>Digitizing</b>
+<ul>
+<li>Magic Wand segmented</li>
+<li>Auto digitizing wizard</li>
+<li>Stitch snapshots</li>
+<li>Manual digitizing tools</li>
+</ul>
+</div>
+<div class="acc-item">
+<b>3D + Viewing</b>
+<ul>
+<li>3D realistic view</li>
+<li>Design sequence</li>
+<li>Design gallery</li>
+<li>Virtual redraw</li>
+</ul>
+</div>
+<div class="acc-item">
+<b>Editing</b>
+<ul>
+<li>Density and underlay controls</li>
+<li>Stitch angles and direction</li>
+<li>Start and end points</li>
+<li>Branching and joins</li>
+</ul>
+</div>
+<div class="acc-item">
+<b>Production Tools</b>
+<ul>
+<li>Design optimization</li>
+<li>Batch conversion</li>
+<li>Design analysis</li>
+<li>Custom thread charts</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="card">
+<h2>Feature Breakdown</h2>
+<div class="incl">
+<div class="incl-grid">
+<div class="incl-box">
+<b>Stitch types</b>
+<ul class="incl-list">
+<li>Run: Standard, Bean, Motif</li>
+<li>Satin: Contour, Whipped, Raised</li>
+<li>Fill: Shape, Echo, Grid, Radial</li>
+</ul>
+</div>
+<div class="incl-box">
+<b>Applique + specialty</b>
+<ul class="incl-list">
+<li>Applique twill + tackle twill</li>
+<li>Click 2 Stitch</li>
+<li>Name drops + bubble text</li>
+</ul>
+</div>
+<div class="incl-box">
+<b>Editing power</b>
+<ul class="incl-list">
+<li>Sequence + optimize sew order</li>
+<li>Angles, density, underlay controls</li>
+<li>Branching + joins</li>
+</ul>
+</div>
+<div class="incl-box">
+<b>Toolset</b>
+<ul class="incl-list">
+<li>Cutter, Repeat, Carousel</li>
+<li>Place, Reflect, Scatter</li>
+<li>Guidelines, Ruler, Editors</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div></div></section><section class="slide-shell"><div id="slide-mighty-hoop"><div class="page">
+<!-- HEADER -->
+<div class="topbar">
+<div class="brand-left">
+<img alt="Stitch It International" class="logo" src="https://cdn.shopify.com/s/files/1/1236/6284/files/new_sii_logo_1_1_f7596205-751d-425c-ba49-acfe68d36dea.png?v=1771362816"/>
+<div class="divider"></div>
+<div>
+<div class="kicker">ACCESSORY</div>
+<h1 class="h1"><span>Mighty</span> Hoops</h1>
+</div>
+</div>
+<img alt="Mighty Hoops" class="logo" src="https://cdn.shopify.com/s/files/1/1236/6284/files/mighty_hoop_logo_-_Edited.png?v=1772756275"/>
+</div>
+<div class="content">
+<!-- LEFT -->
+<div class="hero">
+<img alt="Mighty Hoop" class="hero-img" src="https://cdn.shopify.com/s/files/1/1236/6284/files/27c06fd3-4088-4f19-92d3-36be8f6949f0.png?v=1772756812"/>
+<div class="hero-pad">
+<div class="desc">
+<p>
+            The best solution for all your hooping needs. Let the magnets do the work.
+            Mighty Hoops are a patented system by Midwest Products Inc., the innovators of the HoopMaster.
+          </p>
+<p>
+            Magnetic Mighty Hoops make hooping anything from delicate, thin materials to heavy duty workwear a breeze.
+            No more struggling with manual hoops, adjusting outer rings, or using excessive force.
+            They also help reduce hoop burn and reduce stress on wrists and arms.
+          </p>
+</div>
+<div class="bullets">
+<div class="bullet"><b>Magnetic hooping</b>Fast, consistent clamp pressure.</div>
+<div class="bullet"><b>Less operator fatigue</b>Way easier on wrists and arms.</div>
+<div class="bullet"><b>Reduces hoop burn</b>Cleaner finish on materials.</div>
+<div class="bullet"><b>Production friendly</b>Built for repeat workflow.</div>
+</div>
+<div class="mid-strip">
+<div class="mid-title">QUICK SNAPSHOT</div>
+<div class="mid-grid">
+<div class="mid-box">
+<b>Best for</b>
+<ul class="mini-list">
+<li>High volume flat embroidery</li>
+<li>Thick materials and workwear</li>
+<li>Faster, repeatable setups</li>
+</ul>
+</div>
+<div class="mid-box">
+<b>What to decide</b>
+<ul class="mini-list">
+<li>Hoop sizes you need</li>
+<li>Machine compatibility</li>
+<li>Whether you want HoopMaster too</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- Pricing screenshot block -->
+<div class="left-shot">
+<div class="t">POPULAR SWF SIZES</div>
+<img alt="Mighty Hoops pricing screenshot" src="https://cdn.shopify.com/s/files/1/1236/6284/files/MH.jpg?v=1772757659"/>
+</div>
+<div class="cta-row">
+<a class="cta-btn cta-primary" href="https://stitchitintl.com/collections/mighty-hoop/machine-vendor_swf?sort_by=best-selling" rel="noopener" target="_blank">Buy Now</a>
+<a class="cta-btn" href="https://www.youtube.com/watch?v=AAIyWrC9U2M" rel="noopener" target="_blank">Watch Demo</a>
+<a class="cta-btn" href="https://stitchitintl.com/collections/mighty-hoop/machine-vendor_swf?sort_by=best-selling" rel="noopener" target="_blank">SWF Sizes</a>
+<a class="cta-btn" href="https://stitchitintl.com/collections/mighty-hoop/machine-vendor_swf?sort_by=best-selling" rel="noopener" target="_blank">Compatibility</a>
+</div>
+</div>
+</div>
+<!-- RIGHT -->
+<div class="right">
+<div class="card">
+<h2>Pricing</h2>
+<div class="pricing">
+<div class="model">Mighty Hoops for SWF</div>
+<div class="price">Shop sizes</div>
+<div class="subnote">
+            Pricing varies by hoop size. Shop all SWF Mighty Hoops here:
+            <a href="https://stitchitintl.com/collections/mighty-hoop/machine-vendor_swf?sort_by=best-selling" rel="noopener" target="_blank">stitchitintl.com/collections/mighty-hoop</a>
+</div>
+</div>
+</div>
+<div class="card">
+<h2>Compatibility</h2>
+<div class="acc-grid">
+<div class="acc-item">
+<b>Multi needle tubular machines</b>
+            Works with most multi needle tubular embroidery machines.
+          </div>
+<div class="acc-item">
+<b>Some single needle tubular</b>
+            Select single needle tubular machines can be compatible.
+          </div>
+<div class="acc-item">
+<b>Less hoop burn</b>
+            Helps reduce marks and stress on materials.
+          </div>
+<div class="acc-item">
+<b>Less force required</b>
+            No cranking down rings or fighting tight hoops.
+          </div>
+</div>
+<div class="note">
+<div class="t">NOTE</div>
+<p class="p"><span>Not sure what sizes to get?</span> Start with the SWF sizing page, then tell us what you run most (left chest, jackets, bags, workwear) and we will point you to the best starter set.</p>
+</div>
+</div>
+<div class="card">
+<h2>Best Pairing: HoopMaster</h2>
+<div class="acc-grid">
+<div class="acc-item">
+<b>Fastest and most consistent hooping</b>
+            Mighty Hoops can be used alone, but they shine with a hooping station.
+          </div>
+<div class="acc-item">
+<b>Ultimate hooping experience</b>
+            Pair with HoopMaster for speed and repeatability.
+          </div>
+<div class="acc-item">
+<b>Less rehoops</b>
+            Better placement consistency means fewer redo’s.
+          </div>
+<div class="acc-item">
+<b>Cleaner workflow</b>
+            Easier training for new operators and smoother production.
+          </div>
+</div>
+<div class="note">
+<div class="t">SWF SIZES</div>
+<p class="p"><span>View all Mighty Hoop sizes made for SWF machines:</span>
+<a href="https://stitchitintl.com/collections/mighty-hoop/machine-vendor_swf?sort_by=best-selling" rel="noopener" target="_blank">stitchitintl.com</a>
+</p>
+</div>
+</div>
+</div>
+</div>
+</div></div></section><section class="slide-shell"><div id="slide-supplies"><div class="page">
+<div class="topbar">
+<div class="brand-left">
+<img alt="Stitch It International" class="logo" src="https://cdn.shopify.com/s/files/1/1236/6284/files/new_sii_logo_1_1_f7596205-751d-425c-ba49-acfe68d36dea.png?v=1771362816"/>
+<div>
+<div class="kicker">Embroidery Supplies + Shop Essentials</div>
+<h1 class="h1"><span>Supplies, Support,</span> and Wholesale Pricing</h1>
+</div>
+</div>
+<img alt="SWF" class="logo" src="https://cdn.shopify.com/s/files/1/1236/6284/files/swfnobg.png?v=1759258611"/>
+</div>
+<div class="content">
+<!-- LEFT -->
+<div class="left">
+<div class="hero">
+<div class="hero-inner">
+<div class="desc">
+<p>
+              From thread, bobbins, and needles to backing, topping, and other production essentials, we help customers keep machines running smoothly. We also offer <b>wholesale pricing</b> for customers who want better pricing and a stronger long-term partnership.
+            </p>
+</div>
+<div class="bullets">
+<div class="bullet"><b>Embroidery thread</b>Stock up on core colors and everyday production thread.</div>
+<div class="bullet"><b>Bobbins + needles</b>Essential consumables to keep your machines running smoothly.</div>
+<div class="bullet"><b>Backing + topping</b>Support better sewouts across a wide range of garments and jobs.</div>
+<div class="bullet"><b>Wholesale pricing</b>Qualified shops can request a wholesale account for better pricing.</div>
+</div>
+</div>
+</div>
+<div class="card">
+<h2>What Customers Shop For Most</h2>
+<div class="value-strip">
+<div class="value-title">Popular Categories</div>
+<div class="value-grid">
+<div class="value-item">✔ Embroidery thread</div>
+<div class="value-item">✔ Prewound bobbins</div>
+<div class="value-item">✔ Needles</div>
+<div class="value-item">✔ Backing</div>
+<div class="value-item">✔ Topping</div>
+<div class="value-item">✔ Other shop essentials</div>
+</div>
+</div>
+</div>
+<div class="card">
+<h2>Why Customers Buy Supplies From Stitch It</h2>
+<div class="grid2">
+<div class="info-box">
+<div class="label">One Source</div>
+<div class="value">Machines, support, and supplies all from one trusted partner.</div>
+</div>
+<div class="info-box">
+<div class="label">Built For Production</div>
+<div class="value">Products selected for real embroidery shop workflow.</div>
+</div>
+<div class="info-box">
+<div class="label">Better Ordering Rhythm</div>
+<div class="value">Makes it easier to reorder the supplies customers use every day.</div>
+</div>
+<div class="info-box">
+<div class="label">Wholesale Opportunity</div>
+<div class="value">Qualified customers may be eligible for better supply pricing.</div>
+</div>
+</div>
+</div>
+<div class="cta-box">
+<div class="t">Request A Wholesale Account</div>
+<p class="p">
+          Want access to wholesale pricing on embroidery supplies? Fill out the wholesale request form and our team will review your information.
+        </p>
+<div class="cta-row">
+<a class="cta-btn cta-primary" href="https://form.jotform.com/260695708625164" rel="noopener" target="_blank">Request Wholesale Pricing</a>
+</div>
+</div>
+</div>
+<!-- RIGHT -->
+<div class="right">
+<div class="card">
+<h2>Supply Categories</h2>
+<div class="grid2">
+<div class="info-box">
+<div class="label">Thread</div>
+<div class="value">Keep core colors and high-use thread in stock for daily jobs.</div>
+</div>
+<div class="info-box">
+<div class="label">Bobbins</div>
+<div class="value">Production-ready bobbins for smoother, more efficient operation.</div>
+</div>
+<div class="info-box">
+<div class="label">Needles</div>
+<div class="value">The right needles help improve stitch quality and consistency.</div>
+</div>
+<div class="info-box">
+<div class="label">Backing + Topping</div>
+<div class="value">Essential stabilizers for cleaner results across fabrics and garments.</div>
+</div>
+</div>
+<div class="note">
+<span>Tip:</span> Shops that standardize their supply ordering process usually reduce downtime and avoid last-minute rush orders.
+        </div>
+</div>
+<div class="card">
+<h2>How Wholesale Pricing Works</h2>
+<div class="step-grid">
+<div class="step">
+<div class="step-num">Step 1</div>
+<div class="step-text">Submit the wholesale request form with your business information.</div>
+</div>
+<div class="step">
+<div class="step-num">Step 2</div>
+<div class="step-text">Our team reviews your account and ordering needs.</div>
+</div>
+<div class="step">
+<div class="step-num">Step 3</div>
+<div class="step-text">Qualified customers receive access to wholesale pricing opportunities.</div>
+</div>
+<div class="step">
+<div class="step-num">Step 4</div>
+<div class="step-text">Order supplies through Stitch It and keep your shop stocked more efficiently.</div>
+</div>
+</div>
+<div class="note">
+<span>Important:</span> Wholesale pricing is subject to account review and approval.
+        </div>
+</div>
+<div class="card">
+<h2>Best Fit For</h2>
+<div class="list-card">
+<b>Customers Who Benefit Most</b>
+<ul class="clean-list">
+<li>Shops running embroidery production every week</li>
+<li>Customers who reorder thread, needles, or bobbins regularly</li>
+<li>Businesses wanting a more organized supply purchasing process</li>
+<li>Customers looking for stronger long-term buying relationships</li>
+<li>Growing decorators who want better pricing as volume increases</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div></div></section>
+</div>
 </body>
 </html>
