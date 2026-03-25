@@ -1,0 +1,533 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>StitchMaker Digitizing PRO - One Page</title>
+
+<style>
+:root{
+  --swf-red:#E31B23;
+  --ink:#101010;
+  --muted:#5a5a5a;
+  --line:#E7E7E7;
+  --soft:#F6F7F9;
+  --green:#39B54A;
+  --shadow:0 8px 22px rgba(0,0,0,.05);
+}
+
+*{box-sizing:border-box;}
+@page{size:11in 8.5in;margin:0;}
+
+html,body{
+  margin:0;
+  padding:0;
+  background:#fff;
+  font-family:Arial,Helvetica,sans-serif;
+  color:var(--ink);
+}
+
+.page{
+  width:11in;
+  height:8.5in;
+  overflow:hidden;
+}
+
+/* Print color fix */
+@media print{
+  *{ -webkit-print-color-adjust:exact !important; print-color-adjust:exact !important; }
+  a{ color:inherit !important; text-decoration:none !important; }
+  .cta-btn, .cta-primary{
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+  .cta-primary{
+    background:var(--green) !important;
+    color:#fff !important;
+    border:0 !important;
+  }
+}
+
+/* Header */
+.topbar{
+  height:.75in;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:.22in .5in .12in .5in;
+  border-bottom:1px solid var(--line);
+}
+.brand-left{
+  display:flex;
+  align-items:center;
+  gap:16px;
+}
+.logo{height:.34in; width:auto; display:block;}
+.divider{width:1px;height:.34in;background:var(--line);}
+.kicker{
+  font-size:10px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:var(--muted);
+  margin-bottom:2px;
+}
+.h1{
+  font-size:24px;
+  font-weight:900;
+  margin:0;
+}
+.h1 span{color:var(--swf-red);}
+
+/* Layout */
+.content{
+  height:calc(8.5in - .75in);
+  padding:.16in .5in;
+  display:grid;
+  grid-template-columns:1.18fr 1fr;
+  gap:.22in;
+}
+
+/* Cards */
+.card{
+  border:1px solid var(--line);
+  border-radius:14px;
+  background:#fff;
+  padding:11px 13px;
+  box-shadow:var(--shadow);
+}
+.card h2{
+  margin:0 0 6px 0;
+  font-size:12px;
+  text-transform:uppercase;
+  letter-spacing:.06em;
+  border-bottom:1px solid #EFEFEF;
+  padding-bottom:5px;
+}
+
+/* Hero */
+.hero{
+  border:1px solid var(--line);
+  border-radius:14px;
+  overflow:hidden;
+  display:grid;
+  grid-template-rows:1.82in auto;
+  box-shadow:var(--shadow);
+}
+.hero-img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  padding:6px 10px;
+  border-bottom:1px solid var(--line);
+  background:#fff;
+}
+.hero-pad{
+  padding:10px;
+  display:flex;
+  flex-direction:column;
+  min-height:0;
+}
+
+.desc{
+  font-size:11.4px;
+  line-height:1.38;
+  margin:0 0 7px 0;
+}
+.desc p{ margin:0 0 6px 0; }
+.desc p:last-child{ margin-bottom:0; }
+
+.bullets{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:6px;
+  margin-bottom:6px;
+}
+.bullet{
+  background:var(--soft);
+  border:1px solid #EEF0F3;
+  border-radius:10px;
+  padding:7px;
+  font-size:11px;
+}
+.bullet b{ display:block; margin-bottom:2px; }
+
+/* Mid filler */
+.mid-strip{
+  margin-bottom:6px;
+  padding:8px 10px;
+  border:1px solid #E7E7E7;
+  border-radius:10px;
+  background:var(--soft);
+}
+.mid-title{
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  margin:0 0 6px 0;
+}
+.mid-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:6px 10px;
+}
+.mid-box{
+  background:#fff;
+  border:1px solid #EEF0F3;
+  border-radius:10px;
+  padding:7px 9px;
+  font-size:10.6px;
+  line-height:1.22;
+}
+.mid-box b{ display:block; margin-bottom:2px; }
+.mini-list{ margin:3px 0 0 14px; padding:0; }
+.mini-list li{ margin:2px 0; }
+
+/* Training (moved to left column space) */
+.training{
+  margin-top:6px;
+  padding:8px 10px;
+  border:1px solid #DDE9FF;
+  border-radius:10px;
+  background:#F3F8FF;
+}
+.training .t{
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  margin:0 0 5px 0;
+}
+.training .p{
+  margin:0;
+  font-size:10.6px;
+  line-height:1.22;
+  color:#111;
+}
+.training .p span{ color:var(--muted); }
+
+/* CTA (2 only) */
+.cta-row{
+  margin-top:auto;
+  padding-top:8px;
+  border-top:1px solid #EFEFEF;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:6px;
+}
+.cta-btn{
+  display:block;
+  text-align:center;
+  padding:8px;
+  border-radius:9px;
+  font-size:10.8px;
+  font-weight:800;
+  text-decoration:none;
+  border:1px solid #E3E3E3;
+  background:#F7F7F7;
+  color:#111;
+}
+.cta-primary{
+  background:var(--green);
+  color:#fff;
+  border:none;
+}
+
+/* Right column layout */
+.right{
+  display:grid;
+  grid-template-rows:auto 1fr 1fr; /* gives more breathing room */
+  gap:8px;
+  min-height:0;
+}
+
+/* Pricing */
+.pricing{
+  display:grid;
+  grid-template-columns:1fr auto;
+  row-gap:6px;
+  column-gap:10px;
+  font-size:12.6px;
+  align-items:start;
+}
+.model{font-weight:900;}
+.price{
+  color:var(--green);
+  font-weight:900;
+  font-size:16px;
+  text-align:right;
+  white-space:nowrap;
+}
+.subnote{
+  grid-column:1/-1;
+  font-size:10.5px;
+  color:var(--muted);
+  line-height:1.25;
+  margin-top:2px;
+}
+.pill-row{
+  grid-column:1/-1;
+  display:flex;
+  flex-wrap:wrap;
+  gap:6px;
+  margin-top:2px;
+}
+.pill{
+  display:inline-block;
+  font-size:9px;
+  font-weight:900;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  padding:3px 8px;
+  border-radius:999px;
+  border:1px solid #E6E6E6;
+  background:#fff;
+  color:#111;
+}
+
+/* Capability grid */
+.acc-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:6px;
+}
+.acc-item{
+  background:var(--soft);
+  border:1px solid #EEF0F3;
+  border-radius:10px;
+  padding:7px 9px;
+  font-size:10.5px;
+  line-height:1.2;
+  min-height:52px;
+}
+.acc-item b{ display:block; margin-bottom:2px; }
+.acc-item ul{
+  margin:4px 0 0 14px;
+  padding:0;
+}
+.acc-item li{ margin:2px 0; }
+
+/* Breakdown */
+.incl{
+  margin-top:0; /* tighter since it's its own card now */
+  padding:0;
+  border:0;
+  border-radius:0;
+  background:transparent;
+}
+.incl-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:6px 10px;
+}
+.incl-box{
+  background:#fff;
+  border:1px solid #EEF0F3;
+  border-radius:10px;
+  padding:7px 9px;
+  font-size:10.4px;
+  line-height:1.2;
+}
+.incl-box b{ display:block; margin-bottom:2px; }
+.incl-list{ margin:3px 0 0 14px; padding:0; }
+.incl-list li{ margin:2px 0; }
+</style>
+</head>
+
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="topbar">
+    <div class="brand-left">
+      <img class="logo" alt="Stitch It International" src="https://cdn.shopify.com/s/files/1/1236/6284/files/new_sii_logo_1_1_f7596205-751d-425c-ba49-acfe68d36dea.png?v=1771362816">
+      <div class="divider"></div>
+      <div>
+        <div class="kicker">DIGITIZING SOFTWARE</div>
+        <h1 class="h1"><span>StitchMaker</span> Digitizing PRO</h1>
+      </div>
+    </div>
+    <img class="logo" alt="SWF" src="https://cdn.shopify.com/s/files/1/1236/6284/files/StitchMaker_DP_Logo_1_abe93edb-40d6-46d1-843c-dedceedf4250.png?v=1772752805">
+  </div>
+
+  <div class="content">
+
+    <!-- LEFT -->
+    <div class="hero">
+      <img class="hero-img" alt="StitchMaker Digitizing PRO" src="https://cdn.shopify.com/s/files/1/1236/6284/files/200_Built-In_Fonts_3_1_1.png?v=1772750225">
+
+      <div class="hero-pad">
+
+        <div class="desc">
+          <p>
+            StitchMaker Digitizing PRO is a full featured embroidery digitizing suite built for shops that want speed, control, and clean production ready files.
+            Create designs from scratch, auto digitize artwork, refine stitch paths, and export reliably for real world sewing.
+          </p>
+          <p>
+            Instead of multiple add ons and upgrades, StitchMaker Digitizing PRO delivers a comprehensive all in one digitizing solution that includes Applique Fonts Upgrade, Puffy Fonts Upgrade, Micro Fonts Upgrade, Digitizing Upgrade, and Lettering and Editing in one package.
+          </p>
+        </div>
+
+        <div class="bullets">
+          <div class="bullet"><b>All in one package</b>Digitizing + lettering + editing, no add ons.</div>
+          <div class="bullet"><b>Built in fonts</b>Applique, puffy, and micro fonts included.</div>
+          <div class="bullet"><b>3D realistic preview</b>See how it will sew before you run it.</div>
+          <div class="bullet"><b>Production tools</b>Batch conversion, analysis, optimization.</div>
+        </div>
+
+        <div class="mid-strip">
+          <div class="mid-title">QUICK SNAPSHOT</div>
+          <div class="mid-grid">
+            <div class="mid-box">
+              <b>Best for</b>
+              <ul class="mini-list">
+                <li>Embroidery shops digitizing daily</li>
+                <li>Bringing digitizing in house</li>
+                <li>Better control of stitch quality</li>
+              </ul>
+            </div>
+            <div class="mid-box">
+              <b>What you will love</b>
+              <ul class="mini-list">
+                <li>Auto digitize + manual control</li>
+                <li>3D view and design sequence</li>
+                <li>Clean exports for production</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- MOVED HERE -->
+        <div class="training">
+          <div class="t">TRAINING AVAILABLE</div>
+          <p class="p"><span>One on one online training class:</span> 30 minute sessions via Zoom. Perfect for setup, workflow, and getting your first files production ready.</p>
+        </div>
+
+        <div class="cta-row">
+          <a class="cta-btn cta-primary" href="https://stitchitintl.com/products/stitchmaker-digitizing-software?_pos=1&_sid=32b6c1f25&_ss=r" target="_blank" rel="noopener">Buy Now</a>
+          <a class="cta-btn" href="https://www.youtube.com/watch?v=sD-qpvT3Jsg" target="_blank" rel="noopener">View Demo</a>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- RIGHT -->
+    <div class="right">
+
+      <div class="card">
+        <h2>Pricing</h2>
+
+        <div class="pricing">
+          <div class="model">StitchMaker Digitizing PRO</div>
+          <div class="price">$2,999.99</div>
+
+          <div class="subnote">
+            One time purchase. Includes bundled upgrades in one package.
+          </div>
+
+          <div class="pill-row">
+            <span class="pill">Applique Fonts</span>
+            <span class="pill">Puffy Fonts</span>
+            <span class="pill">Micro Fonts</span>
+            <span class="pill">Digitizing Upgrade</span>
+            <span class="pill">Lettering + Editing</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Top Capabilities</h2>
+
+        <div class="acc-grid">
+          <div class="acc-item">
+            <b>Digitizing</b>
+            <ul>
+              <li>Magic Wand segmented</li>
+              <li>Auto digitizing wizard</li>
+              <li>Stitch snapshots</li>
+              <li>Manual digitizing tools</li>
+            </ul>
+          </div>
+
+          <div class="acc-item">
+            <b>3D + Viewing</b>
+            <ul>
+              <li>3D realistic view</li>
+              <li>Design sequence</li>
+              <li>Design gallery</li>
+              <li>Virtual redraw</li>
+            </ul>
+          </div>
+
+          <div class="acc-item">
+            <b>Editing</b>
+            <ul>
+              <li>Density and underlay controls</li>
+              <li>Stitch angles and direction</li>
+              <li>Start and end points</li>
+              <li>Branching and joins</li>
+            </ul>
+          </div>
+
+          <div class="acc-item">
+            <b>Production Tools</b>
+            <ul>
+              <li>Design optimization</li>
+              <li>Batch conversion</li>
+              <li>Design analysis</li>
+              <li>Custom thread charts</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Feature Breakdown</h2>
+
+        <div class="incl">
+          <div class="incl-grid">
+            <div class="incl-box">
+              <b>Stitch types</b>
+              <ul class="incl-list">
+                <li>Run: Standard, Bean, Motif</li>
+                <li>Satin: Contour, Whipped, Raised</li>
+                <li>Fill: Shape, Echo, Grid, Radial</li>
+              </ul>
+            </div>
+
+            <div class="incl-box">
+              <b>Applique + specialty</b>
+              <ul class="incl-list">
+                <li>Applique twill + tackle twill</li>
+                <li>Click 2 Stitch</li>
+                <li>Name drops + bubble text</li>
+              </ul>
+            </div>
+
+            <div class="incl-box">
+              <b>Editing power</b>
+              <ul class="incl-list">
+                <li>Sequence + optimize sew order</li>
+                <li>Angles, density, underlay controls</li>
+                <li>Branching + joins</li>
+              </ul>
+            </div>
+
+            <div class="incl-box">
+              <b>Toolset</b>
+              <ul class="incl-list">
+                <li>Cutter, Repeat, Carousel</li>
+                <li>Place, Reflect, Scatter</li>
+                <li>Guidelines, Ruler, Editors</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,473 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Mighty Hoops - One Page</title>
+
+<style>
+:root{
+  --swf-red:#E31B23;
+  --ink:#101010;
+  --muted:#5a5a5a;
+  --line:#E7E7E7;
+  --soft:#F6F7F9;
+  --green:#39B54A;
+  --shadow:0 8px 22px rgba(0,0,0,.05);
+}
+
+*{box-sizing:border-box;}
+@page{size:11in 8.5in;margin:0;}
+
+html,body{
+  margin:0;
+  padding:0;
+  background:#fff;
+  font-family:Arial,Helvetica,sans-serif;
+  color:var(--ink);
+}
+
+.page{
+  width:11in;
+  height:8.5in;
+  overflow:hidden;
+}
+
+/* Print color fix */
+@media print{
+  *{ -webkit-print-color-adjust:exact !important; print-color-adjust:exact !important; }
+  a{ color:inherit !important; text-decoration:none !important; }
+  .cta-btn, .cta-primary{
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+  .cta-primary{
+    background:var(--green) !important;
+    color:#fff !important;
+    border:0 !important;
+  }
+}
+
+/* Header */
+.topbar{
+  height:.75in;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:.22in .5in .12in .5in;
+  border-bottom:1px solid var(--line);
+}
+.brand-left{
+  display:flex;
+  align-items:center;
+  gap:16px;
+}
+.logo{height:.34in; width:auto; display:block;}
+.divider{width:1px;height:.34in;background:var(--line);}
+.kicker{
+  font-size:10px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:var(--muted);
+  margin-bottom:2px;
+}
+.h1{
+  font-size:24px;
+  font-weight:900;
+  margin:0;
+}
+.h1 span{color:var(--swf-red);}
+
+/* Layout */
+.content{
+  height:calc(8.5in - .75in);
+  padding:.16in .5in;
+  display:grid;
+  grid-template-columns:1.18fr 1fr;
+  gap:.22in;
+}
+
+/* Cards */
+.card{
+  border:1px solid var(--line);
+  border-radius:14px;
+  background:#fff;
+  padding:12px 14px;
+  box-shadow:var(--shadow);
+}
+.card h2{
+  margin:0 0 6px 0;
+  font-size:12px;
+  text-transform:uppercase;
+  letter-spacing:.06em;
+  border-bottom:1px solid #EFEFEF;
+  padding-bottom:5px;
+}
+
+/* Hero */
+.hero{
+  border:1px solid var(--line);
+  border-radius:14px;
+  overflow:hidden;
+  display:grid;
+  grid-template-rows:1.85in auto;
+  box-shadow:var(--shadow);
+}
+.hero-img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  padding:8px 10px;
+  border-bottom:1px solid var(--line);
+  background:#fff;
+}
+.hero-pad{
+  padding:10px;
+  display:flex;
+  flex-direction:column;
+  min-height:0;
+}
+
+.desc{
+  font-size:11.5px;
+  line-height:1.4;
+  margin:0 0 8px 0;
+}
+.desc p{ margin:0 0 6px 0; }
+.desc p:last-child{ margin-bottom:0; }
+
+.bullets{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:6px;
+  margin-bottom:6px;
+}
+.bullet{
+  background:var(--soft);
+  border:1px solid #EEF0F3;
+  border-radius:10px;
+  padding:7px;
+  font-size:11px;
+}
+.bullet b{ display:block; margin-bottom:2px; }
+
+/* Mid strip */
+.mid-strip{
+  margin-bottom:6px;
+  padding:8px 10px;
+  border:1px solid #E7E7E7;
+  border-radius:10px;
+  background:var(--soft);
+}
+.mid-title{
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  margin:0 0 6px 0;
+}
+.mid-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:6px 10px;
+}
+.mid-box{
+  background:#fff;
+  border:1px solid #EEF0F3;
+  border-radius:10px;
+  padding:7px 9px;
+  font-size:10.7px;
+  line-height:1.25;
+}
+.mid-box b{ display:block; margin-bottom:2px; }
+.mini-list{ margin:3px 0 0 14px; padding:0; }
+.mini-list li{ margin:2px 0; }
+
+/* Pricing screenshot block above CTAs */
+.left-shot{
+  margin-top:6px;
+  border:1px solid #E7E7E7;
+  border-radius:12px;
+  background:#fff;
+  overflow:hidden;
+}
+.left-shot .t{
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  padding:7px 10px;
+  border-bottom:1px solid #EFEFEF;
+  background:#FAFAFA;
+}
+.left-shot img{
+  width:100%;
+  height:1.15in;   /* tuned so it fits above CTAs cleanly */
+  object-fit:contain;
+  display:block;
+  padding:6px 10px;
+  background:#fff;
+}
+
+/* CTA */
+.cta-row{
+  margin-top:auto;
+  padding-top:8px;
+  border-top:1px solid #EFEFEF;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  grid-template-rows:auto auto;
+  gap:6px;
+}
+.cta-btn{
+  display:block;
+  text-align:center;
+  padding:8px;
+  border-radius:9px;
+  font-size:10.8px;
+  font-weight:800;
+  text-decoration:none;
+  border:1px solid #E3E3E3;
+  background:#F7F7F7;
+  color:#111;
+}
+.cta-primary{
+  background:var(--green);
+  color:#fff;
+  border:none;
+}
+
+/* Right */
+.right{
+  display:grid;
+  grid-template-rows:auto auto 1fr;
+  gap:8px;
+  min-height:0;
+}
+
+/* Pricing */
+.pricing{
+  display:grid;
+  grid-template-columns:1fr auto;
+  row-gap:6px;
+  column-gap:10px;
+  font-size:12.8px;
+}
+.model{font-weight:900;}
+.price{
+  color:var(--green);
+  font-weight:900;
+  font-size:16px;
+  text-align:right;
+  white-space:nowrap;
+}
+.subnote{
+  grid-column:1/-1;
+  font-size:10.5px;
+  color:var(--muted);
+  line-height:1.25;
+  margin-top:2px;
+}
+.subnote a{ color:var(--ink); text-decoration:underline; }
+
+/* Grid boxes */
+.acc-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:6px;
+}
+.acc-item{
+  background:var(--soft);
+  border:1px solid #EEF0F3;
+  border-radius:10px;
+  padding:7px 9px;
+  font-size:10.8px;
+  line-height:1.25;
+  min-height:56px;
+}
+.acc-item b{ display:block; margin-bottom:2px; }
+
+/* Notes */
+.note{
+  margin-top:6px;
+  padding:8px 10px;
+  border:1px solid #E7E7E7;
+  border-radius:10px;
+  background:#FAFAFA;
+}
+.note .t{
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  margin:0 0 5px 0;
+}
+.note .p{
+  font-size:10.7px;
+  color:#222;
+  line-height:1.25;
+  margin:0;
+}
+.note .p span{ color:var(--muted); }
+.note a{ color:var(--ink); text-decoration:underline; }
+</style>
+</head>
+
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="topbar">
+    <div class="brand-left">
+      <img class="logo" alt="Stitch It International" src="https://cdn.shopify.com/s/files/1/1236/6284/files/new_sii_logo_1_1_f7596205-751d-425c-ba49-acfe68d36dea.png?v=1771362816">
+      <div class="divider"></div>
+      <div>
+        <div class="kicker">ACCESSORY</div>
+        <h1 class="h1"><span>Mighty</span> Hoops</h1>
+      </div>
+    </div>
+
+    <img class="logo" alt="Mighty Hoops" src="https://cdn.shopify.com/s/files/1/1236/6284/files/mighty_hoop_logo_-_Edited.png?v=1772756275">
+  </div>
+
+  <div class="content">
+
+    <!-- LEFT -->
+    <div class="hero">
+      <img class="hero-img" alt="Mighty Hoop" src="https://cdn.shopify.com/s/files/1/1236/6284/files/27c06fd3-4088-4f19-92d3-36be8f6949f0.png?v=1772756812">
+
+      <div class="hero-pad">
+
+        <div class="desc">
+          <p>
+            The best solution for all your hooping needs. Let the magnets do the work.
+            Mighty Hoops are a patented system by Midwest Products Inc., the innovators of the HoopMaster.
+          </p>
+          <p>
+            Magnetic Mighty Hoops make hooping anything from delicate, thin materials to heavy duty workwear a breeze.
+            No more struggling with manual hoops, adjusting outer rings, or using excessive force.
+            They also help reduce hoop burn and reduce stress on wrists and arms.
+          </p>
+        </div>
+
+        <div class="bullets">
+          <div class="bullet"><b>Magnetic hooping</b>Fast, consistent clamp pressure.</div>
+          <div class="bullet"><b>Less operator fatigue</b>Way easier on wrists and arms.</div>
+          <div class="bullet"><b>Reduces hoop burn</b>Cleaner finish on materials.</div>
+          <div class="bullet"><b>Production friendly</b>Built for repeat workflow.</div>
+        </div>
+
+        <div class="mid-strip">
+          <div class="mid-title">QUICK SNAPSHOT</div>
+          <div class="mid-grid">
+            <div class="mid-box">
+              <b>Best for</b>
+              <ul class="mini-list">
+                <li>High volume flat embroidery</li>
+                <li>Thick materials and workwear</li>
+                <li>Faster, repeatable setups</li>
+              </ul>
+            </div>
+            <div class="mid-box">
+              <b>What to decide</b>
+              <ul class="mini-list">
+                <li>Hoop sizes you need</li>
+                <li>Machine compatibility</li>
+                <li>Whether you want HoopMaster too</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pricing screenshot block -->
+        <div class="left-shot">
+          <div class="t">POPULAR SWF SIZES</div>
+          <img alt="Mighty Hoops pricing screenshot" src="https://cdn.shopify.com/s/files/1/1236/6284/files/MH.jpg?v=1772757659">
+        </div>
+
+        <div class="cta-row">
+          <a class="cta-btn cta-primary" href="https://stitchitintl.com/collections/mighty-hoop/machine-vendor_swf?sort_by=best-selling" target="_blank" rel="noopener">Buy Now</a>
+          <a class="cta-btn" href="https://www.youtube.com/watch?v=AAIyWrC9U2M" target="_blank" rel="noopener">Watch Demo</a>
+          <a class="cta-btn" href="https://stitchitintl.com/collections/mighty-hoop/machine-vendor_swf?sort_by=best-selling" target="_blank" rel="noopener">SWF Sizes</a>
+          <a class="cta-btn" href="https://stitchitintl.com/collections/mighty-hoop/machine-vendor_swf?sort_by=best-selling" target="_blank" rel="noopener">Compatibility</a>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- RIGHT -->
+    <div class="right">
+
+      <div class="card">
+        <h2>Pricing</h2>
+        <div class="pricing">
+          <div class="model">Mighty Hoops for SWF</div>
+          <div class="price">Shop sizes</div>
+          <div class="subnote">
+            Pricing varies by hoop size. Shop all SWF Mighty Hoops here:
+            <a href="https://stitchitintl.com/collections/mighty-hoop/machine-vendor_swf?sort_by=best-selling" target="_blank" rel="noopener">stitchitintl.com/collections/mighty-hoop</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Compatibility</h2>
+        <div class="acc-grid">
+          <div class="acc-item">
+            <b>Multi needle tubular machines</b>
+            Works with most multi needle tubular embroidery machines.
+          </div>
+          <div class="acc-item">
+            <b>Some single needle tubular</b>
+            Select single needle tubular machines can be compatible.
+          </div>
+          <div class="acc-item">
+            <b>Less hoop burn</b>
+            Helps reduce marks and stress on materials.
+          </div>
+          <div class="acc-item">
+            <b>Less force required</b>
+            No cranking down rings or fighting tight hoops.
+          </div>
+        </div>
+
+        <div class="note">
+          <div class="t">NOTE</div>
+          <p class="p"><span>Not sure what sizes to get?</span> Start with the SWF sizing page, then tell us what you run most (left chest, jackets, bags, workwear) and we will point you to the best starter set.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Best Pairing: HoopMaster</h2>
+        <div class="acc-grid">
+          <div class="acc-item">
+            <b>Fastest and most consistent hooping</b>
+            Mighty Hoops can be used alone, but they shine with a hooping station.
+          </div>
+          <div class="acc-item">
+            <b>Ultimate hooping experience</b>
+            Pair with HoopMaster for speed and repeatability.
+          </div>
+          <div class="acc-item">
+            <b>Less rehoops</b>
+            Better placement consistency means fewer redo’s.
+          </div>
+          <div class="acc-item">
+            <b>Cleaner workflow</b>
+            Easier training for new operators and smoother production.
+          </div>
+        </div>
+
+        <div class="note">
+          <div class="t">SWF SIZES</div>
+          <p class="p"><span>View all Mighty Hoop sizes made for SWF machines:</span>
+            <a href="https://stitchitintl.com/collections/mighty-hoop/machine-vendor_swf?sort_by=best-selling" target="_blank" rel="noopener">stitchitintl.com</a>
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+</body>
+</html>
