@@ -1,8 +1,9 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>SWF Sales Deck</title>
 <style>
 
@@ -13,33 +14,41 @@ html, body{
 }
 body{
   font-family:Arial, Helvetica, sans-serif;
+  overflow-x:hidden;
 }
 .deck{
   width:100%;
   padding:20px 0 40px;
 }
 .slide-shell{
+  width:100%;
   display:flex;
   justify-content:center;
   align-items:flex-start;
   margin:20px 0;
-  width:100%;
 }
-.slide-shell > [id]{
+.slide-scale{
   width:1056px;
-  max-width:none;
+  height:816px;
   transform-origin:top center;
-  will-change:transform;
+  flex:0 0 auto;
 }
-.slide-shell .page{
+.slide-scale .page{
   box-shadow:0 8px 24px rgba(0,0,0,.12);
   background:#fff;
 }
-@media (max-width: 1150px){
+@media (max-width:1150px){
   .deck{
     padding:12px 0 24px;
   }
   .slide-shell{
+    margin:12px 0;
+  }
+  .slide-scale .page{
+    box-shadow:none;
+  }
+}
+.slide-shell{
     margin:12px 0;
     padding:0 8px;
     overflow:hidden;
@@ -3364,7 +3373,7 @@ body{
 </head>
 <body>
 <div class="deck">
-<section class="slide-shell"><div id="slide-ke"><div class="page">
+<section class="slide-shell"><div class="slide-scale"><div id="slide-ke"><div class="page">
 <!-- HEADER -->
 <div class="topbar">
 <div class="brand-left">
@@ -3467,7 +3476,7 @@ body{
 </div>
 </div>
 </div>
-</div></div></section><section class="slide-shell"><div id="slide-kx"><div class="page">
+</div></div></div></section><section class="slide-shell"><div class="slide-scale"><div id="slide-kx"><div class="page">
 <div class="topbar">
 <div class="brand-left">
 <img alt="SWF" class="logo" src="https://cdn.shopify.com/s/files/1/1236/6284/files/swfnobg.png?v=1759258611"/>
@@ -3598,7 +3607,7 @@ body{
 </div>
 </div>
 </div>
-</div></div></section><section class="slide-shell"><div id="slide-kx-dual"><div class="page">
+</div></div></div></section><section class="slide-shell"><div class="slide-scale"><div id="slide-kx-dual"><div class="page">
 <!-- HEADER -->
 <div class="topbar">
 <div class="brand-left">
@@ -3740,7 +3749,7 @@ body{
 </div>
 </div>
 </div>
-</div></div></section><section class="slide-shell"><div id="slide-kx-single"><div class="page">
+</div></div></div></section><section class="slide-shell"><div class="slide-scale"><div id="slide-kx-single"><div class="page">
 <!-- HEADER -->
 <div class="topbar">
 <div class="brand-left">
@@ -3868,7 +3877,7 @@ body{
 </div>
 </div>
 </div>
-</div></div></section><section class="slide-shell"><div id="slide-es-full"><div class="page">
+</div></div></div></section><section class="slide-shell"><div class="slide-scale"><div id="slide-es-full"><div class="page">
 <!-- HEADER -->
 <div class="topbar">
 <div class="brand-left">
@@ -4019,7 +4028,7 @@ body{
 </div>
 </div>
 </div>
-</div></div></section><section class="slide-shell"><div id="slide-es-compact"><div class="page">
+</div></div></div></section><section class="slide-shell"><div class="slide-scale"><div id="slide-es-compact"><div class="page">
 <!-- HEADER -->
 <div class="topbar">
 <div class="brand-left">
@@ -4170,7 +4179,7 @@ body{
 </div>
 </div>
 </div>
-</div></div></section><section class="slide-shell"><div id="slide-mas-12"><div class="page">
+</div></div></div></section><section class="slide-shell"><div class="slide-scale"><div id="slide-mas-12"><div class="page">
 <!-- HEADER -->
 <div class="topbar">
 <div class="brand-left">
@@ -4320,7 +4329,7 @@ body{
 </div>
 </div>
 </div>
-</div></div></section><section class="slide-shell"><div id="slide-sunny-7"><div class="page">
+</div></div></div></section><section class="slide-shell"><div class="slide-scale"><div id="slide-sunny-7"><div class="page">
 <!-- HEADER -->
 <div class="topbar">
 <div class="brand-left">
@@ -4461,7 +4470,7 @@ body{
 </div>
 </div>
 </div>
-</div></div></section><section class="slide-shell"><div id="slide-install"><div class="page">
+</div></div></div></section><section class="slide-shell"><div class="slide-scale"><div id="slide-install"><div class="page">
 <!-- HEADER -->
 <div class="topbar">
 <div class="brand-left">
@@ -4624,7 +4633,7 @@ body{
 </div>
 </div>
 </div>
-</div></div></section><section class="slide-shell"><div id="slide-roi"><div class="page">
+</div></div></div></section><section class="slide-shell"><div class="slide-scale"><div id="slide-roi"><div class="page">
 <div class="topbar">
 <div class="brand-left">
 <img alt="Stitch It International" class="logo-stitch" src="https://cdn.shopify.com/s/files/1/1236/6284/files/new_sii_logo_1_1_f7596205-751d-425c-ba49-acfe68d36dea.png?v=1771362816"/>
@@ -4823,7 +4832,7 @@ body{
 </div>
 </div>
 </div>
-</div></div></section><section class="slide-shell"><div id="slide-tradein"><div class="page">
+</div></div></div></section><section class="slide-shell"><div class="slide-scale"><div id="slide-tradein"><div class="page">
 <div class="topbar">
 <div class="brand-left">
 <img alt="Stitch It International" class="logo" src="https://cdn.shopify.com/s/files/1/1236/6284/files/new_sii_logo_1_1_f7596205-751d-425c-ba49-acfe68d36dea.png?v=1771362816"/>
@@ -4961,7 +4970,7 @@ body{
 </div>
 </div>
 </div>
-</div></div></section><section class="slide-shell"><div id="slide-stitchmaker"><div class="page">
+</div></div></div></section><section class="slide-shell"><div class="slide-scale"><div id="slide-stitchmaker"><div class="page">
 <!-- HEADER -->
 <div class="topbar">
 <div class="brand-left">
@@ -5127,7 +5136,7 @@ body{
 </div>
 </div>
 </div>
-</div></div></section><section class="slide-shell"><div id="slide-mighty-hoop"><div class="page">
+</div></div></div></section><section class="slide-shell"><div class="slide-scale"><div id="slide-mighty-hoop"><div class="page">
 <!-- HEADER -->
 <div class="topbar">
 <div class="brand-left">
@@ -5263,7 +5272,7 @@ body{
 </div>
 </div>
 </div>
-</div></div></section><section class="slide-shell"><div id="slide-supplies"><div class="page">
+</div></div></div></section><section class="slide-shell"><div class="slide-scale"><div id="slide-supplies"><div class="page">
 <div class="topbar">
 <div class="brand-left">
 <img alt="Stitch It International" class="logo" src="https://cdn.shopify.com/s/files/1/1236/6284/files/new_sii_logo_1_1_f7596205-751d-425c-ba49-acfe68d36dea.png?v=1771362816"/>
@@ -5402,7 +5411,31 @@ body{
 </div>
 </div>
 </div>
-</div></div></section>
+</div></div></div></section>
 </div>
+<script>
+(function () {
+  const BASE_WIDTH = 1056;
+  const BASE_HEIGHT = 816;
+
+  function fitSlides() {
+    const shells = document.querySelectorAll('.slide-shell');
+
+    shells.forEach((shell) => {
+      const scaleWrap = shell.querySelector('.slide-scale');
+      if (!scaleWrap) return;
+
+      const availableWidth = shell.clientWidth;
+      const scale = Math.min(1, availableWidth / BASE_WIDTH);
+
+      scaleWrap.style.transform = `scale(${scale})`;
+      shell.style.height = `${BASE_HEIGHT * scale}px`;
+    });
+  }
+
+  window.addEventListener('load', fitSlides);
+  window.addEventListener('resize', fitSlides);
+})();
+</script>
 </body>
 </html>
