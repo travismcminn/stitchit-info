@@ -50,7 +50,7 @@ a { color: inherit; }
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: #111;
+  background: #fff;
   height: var(--nav-h);
   display: flex;
   align-items: center;
@@ -60,12 +60,13 @@ a { color: inherit; }
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
   border-bottom: 2px solid var(--swf-red);
+  box-shadow: 0 2px 10px rgba(0,0,0,.08);
 }
 #site-nav::-webkit-scrollbar { display: none; }
 
 #site-nav a {
   white-space: nowrap;
-  color: #ccc;
+  color: #444;
   font-family: var(--font-head);
   font-size: 13px;
   font-weight: 700;
@@ -705,451 +706,21 @@ td:first-child { color: var(--muted); width: 50%; }
      ============================================================ -->
 <nav id="site-nav">
   <img class="nav-logo" src="https://cdn.shopify.com/s/files/1/1236/6284/files/new_sii_logo_1_1_f7596205-751d-425c-ba49-acfe68d36dea.png?v=1771362816" alt="Stitch It International">
-  <a href="#byld-roi">BYLD ROI</a>
-  <a href="#es-full">ES Full Size</a>
-  <a href="#es-compact">ES Compact</a>
-  <a href="#install">Install &amp; Protection</a>
   <a href="#ke">KE Series</a>
+  <a href="#kx-series">KX Series</a>
   <a href="#kx-dual">KX Dual</a>
   <a href="#kx-single-head">KX Single Head</a>
-  <a href="#kx-series">KX Series</a>
+  <a href="#es-full">ES Full Size</a>
+  <a href="#es-compact">ES Compact</a>
   <a href="#mas12">MAS-12</a>
+  <a href="#sunny">Sunny 7</a>
+  <a href="#install">Install &amp; Protection</a>
+  <a href="#byld-roi">BYLD ROI</a>
+  <a href="#trade-in">Trade-Ins</a>
+  <a href="#stitchmaker">StitchMaker</a>
   <a href="#mighty-hoop">Mighty Hoops</a>
   <a href="#supplies">Supplies</a>
-  <a href="#stitchmaker">StitchMaker</a>
-  <a href="#sunny">Sunny 7</a>
-  <a href="#trade-in">Trade-Ins</a>
 </nav>
-
-
-<!-- ============================================================
-  1. BYLD ROI PAGE
-  ============================================================ -->
-<div class="section-block" id="byld-roi">
-  <div class="section-label">Equipment Financing</div>
-  <div class="section-divider"></div>
-  <div class="page-shell">
-
-    <div class="topbar">
-      <div class="brand-left">
-        <img class="logo-stitch" alt="Stitch It International" src="https://cdn.shopify.com/s/files/1/1236/6284/files/new_sii_logo_1_1_f7596205-751d-425c-ba49-acfe68d36dea.png?v=1771362816">
-        <div class="divider"></div>
-        <div>
-          <div class="kicker">Equipment Financing + ROI Example</div>
-          <h1 class="page-h1"><span>Can this machine</span> pay for itself?</h1>
-        </div>
-      </div>
-      <img class="logo-byld" alt="BYLD Finance" src="https://cdn.shopify.com/s/files/1/0878/0608/3384/files/4_1_black_text_5.png?v=1762451516">
-    </div>
-
-    <div class="content">
-
-      <div class="left">
-        <div class="card">
-          <div class="desc">
-            <p>This example shows how financing can turn a machine purchase into a monthly cash flow decision instead of one large upfront expense.</p>
-            <p>Below is a static ROI example for the <b>SWF KX-UH1506-45</b>, using average production assumptions based on caps only.</p>
-          </div>
-          <div class="bullets" style="margin-top:10px;">
-            <div class="bullet"><b>Soft credit pull</b>Fast pre-approval without a hard inquiry up front.</div>
-            <div class="bullet"><b>Cash flow focused</b>Compare estimated payment against production potential.</div>
-          </div>
-        </div>
-
-        <div class="card">
-          <h2>Selected Machine</h2>
-          <div class="machine-box">
-            <div class="machine-mini"><div class="label">Model</div><div class="value">KX-UH1506-45</div></div>
-            <div class="machine-mini"><div class="label">Heads</div><div class="value">6 Head Setup</div></div>
-          </div>
-        </div>
-
-        <div class="card">
-          <h2>Assumptions Used</h2>
-          <div class="assumption-grid">
-            <div class="assump"><div class="label">Machine Price</div><div class="value">$65,500</div></div>
-            <div class="assump"><div class="label">Est. Monthly Payment</div><div class="value">$1,458</div></div>
-            <div class="assump"><div class="label">Gross Profit Per Cap</div><div class="value">$8.00</div></div>
-            <div class="assump"><div class="label">Workdays Per Month</div><div class="value">22 Days</div></div>
-            <div class="assump"><div class="label">Low Output</div><div class="value">8 Caps / Head / Day</div></div>
-            <div class="assump"><div class="label">Average Output</div><div class="value">15 Caps / Head / Day</div></div>
-            <div class="assump" style="grid-column:1/-1"><div class="label">High Output</div><div class="value">25 Caps / Head / Day</div></div>
-          </div>
-        </div>
-
-        <div class="card">
-          <h2>Financing Options</h2>
-          <p style="font-size:13px;line-height:1.45;margin-bottom:12px;">Get pre-approved with BYLD Finance in minutes using a soft credit check. Approval lets you review financing options before finalizing your machine purchase.</p>
-          <div class="cta-row" style="border-top:none;padding-top:0;">
-            <a class="cta-btn cta-byld" href="https://byldfinance.com/pages/apply-now" target="_blank" rel="noopener">Get Pre-Approved</a>
-            <a class="cta-btn" href="https://byldfinance.com/pages/apply-now" target="_blank" rel="noopener">Apply Now</a>
-          </div>
-        </div>
-
-        <div class="card">
-          <h2>Next Step</h2>
-          <a class="cta-btn cta-byld" style="display:block;text-align:center;" href="https://byldfinance.com/pages/swf-roi-interactive-calculator" target="_blank" rel="noopener">Open Interactive ROI Calculator</a>
-        </div>
-      </div>
-
-      <div class="right">
-        <div class="card">
-          <h2>Monthly ROI Snapshot</h2>
-          <div class="summary-grid">
-            <div class="summary-box"><div class="label">Machine Price</div><div class="value">$65,500</div><div class="sub">Estimated selling price</div></div>
-            <div class="summary-box"><div class="label">Est. Payment</div><div class="value">$1,458</div><div class="sub">Illustration only</div></div>
-            <div class="summary-box"><div class="label">Break-Even Caps/Mo</div><div class="value">183</div><div class="sub">At $8 gross profit per cap</div></div>
-            <div class="summary-box"><div class="label">Machine</div><div class="value" style="font-size:16px;">KX-UH1506-45</div><div class="sub">6 head production setup</div></div>
-          </div>
-        </div>
-
-        <div class="card">
-          <h2>Production Example</h2>
-          <div class="roi-grid">
-            <div class="roi-col">
-              <div class="roi-title">Low Output</div>
-              <div class="metric"><div class="m-label">Caps / Month</div><div class="m-value">1,056</div></div>
-              <div class="metric"><div class="m-label">Gross Profit</div><div class="m-value">$8,448</div></div>
-              <div class="metric"><div class="m-label">After Payment</div><div class="m-value small byld-green">$6,990</div></div>
-            </div>
-            <div class="roi-col">
-              <div class="roi-title">Average Output</div>
-              <div class="metric"><div class="m-label">Caps / Month</div><div class="m-value">1,980</div></div>
-              <div class="metric"><div class="m-label">Gross Profit</div><div class="m-value">$15,840</div></div>
-              <div class="metric"><div class="m-label">After Payment</div><div class="m-value small byld-green">$14,382</div></div>
-            </div>
-            <div class="roi-col">
-              <div class="roi-title">High Output</div>
-              <div class="metric"><div class="m-label">Caps / Month</div><div class="m-value">3,300</div></div>
-              <div class="metric"><div class="m-label">Gross Profit</div><div class="m-value">$26,400</div></div>
-              <div class="metric"><div class="m-label">After Payment</div><div class="m-value small byld-green">$24,942</div></div>
-            </div>
-          </div>
-          <div class="note-box" style="margin-top:10px;"><span>Illustration only:</span> This example is based on cap production assumptions and should be treated as a directional ROI tool, not a guarantee of performance or profitability.</div>
-        </div>
-
-        <div class="card">
-          <h2>Why Financing Works</h2>
-          <div class="summary-grid">
-            <div class="summary-box"><div class="label">1</div><div class="sub" style="font-size:12.5px;color:#111;">Turns a large purchase into a monthly cash flow decision</div></div>
-            <div class="summary-box"><div class="label">2</div><div class="sub" style="font-size:12.5px;color:#111;">Matches estimated payment against real production potential</div></div>
-            <div class="summary-box"><div class="label">3</div><div class="sub" style="font-size:12.5px;color:#111;">Lets BYLD structure the deal around the shop's growth plan</div></div>
-            <div class="summary-box"><div class="label">4</div><div class="sub" style="font-size:12.5px;color:#111;">Gives the customer a clear path to pre-approval first</div></div>
-          </div>
-          <div class="note-box" style="margin-top:10px;"><span>Disclaimer:</span> Actual terms, rates, and payments are subject to credit approval, equipment type, vendor approval, and lender program availability.</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-<!-- ============================================================
-  2. ES FULL SIZE
-  ============================================================ -->
-<div class="section-block" id="es-full">
-  <div class="section-label">Single Head Embroidery</div>
-  <div class="section-divider"></div>
-  <div class="page-shell">
-
-    <div class="topbar">
-      <div class="brand-left">
-        <img class="logo" alt="SWF" src="https://cdn.shopify.com/s/files/1/1236/6284/files/swfnobg.png?v=1759258611">
-        <div class="divider"></div>
-        <div>
-          <div class="kicker">Single Head Embroidery</div>
-          <h1 class="page-h1"><span>ES</span>-T1501 (Full Size Single Head)</h1>
-        </div>
-      </div>
-      <img class="logo" alt="Stitch It International" src="https://cdn.shopify.com/s/files/1/1236/6284/files/new_sii_logo_1_1_f7596205-751d-425c-ba49-acfe68d36dea.png?v=1771362816">
-    </div>
-
-    <div class="content">
-      <div class="hero">
-        <img class="hero-img" alt="SWF ES-T1501 Full Size" src="https://cdn.shopify.com/s/files/1/1236/6284/files/es_full_size.jpg?v=1759260197">
-        <div class="hero-pad">
-          <div class="desc">
-            <p>The SWF ES-T1501 is a full size, 15 needle single head built for shops that want reliable day to day production plus the flexibility to handle flats, tubular, and caps. It is a great fit for growing decorators who want a true commercial single head footprint without stepping up to multi head.</p>
-            <p>This is the ES-T1501 full size model, not the compact type. If you want the larger sewing area and a more traditional stand setup, this is the one.</p>
-          </div>
-          <div class="bullets">
-            <div class="bullet"><b>Full size single head</b>Commercial footprint and workflow.</div>
-            <div class="bullet"><b>15 needle platform</b>Fast color changes and versatility.</div>
-            <div class="bullet"><b>Border and tubular ready</b>520 x 360 border and 520 x 360 tubular.</div>
-            <div class="bullet"><b>Quick-change cap system</b>Cap setup included for production workflows.</div>
-          </div>
-          <div class="value-strip">
-            <div class="value-title">Why Buy From Stitch It International</div>
-            <div class="value-grid">
-              <div class="value-item">✔ Authorized SWF Distributor</div>
-              <div class="value-item">✔ 7 Year Limited Factory Warranty</div>
-              <div class="value-item">✔ Financing via BYLD Finance</div>
-              <div class="value-item">✔ Installation and training available</div>
-            </div>
-          </div>
-          <div class="mid-strip">
-            <div class="mid-title">Quick Snapshot</div>
-            <div class="mid-grid">
-              <div class="mid-box"><b>Best for</b><ul class="mini-list"><li>Startups and small shops</li><li>In-house embroidery add on</li><li>Hats plus flats and jackets</li></ul></div>
-              <div class="mid-box"><b>What to decide</b><ul class="mini-list"><li>Freight and setup timing</li><li>Install and training schedule</li><li>Any add-on hoops needed</li></ul></div>
-            </div>
-          </div>
-          <div class="cta-row">
-            <a class="cta-btn cta-primary" href="https://byldfinance.com/pages/apply-now" target="_blank" rel="noopener">Get Pre-Approved</a>
-            <a class="cta-btn" href="https://form.jotform.com/260635331558054" target="_blank" rel="noopener">Freight Quote</a>
-            <a class="cta-btn" href="https://www.youtube.com/watch?v=SXF3pEDHqn0" target="_blank" rel="noopener">Watch Demo</a>
-            <a class="cta-btn" href="https://form.jotform.com/260636305618154" target="_blank" rel="noopener">Request Live Demo</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="right">
-        <div class="card">
-          <h2>Lineup and Pricing</h2>
-          <div class="pricing">
-            <div class="model">ES-T1501 (Full Size Single Head)</div><div class="price">$18,549</div>
-            <div class="subnote">Ask about freight, install and training options.</div>
-          </div>
-        </div>
-        <div class="card">
-          <h2>Machine Specifications</h2>
-          <table>
-            <tr><td>Max speed</td><td><b>1,200 rpm</b></td></tr>
-            <tr><td>Field (Border)</td><td><b>520 x 360 mm</b></td></tr>
-            <tr><td>Field (Tubular)</td><td><b>520 x 360 mm</b></td></tr>
-            <tr><td>Field (Cap)</td><td><b>360 x 75 mm</b></td></tr>
-            <tr><td>Memory</td><td><b>40,000,000 stitches</b></td></tr>
-            <tr><td>Machine size</td><td><b>1,191 x 1,113 x 1,408 mm</b></td></tr>
-          </table>
-        </div>
-        <div class="card">
-          <h2>Highlights &amp; Included Accessories</h2>
-          <div class="acc-grid">
-            <div class="acc-item"><b>Full size commercial setup</b>Traditional stand and workflow for daily production.</div>
-            <div class="acc-item"><b>Large sewing fields</b>Border plus tubular support for diverse products.</div>
-            <div class="acc-item"><b>Cap ready</b>Quick-change cap system included.</div>
-            <div class="acc-item"><b>15 needle versatility</b>Fast color changes across job types.</div>
-          </div>
-          <div class="incl">
-            <div class="t">Included Accessories</div>
-            <div class="incl-grid">
-              <div class="incl-box"><b>Tubular Round Frames (2 pcs/head)</b><ul class="incl-list"><li>TRF 12 (4.25")</li><li>TRF 15 (5.4")</li><li>TRF 18 (6.6")</li></ul></div>
-              <div class="incl-box"><b>Tubular Square Frames (2 pcs/head)</b><ul class="incl-list"><li>TSF-30x30 (12.3" x 12.3")</li><li>TSF-41x27 (16.4" x 13.8")</li></ul></div>
-              <div class="incl-box"><b>Border Frame Sash (1 pc/head)</b><ul class="incl-list"><li>BFS-520x360 (20.47" x 14.17")</li></ul></div>
-              <div class="incl-box"><b>Quick-Change Cap System</b><ul class="incl-list"><li>Cap frames (2 pcs/head)</li><li>Cap frame driver (1 pc)</li><li>Cap frame holder (1 pc)</li></ul></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-<!-- ============================================================
-  3. ES COMPACT
-  ============================================================ -->
-<div class="section-block" id="es-compact">
-  <div class="section-label">Single Head Embroidery</div>
-  <div class="section-divider"></div>
-  <div class="page-shell">
-
-    <div class="topbar">
-      <div class="brand-left">
-        <img class="logo" alt="SWF" src="https://cdn.shopify.com/s/files/1/1236/6284/files/swfnobg.png?v=1759258611">
-        <div class="divider"></div>
-        <div>
-          <div class="kicker">Single Head Embroidery</div>
-          <h1 class="page-h1"><span>ES</span>-T1501C (Compact Single Head)</h1>
-        </div>
-      </div>
-      <img class="logo" alt="Stitch It International" src="https://cdn.shopify.com/s/files/1/1236/6284/files/new_sii_logo_1_1_f7596205-751d-425c-ba49-acfe68d36dea.png?v=1771362816">
-    </div>
-
-    <div class="content">
-      <div class="hero">
-        <img class="hero-img" alt="SWF ES-T1501C Compact" src="https://cdn.shopify.com/s/files/1/1236/6284/files/es_compact_ce76207c-a665-4f6f-8335-a67fc84e26c4.jpg?v=1759260197">
-        <div class="hero-pad">
-          <div class="desc">
-            <p>The SWF/ES-T1501C is a compact, 15 needle single head built for shops that want true commercial embroidery capability with a smaller footprint. It is a strong fit for startups, home based businesses, and growing decorators who want to produce caps and flats in house without dedicating a large floor area.</p>
-            <p>You still get the SWF workflow, fast color changes, and a production ready cap system, while keeping the machine size and layout simple and efficient.</p>
-          </div>
-          <div class="bullets">
-            <div class="bullet"><b>Compact single head</b>Smaller footprint for tight spaces.</div>
-            <div class="bullet"><b>15 needle platform</b>Fast color changes and versatility.</div>
-            <div class="bullet"><b>Cap ready</b>Quick-change cap system included.</div>
-            <div class="bullet"><b>Everyday production</b>Built for reliable daily output.</div>
-          </div>
-          <div class="value-strip">
-            <div class="value-title">Why Buy From Stitch It International</div>
-            <div class="value-grid">
-              <div class="value-item">✔ Authorized SWF Distributor</div>
-              <div class="value-item">✔ 7 Year Limited Factory Warranty</div>
-              <div class="value-item">✔ Financing via BYLD Finance</div>
-              <div class="value-item">✔ Installation and training available</div>
-            </div>
-          </div>
-          <div class="mid-strip">
-            <div class="mid-title">Quick Snapshot</div>
-            <div class="mid-grid">
-              <div class="mid-box"><b>Best for</b><ul class="mini-list"><li>Startups and small shops</li><li>Home based embroidery</li><li>Cap and flat production</li></ul></div>
-              <div class="mid-box"><b>What to decide</b><ul class="mini-list"><li>Freight and setup timing</li><li>Install and training schedule</li><li>Any add-on hoops needed</li></ul></div>
-            </div>
-          </div>
-          <div class="cta-row">
-            <a class="cta-btn cta-primary" href="https://byldfinance.com/pages/apply-now" target="_blank" rel="noopener">Get Pre-Approved</a>
-            <a class="cta-btn" href="https://form.jotform.com/260635331558054" target="_blank" rel="noopener">Freight Quote</a>
-            <a class="cta-btn" href="https://www.youtube.com/watch?v=jMvpN7zj3Vo" target="_blank" rel="noopener">Watch Demo</a>
-            <a class="cta-btn" href="https://form.jotform.com/260636305618154" target="_blank" rel="noopener">Request Live Demo</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="right">
-        <div class="card">
-          <h2>Lineup and Pricing</h2>
-          <div class="pricing">
-            <div class="model">ES-T1501C (Compact Single Head)</div><div class="price">$17,549</div>
-            <div class="subnote">Ask about freight, install and training options.</div>
-          </div>
-        </div>
-        <div class="card">
-          <h2>Machine Specifications</h2>
-          <table>
-            <tr><td>Max speed</td><td><b>1,200 rpm</b></td></tr>
-            <tr><td>Field (Tubular)</td><td><b>460 x 300 mm</b></td></tr>
-            <tr><td>Field (Cap)</td><td><b>360 x 75 mm</b></td></tr>
-            <tr><td>Memory</td><td><b>40,000,000 stitches</b></td></tr>
-            <tr><td>Machine type</td><td><b>Compact stand</b></td></tr>
-          </table>
-        </div>
-        <div class="card">
-          <h2>Highlights &amp; Included Accessories</h2>
-          <div class="acc-grid">
-            <div class="acc-item"><b>Compact footprint</b>Built to fit tight spaces without sacrificing capability.</div>
-            <div class="acc-item"><b>Cap plus tubular support</b>Set up quickly for hats and tubular jobs.</div>
-            <div class="acc-item"><b>Quick-change cap system</b>Included for production workflows.</div>
-            <div class="acc-item"><b>15 needle versatility</b>Fast color changes across job types.</div>
-          </div>
-          <div class="incl">
-            <div class="t">Included Accessories</div>
-            <div class="incl-grid">
-              <div class="incl-box"><b>Tubular Round Frames</b><ul class="incl-list"><li>TRF 12 (4.25")</li><li>TRF 15 (5.4")</li><li>TRF 18 (6.6")</li></ul></div>
-              <div class="incl-box"><b>Tubular Square Frames</b><ul class="incl-list"><li>TSF-30x30 (12.3" x 12.3")</li><li>TSF-41x27 (16.7" x 10.9")</li></ul></div>
-              <div class="incl-box"><b>Quick-Change Cap System</b><ul class="incl-list"><li>Cap frames (2 pcs/head)</li><li>Cap frame driver (1 pc/head)</li><li>Cap frame holder (1 pc)</li></ul></div>
-              <div class="incl-box"><b>Notes</b><ul class="incl-list"><li>Ask about optional add-on hoops</li><li>We can help schedule freight and setup</li></ul></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-<!-- ============================================================
-  4. INSTALL & TRAINING
-  ============================================================ -->
-<div class="section-block" id="install">
-  <div class="section-label">Support &amp; Coverage</div>
-  <div class="section-divider"></div>
-  <div class="page-shell">
-
-    <div class="topbar">
-      <div class="brand-left">
-        <img class="logo" alt="SWF" src="https://cdn.shopify.com/s/files/1/1236/6284/files/swfnobg.png?v=1759258611">
-        <div class="divider"></div>
-        <div>
-          <div class="kicker">Support &amp; Coverage</div>
-          <h1 class="page-h1"><span>Installation</span> &amp; Protection</h1>
-        </div>
-      </div>
-      <img class="logo" alt="Stitch It International" src="https://cdn.shopify.com/s/files/1/1236/6284/files/new_sii_logo_1_1_f7596205-751d-425c-ba49-acfe68d36dea.png?v=1771362816">
-    </div>
-
-    <div class="content">
-      <div class="card">
-        <h2>Installation &amp; Training</h2>
-        <p class="desc" style="margin-bottom:12px;">Professional setup, calibration, and hands-on operator training designed to get your machine running correctly from day one. Installation and training also activate Stitch It's 90-Day Operational Guarantee.</p>
-        <div class="grid2">
-          <div class="box"><b>1 Day Installation</b>Single head machines<br>Setup and calibration<br>Operator training<br>Basic troubleshooting instruction</div>
-          <div class="box"><b>2 Day Installation</b>KX-T1502D and all multi-head machines<br>Extended setup and calibration<br>More in-depth operator training<br>Basic troubleshooting instruction</div>
-        </div>
-
-        <h2 style="margin-top:16px;">90-Day Operational Guarantee</h2>
-        <p class="desc" style="margin-bottom:12px;">Included automatically when installation and training are purchased. Coverage applies to qualifying machine-related issues and starts on the date of installation.</p>
-        <div class="grid2">
-          <div class="box"><b>What's Covered</b>Qualifying parts<br>Labor<br>Technician travel<br>Remote troubleshooting support</div>
-          <div class="box"><b>How It Works</b>Remote support first<br>One covered on-site technician visit if needed<br>Comparable replacement unit if qualifying issue cannot be resolved</div>
-        </div>
-
-        <div class="value-strip" style="margin-top:12px;">
-          <div class="value-title">Why It Matters</div>
-          <div class="value-grid">
-            <div class="value-item">✔ Full support from day one</div>
-            <div class="value-item">✔ Reduces startup risk</div>
-            <div class="value-item">✔ Faster service resolution</div>
-            <div class="value-item">✔ Stronger long-term peace of mind</div>
-          </div>
-        </div>
-
-        <div class="value-strip" style="margin-top:10px;">
-          <div class="value-title">Service Process</div>
-          <div class="value-grid">
-            <div class="value-item">1. Remote troubleshooting first</div>
-            <div class="value-item">2. Qualifying issue review</div>
-            <div class="value-item">3. Covered on-site visit if needed</div>
-            <div class="value-item">4. Replacement if unresolved</div>
-          </div>
-        </div>
-
-        <div class="box" style="background:#fafafa;margin-top:12px;"><b>What Happens If You Skip Installation?</b>If installation and training are waived, the customer assumes responsibility for setup, calibration, operation, and troubleshooting. Qualifying warranty parts may still be covered, but labor and technician travel are the customer's responsibility, and the 90-Day Operational Guarantee does not apply.</div>
-      </div>
-
-      <div class="right">
-        <div class="card">
-          <h2>Installation Pricing</h2>
-          <div class="pricing">
-            <div class="model">1 Day Installation</div><div class="price">$1,500</div>
-            <div class="subnote">For single head machines</div>
-            <div class="model">2 Day Installation</div><div class="price">$3,000</div>
-            <div class="subnote">For dual and multi-head machines</div>
-          </div>
-        </div>
-
-        <div class="card">
-          <h2>Protection Plans</h2>
-          <div class="pricing">
-            <div class="model">1 Year Plan</div><div class="price">$1,995</div>
-            <div class="model">2 Year Premium Plan</div><div class="price">$3,495</div>
-          </div>
-          <div class="highlight">
-            <div class="label">Most Customers Choose</div>
-            <div class="title">2 Year Premium Protection</div>
-            <div class="copy">Best for customers who want longer-term confidence and protection without worrying about labor or travel costs on qualifying issues.</div>
-          </div>
-        </div>
-
-        <div class="card">
-          <h2>Coverage Comparison</h2>
-          <table class="compare-table">
-            <tr><th>Coverage</th><th>90-Day</th><th>1 Year</th><th>2 Year</th><th>No Install</th></tr>
-            <tr><td>Parts</td><td class="yes">✔</td><td class="yes">✔</td><td class="yes">✔</td><td class="yes">✔</td></tr>
-            <tr><td>Labor</td><td class="yes">✔</td><td class="yes">✔</td><td class="yes">✔</td><td class="no">Customer Pays</td></tr>
-            <tr><td>Travel</td><td class="yes">✔</td><td class="yes">✔</td><td class="yes">✔</td><td class="no">Customer Pays</td></tr>
-            <tr><td>On-Site Visit</td><td class="yes">✔</td><td class="yes">✔</td><td class="yes">✔</td><td class="no">Not Included</td></tr>
-            <tr><td>Replacement</td><td class="yes">✔</td><td class="yes">✔</td><td class="yes">✔</td><td class="no">Not Included</td></tr>
-          </table>
-          <div class="cta-row" style="padding-top:12px;">
-            <a class="cta-btn cta-primary" href="https://form.jotform.com/93356006387158" target="_blank" rel="noopener">Request Info</a>
-            <a class="cta-btn" href="https://form.jotform.com/260635331558054" target="_blank" rel="noopener">Freight Quote</a>
-          </div>
-          <div class="note-box" style="margin-top:10px;"><span>Note:</span> Qualifying coverage is determined by Stitch It International based on whether the issue is machine-related or customer-caused.</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
 
 
 <!-- ============================================================
@@ -1157,275 +728,7 @@ td:first-child { color: var(--muted); width: 50%; }
   ============================================================ -->
 <div class="section-block" id="ke">
   <div class="section-label">Multi-Head Embroidery</div>
-  <div class="section-divider"></div>
-  <div class="page-shell">
 
-    <div class="topbar">
-      <div class="brand-left">
-        <img class="logo" alt="SWF" src="https://cdn.shopify.com/s/files/1/1236/6284/files/swfnobg.png?v=1759258611">
-        <div class="divider"></div>
-        <div>
-          <div class="kicker">Multi-Head Embroidery</div>
-          <h1 class="page-h1"><span>KE</span> Series (Tubular)</h1>
-        </div>
-      </div>
-      <img class="logo" alt="Stitch It International" src="https://cdn.shopify.com/s/files/1/1236/6284/files/new_sii_logo_1_1_f7596205-751d-425c-ba49-acfe68d36dea.png?v=1771362816">
-    </div>
-
-    <div class="content">
-      <div class="hero">
-        <img class="hero-img" alt="SWF KE Series" src="https://cdn.shopify.com/s/files/1/1236/6284/files/Ke_Series.jpg?v=1759259733">
-        <div class="hero-pad">
-          <p class="desc">The SWF KE Tubular Series is a reliable, smart, automatic multi-head embroidery machine designed for efficient production and consistent, high-quality results. Built for versatility, the KE Series supports tubular, cap, and flat embroidery applications while featuring a large 15.1-inch full-touch operation panel for intuitive control, quick design selection, and easy monitoring.</p>
-          <div class="bullets">
-            <div class="bullet"><b>Built for production</b>Productivity-focused systems to keep your shop running smoothly with reduced downtime.</div>
-            <div class="bullet"><b>Versatile applications</b>Tubular, cap, and flat support with quick switching between setups.</div>
-            <div class="bullet"><b>Easy operation</b>15.1-inch full-touch LCD for settings, design selection, and monitoring.</div>
-            <div class="bullet"><b>Scalable lineup</b>Choose 4-head, 6-head, or 8-head based on production volume.</div>
-          </div>
-          <div class="value-strip">
-            <div class="value-title">Why Buy From Stitch It International</div>
-            <div class="value-grid">
-              <div class="value-item">✔ Authorized SWF Distributor</div>
-              <div class="value-item">✔ 7 Year Limited SWF Factory Warranty</div>
-              <div class="value-item">✔ Financing via BYLD Finance</div>
-              <div class="value-item">✔ Installation, training and support</div>
-            </div>
-          </div>
-          <div class="cta-row">
-            <a class="cta-btn cta-primary" href="https://byldfinance.com/pages/apply-now" target="_blank" rel="noopener">Get Pre-Approved for Financing</a>
-            <a class="cta-btn" href="https://form.jotform.com/260635331558054" target="_blank" rel="noopener">Get a Freight Quote</a>
-            <a class="cta-btn" href="https://www.youtube.com/watch?v=650irwOZM4A" target="_blank" rel="noopener">Watch Demonstration Video</a>
-            <a class="cta-btn" href="https://cdn.shopify.com/s/files/1/1236/6284/files/KE_TUBULAR_1.pdf?v=1743451926" target="_blank" rel="noopener">Request Live Demo</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="right">
-        <div class="card">
-          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;">
-            <span class="pill dark">Special Pricing</span>
-          </div>
-          <h2>Lineup and Pricing</h2>
-          <div class="pricing">
-            <div class="model">KE-UH1504-45</div><div class="price">$32,500</div>
-            <div class="model">KE-UH1506-45</div><div class="price">$39,900</div>
-            <div class="model">KE-UH1508-45</div><div class="price">$49,900</div>
-            <div class="subnote">Ask about freight, install and training. Financing via BYLD Finance.</div>
-          </div>
-        </div>
-        <div class="card">
-          <h2>Machine Specifications</h2>
-          <table>
-            <tr><td>Max speed</td><td><b>1,000 SPM</b></td></tr>
-            <tr><td>Field (Cap)</td><td><b>360 x 75 mm</b></td></tr>
-            <tr><td>Field (Border)</td><td><b>400 x 450 mm</b></td></tr>
-            <tr><td>Memory</td><td><b>40,000,000 stitches</b></td></tr>
-          </table>
-        </div>
-        <div class="card">
-          <h2>Included Accessories</h2>
-          <div class="acc-item" style="margin-bottom:8px;"><b>Hoops</b><ul class="acc-list"><li>30 x 30cm (12.3 x 12.3")</li><li>32 x 44cm (12.5 x 17.1")</li><li>12cm round, 15cm round, 18cm round</li></ul></div>
-          <div class="acc-item" style="margin-bottom:8px;"><b>Cap system</b>Redesigned 270° cap frame — stronger and lighter — with quick switching between cap and tubular frames.</div>
-          <div class="acc-item"><b>15.1" full touch LCD</b>Touch screen operation panel for easy settings and embroidery status monitoring.</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-<!-- ============================================================
-  6. KX DUAL
-  ============================================================ -->
-<div class="section-block" id="kx-dual">
-  <div class="section-label">Multi-Head Embroidery</div>
-  <div class="section-divider"></div>
-  <div class="page-shell">
-
-    <div class="topbar">
-      <div class="brand-left">
-        <img class="logo" alt="SWF" src="https://cdn.shopify.com/s/files/1/1236/6284/files/swfnobg.png?v=1759258611">
-        <div class="divider"></div>
-        <div>
-          <div class="kicker">Multi-Head Embroidery</div>
-          <h1 class="page-h1"><span>KX</span> Dual Function (KX-T1502D)</h1>
-        </div>
-      </div>
-      <img class="logo" alt="Stitch It International" src="https://cdn.shopify.com/s/files/1/1236/6284/files/new_sii_logo_1_1_f7596205-751d-425c-ba49-acfe68d36dea.png?v=1771362816">
-    </div>
-
-    <div class="content">
-      <div class="hero">
-        <img class="hero-img" alt="SWF KX Dual" src="https://cdn.shopify.com/s/files/1/1236/6284/files/KX-1X1-e1739525153532-1024x916.png?v=1772740296">
-        <div class="hero-pad">
-          <div class="desc"><p>The SWF KX-T1502D is a smart dual function, two head embroidery machine designed to run as one unit or as two independent heads from a single control panel. It is built for shops that want maximum flexibility, better workflow, and the ability to run two jobs at once without adding extra floor space.</p></div>
-          <div class="bullets">
-            <div class="bullet"><b>Dual function workflow</b>Run as one unit or split into two independent heads.</div>
-            <div class="bullet"><b>15.1" full touch LCD</b>Fast settings, design selection, and status monitoring.</div>
-            <div class="bullet"><b>Cap focused design</b>Quick switching between cap and tubular frames.</div>
-            <div class="bullet"><b>Smart automation options</b>NEW Smart Tension and Smart Action Presser Foot.</div>
-          </div>
-          <div class="value-strip">
-            <div class="value-title">Why Buy From Stitch It International</div>
-            <div class="value-grid">
-              <div class="value-item">✔ Authorized SWF Distributor</div>
-              <div class="value-item">✔ 7 Year Limited Factory Warranty</div>
-              <div class="value-item">✔ Financing via BYLD Finance</div>
-              <div class="value-item">✔ Installation and training available</div>
-            </div>
-          </div>
-          <div class="mid-strip">
-            <div class="mid-title">Quick Snapshot</div>
-            <div class="mid-grid">
-              <div class="mid-box"><b>Best for</b><ul class="mini-list"><li>Cap heavy production</li><li>Two jobs at once</li><li>Growing shops short on space</li></ul></div>
-              <div class="mid-box"><b>What to decide</b><ul class="mini-list"><li>How you will split head usage</li><li>Optional accessories or software</li><li>Freight and install timing</li></ul></div>
-            </div>
-          </div>
-          <div class="cta-row">
-            <a class="cta-btn cta-primary" href="https://byldfinance.com/pages/apply-now" target="_blank" rel="noopener">Get Pre-Approved</a>
-            <a class="cta-btn" href="https://form.jotform.com/260635331558054" target="_blank" rel="noopener">Freight Quote</a>
-            <a class="cta-btn" href="https://www.youtube.com/watch?v=qaDz0VXBX3M" target="_blank" rel="noopener">View Demo Video</a>
-            <a class="cta-btn" href="https://form.jotform.com/260636305618154" target="_blank" rel="noopener">Request Live Demo</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="right">
-        <div class="card">
-          <h2>Lineup and Pricing</h2>
-          <div class="pricing">
-            <div class="model">KX-T1502D (Dual Function 2 Head)</div><div class="price">$36,250</div>
-            <div class="subnote">Includes dual function operation from one control panel.</div>
-          </div>
-        </div>
-        <div class="card">
-          <h2>Machine Specifications</h2>
-          <table>
-            <tr><td>Max speed (Normal)</td><td><b>1,200 SPM</b></td></tr>
-            <tr><td>Max speed (Cap)</td><td><b>1,000 SPM</b></td></tr>
-            <tr><td>Field (Cap)</td><td><b>360 x 75 mm</b></td></tr>
-            <tr><td>Field (Tubular / Border)</td><td><b>520 x 360 mm</b></td></tr>
-            <tr><td>Memory</td><td><b>40,000,000 stitches</b></td></tr>
-          </table>
-        </div>
-        <div class="card">
-          <h2>Key Features and Options</h2>
-          <div class="acc-grid">
-            <div class="acc-item"><b>Dual Function</b>Operate as one unit or two separate units from one LCD panel.</div>
-            <div class="acc-item"><b>SWNS Wireless Networking</b>Send and download designs over WiFi to reduce downtime.</div>
-            <div class="acc-item"><b>Smart Action Presser Foot</b>Auto adjusts presser foot height for consistent quality across materials.</div>
-            <div class="acc-item"><b>Slim Cylinder Arm</b>Redesigned arm for improved access and quality on products.</div>
-            <div class="acc-item"><b>Smart Tension System</b>Auto adjusts thread tension based on stitch type and speed.</div>
-            <div class="acc-item"><b>EZ-Change Cap System</b>Faster switching between cap and tubular frames with no tools.</div>
-          </div>
-          <div class="hoops-box">
-            <div class="t">Included Hoops</div>
-            <div class="hoops-grid">
-              <div class="hoops-col"><b>Tubular Round Frames (2 pcs/head)</b><ul class="hoops-list"><li>TRF 12 (4.25")</li><li>TRF 15 (5.4")</li><li>TRF 18 (6.6")</li></ul></div>
-              <div class="hoops-col"><b>Tubular Square Frames (2 pcs/head)</b><ul class="hoops-list"><li>TSF 30 x 30cm (12.3" x 12.3")</li><li>TSF 45 x 44cm (16.6" x 17.1")</li></ul></div>
-            </div>
-            <div class="hoops-foot">Hoops listed above are per head, as shown in the included accessory list.</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-<!-- ============================================================
-  7. KX SINGLE HEAD
-  ============================================================ -->
-<div class="section-block" id="kx-single-head">
-  <div class="section-label">Single Head Embroidery</div>
-  <div class="section-divider"></div>
-  <div class="page-shell">
-
-    <div class="topbar">
-      <div class="brand-left">
-        <img class="logo" alt="SWF" src="https://cdn.shopify.com/s/files/1/1236/6284/files/swfnobg.png?v=1759258611">
-        <div class="divider"></div>
-        <div>
-          <div class="kicker">Single Head Embroidery</div>
-          <h1 class="page-h1"><span>KX</span> Single Head (KX-T1501)</h1>
-        </div>
-      </div>
-      <img class="logo" alt="Stitch It International" src="https://cdn.shopify.com/s/files/1/1236/6284/files/new_sii_logo_1_1_f7596205-751d-425c-ba49-acfe68d36dea.png?v=1771362816">
-    </div>
-
-    <div class="content">
-      <div class="hero">
-        <img class="hero-img" alt="SWF KX-T1501" src="https://cdn.shopify.com/s/files/1/1236/6284/files/KX_single.jpg?v=1759260196">
-        <div class="hero-pad">
-          <div class="desc">
-            <p>The SWF KX-T1501 is a high performance single head, 15 needle commercial embroidery machine built for professional shops that want precision, speed, and consistent stitch quality.</p>
-            <p>With speeds up to 1,200 stitches per minute and advanced automation options like Smart Tension and Smart Action Presser Foot, the KX-T1501 is a strong fit for caps, pockets, and detailed multi color logos while keeping workflow smooth and efficient.</p>
-          </div>
-          <div class="bullets">
-            <div class="bullet"><b>1,200 SPM performance</b>Fast production speed with clean results.</div>
-            <div class="bullet"><b>15.1" touch LCD</b>Quick settings, design selection, and monitoring.</div>
-            <div class="bullet"><b>Smart Tension option</b>Auto adjusts thread tension in real time.</div>
-            <div class="bullet"><b>Cap focused setup</b>EZ change cap system included.</div>
-          </div>
-          <div class="value-strip">
-            <div class="value-title">Why Buy From Stitch It International</div>
-            <div class="value-grid">
-              <div class="value-item">✔ Authorized SWF Distributor</div>
-              <div class="value-item">✔ 7 Year Limited Factory Warranty</div>
-              <div class="value-item">✔ Financing via BYLD Finance</div>
-              <div class="value-item">✔ Installation and training available</div>
-            </div>
-          </div>
-          <div class="mid-strip">
-            <div class="mid-title">Quick Snapshot</div>
-            <div class="mid-grid">
-              <div class="mid-box"><b>Best for</b><ul class="mini-list"><li>Cap and 3D puff embroidery</li><li>Detailed and large logos</li><li>Shops adding in-house embroidery</li></ul></div>
-              <div class="mid-box"><b>What to decide</b><ul class="mini-list"><li>Cap focus vs mixed production</li><li>Optional accessories or software</li><li>Freight and install timing</li></ul></div>
-            </div>
-          </div>
-          <div class="cta-row">
-            <a class="cta-btn cta-primary" href="https://byldfinance.com/pages/apply-now" target="_blank" rel="noopener">Get Pre-Approved</a>
-            <a class="cta-btn" href="https://form.jotform.com/260635331558054" target="_blank" rel="noopener">Freight Quote</a>
-            <a class="cta-btn" href="https://www.youtube.com/watch?v=JGvx7qR-Z8c" target="_blank" rel="noopener">View Demo Video</a>
-            <a class="cta-btn" href="https://form.jotform.com/260636305618154" target="_blank" rel="noopener">Request Live Demo</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="right">
-        <div class="card">
-          <h2>Lineup and Pricing</h2>
-          <div class="pricing">
-            <div class="model">KX-T1501 (Single Head)</div><div class="price">$22,269</div>
-            <div class="subnote">Special pricing shown. Ask about freight, installation, and training options.</div>
-          </div>
-        </div>
-        <div class="card">
-          <h2>Machine Specifications</h2>
-          <table>
-            <tr><td>Max speed</td><td><b>1,200 SPM</b></td></tr>
-            <tr><td>Field (Cap)</td><td><b>360 x 75 mm</b></td></tr>
-            <tr><td>Field (Border)</td><td><b>520 x 360 mm</b></td></tr>
-            <tr><td>Memory</td><td><b>40,000,000 stitches</b></td></tr>
-          </table>
-        </div>
-        <div class="card">
-          <h2>Included Accessories &amp; Highlights</h2>
-          <div class="acc-grid">
-            <div class="acc-item"><b>EZ-Change Cap Frame Set</b><ul><li>Cap frames (2 pcs/head)</li><li>Cap frame drivers (1 pc)</li><li>Cap frame holder (1 pc)</li></ul></div>
-            <div class="acc-item"><b>Tubular Round Frames (2 pcs/head)</b>TRF 12 (4.25"), TRF 15 (5.4"), TRF 18 (6.6")</div>
-            <div class="acc-item"><b>Tubular Square Frames (2 pcs/head)</b>TSF-30x30cm (12.3" x 12.3"), TSF-45x44cm (16.6" x 17.1")</div>
-            <div class="acc-item"><b>Smart Tension System (STS)</b>Automatically adjusts thread tension in real time for consistent results.</div>
-            <div class="acc-item"><b>Smart Action Presser Foot</b>Auto adjusts presser foot height to match materials and reduce rework.</div>
-            <div class="acc-item"><b>15.1" Touch LCD</b>Fast settings, quick design selection, and clear status monitoring.</div>
-          </div>
-          <div class="note-box" style="margin-top:10px;"><span>Most customers ask about:</span> cap setup options, what hoops they will use most, and how quickly we can schedule freight, installation, and training.</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
 
 
 <!-- ============================================================
@@ -1433,99 +736,39 @@ td:first-child { color: var(--muted); width: 50%; }
   ============================================================ -->
 <div class="section-block" id="kx-series">
   <div class="section-label">Multi-Head Embroidery</div>
-  <div class="section-divider"></div>
-  <div class="page-shell">
 
-    <div class="topbar">
-      <div class="brand-left">
-        <img class="logo" alt="SWF" src="https://cdn.shopify.com/s/files/1/1236/6284/files/swfnobg.png?v=1759258611">
-        <div class="divider"></div>
-        <div>
-          <div class="kicker">Multi-Head Embroidery</div>
-          <h1 class="page-h1"><span>KX</span> Series (Tubular)</h1>
-        </div>
-      </div>
-      <img class="logo" alt="Stitch It International" src="https://cdn.shopify.com/s/files/1/1236/6284/files/new_sii_logo_1_1_f7596205-751d-425c-ba49-acfe68d36dea.png?v=1771362816">
-    </div>
 
-    <div class="content">
-      <div class="hero">
-        <img class="hero-img" alt="SWF KX Series" src="https://cdn.shopify.com/s/files/1/1236/6284/files/KX_6_head.png?v=1771959407">
-        <div class="hero-pad">
-          <div class="desc">
-            <p>The SWF KX Tubular Series is a smart, automatic multi-head embroidery solution built for high-volume production, precision, and versatility. Designed to handle tubular, cap, and specialty embroidery, the KX Series features a large 15.1" full-touch LCD control panel for intuitive operation, fast design selection, and real-time monitoring.</p>
-            <p>Advanced systems like Smart Tension and an improved cap-focused design help maintain consistently high-quality results while reducing setup time. A strong fit for shops looking to scale efficiently and deliver premium embroidery output at speed.</p>
-          </div>
-          <div class="bullets">
-            <div class="bullet"><b>High-volume platform</b>Built for daily production output.</div>
-            <div class="bullet"><b>15.1" LCD control</b>Fast design selection and monitoring.</div>
-            <div class="bullet"><b>Smart tension system</b>Auto-adjusts for consistent stitching.</div>
-            <div class="bullet"><b>EZ-Change cap system</b>Quickly switch between cap and tubular.</div>
-          </div>
-          <div class="value-strip">
-            <div class="value-title">Why Buy From Stitch It International</div>
-            <div class="value-grid">
-              <div class="value-item">✔ Authorized SWF Distributor</div>
-              <div class="value-item">✔ 7 Year Limited Factory Warranty</div>
-              <div class="value-item">✔ Financing via BYLD Finance</div>
-              <div class="value-item">✔ Installation and training available</div>
-            </div>
-          </div>
-          <div class="mid-strip">
-            <div class="mid-title">Quick Snapshot</div>
-            <div class="mid-grid">
-              <div class="mid-box"><b>Best for</b><ul class="mini-list"><li>Growing production shops</li><li>Cap-heavy embroidery work</li><li>Consistent high volume output</li></ul></div>
-              <div class="mid-box"><b>What to decide</b><ul class="mini-list"><li>UH vs UK sewing field</li><li>4, 6, or 8 head lineup</li><li>Freight and install timing</li></ul></div>
-            </div>
-          </div>
-          <div class="cta-row">
-            <a class="cta-btn cta-primary" href="https://byldfinance.com/pages/apply-now" target="_blank" rel="noopener">Get Pre-Approved</a>
-            <a class="cta-btn" href="https://form.jotform.com/260635331558054" target="_blank" rel="noopener">Freight Quote</a>
-            <a class="cta-btn" href="https://www.youtube.com/watch?v=qaDz0VXBX3M" target="_blank" rel="noopener">Watch Demo</a>
-            <a class="cta-btn" href="https://form.jotform.com/260636305618154" target="_blank" rel="noopener">Request Live Demo</a>
-          </div>
-        </div>
-      </div>
 
-      <div class="right">
-        <div class="card">
-          <h2>Lineup and Pricing</h2>
-          <div class="pricing">
-            <small>Standard Sewing Field (UH)</small>
-            <div class="model">KX-UH1504-45</div><div class="price">$52,500</div>
-            <div class="model">KX-UH1506-45</div><div class="price">$65,500</div>
-            <div class="model">KX-UH1508-45</div><div class="price">$77,900</div>
-            <small>Expanded Sewing Field (UK)</small>
-            <div class="model">KX-UK1504-45</div><div class="price">$54,500</div>
-            <div class="model">KX-UK1506-45</div><div class="price">$67,500</div>
-            <div class="model">KX-UK1508-45</div><div class="price">$79,900</div>
-          </div>
-        </div>
-        <div class="card">
-          <h2>Machine Specifications</h2>
-          <table>
-            <tr><td>Max speed</td><td><b>1,200 SPM</b></td></tr>
-            <tr><td>Field (Cap)</td><td><b>360 x 75 mm</b></td></tr>
-            <tr><td>Field (Flat)</td><td><b>UH: 400x450 mm | UK: 500x450 mm</b></td></tr>
-            <tr><td>Memory</td><td><b>40,000,000 stitches</b></td></tr>
-          </table>
-        </div>
-        <div class="card">
-          <h2>Included Accessories</h2>
-          <div class="acc-grid">
-            <div class="acc-item"><b>Square Hoops</b>30 x 30cm, 32 x 44cm</div>
-            <div class="acc-item"><b>Round Hoops</b>12cm, 15cm, 18cm</div>
-            <div class="acc-item"><b>Wide Field Hoop <span class="badge uk">UK only</span></b>45 x 44cm (16.6 x 17.1")</div>
-            <div class="acc-item"><b>EZ Change Cap System</b>Stronger, lighter cap frame for quick switching.</div>
-            <div class="acc-item"><b>Smart Tension System</b>Automatically adjusts tension in real time for consistent results.</div>
-            <div class="acc-item"><b>15" Touch LCD</b>Fast settings, design selection, and monitoring.</div>
-          </div>
-          <div class="note-box" style="margin-top:10px;"><span>Most customers ask about:</span> freight timing, installation and training scheduling. Use the buttons on the left to get pre-approved, request freight, watch the demo, or download the brochure.</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+<!-- ============================================================
+  6. KX DUAL
+  ============================================================ -->
+<div class="section-block" id="kx-dual">
+  <div class="section-label">Multi-Head Embroidery</div>
+
+
+
+<!-- ============================================================
+  7. KX SINGLE HEAD
+  ============================================================ -->
+<div class="section-block" id="kx-single-head">
+  <div class="section-label">Single Head Embroidery</div>
+
+
+
+<!-- ============================================================
+  2. ES FULL SIZE
+  ============================================================ -->
+<div class="section-block" id="es-full">
+  <div class="section-label">Single Head Embroidery</div>
+
+
+
+<!-- ============================================================
+  3. ES COMPACT
+  ============================================================ -->
+<div class="section-block" id="es-compact">
+  <div class="section-label">Single Head Embroidery</div>
+
 
 
 <!-- ============================================================
@@ -1533,390 +776,7 @@ td:first-child { color: var(--muted); width: 50%; }
   ============================================================ -->
 <div class="section-block" id="mas12">
   <div class="section-label">Single Head Embroidery</div>
-  <div class="section-divider"></div>
-  <div class="page-shell">
 
-    <div class="topbar">
-      <div class="brand-left">
-        <img class="logo" alt="SWF" src="https://cdn.shopify.com/s/files/1/1236/6284/files/swfnobg.png?v=1759258611">
-        <div class="divider"></div>
-        <div>
-          <div class="kicker">Single Head Embroidery</div>
-          <h1 class="page-h1"><span>MAS</span>-12 (Compact Single Head)</h1>
-        </div>
-      </div>
-      <img class="logo" alt="Stitch It International" src="https://cdn.shopify.com/s/files/1/1236/6284/files/new_sii_logo_1_1_f7596205-751d-425c-ba49-acfe68d36dea.png?v=1771362816">
-    </div>
-
-    <div class="content">
-      <div class="hero">
-        <img class="hero-img" alt="SWF MAS-12" src="https://cdn.shopify.com/s/files/1/1236/6284/files/MAS-12.jpg?v=1759260197">
-        <div class="hero-pad">
-          <div class="desc">
-            <p>The SWF MAS-12 is a compact single head built for shops that want a true commercial embroidery platform without taking up a full size footprint. With a 12 needle head, a clean workflow, and a space saving setup, it is an easy fit for startups, home based decorators, and tight production floors.</p>
-            <p>It is a strong option for hats, flats, and everyday production work when you want dependable performance in a smaller package.</p>
-          </div>
-          <div class="bullets">
-            <div class="bullet"><b>Compact footprint</b>Great for small spaces and home based shops.</div>
-            <div class="bullet"><b>12 needle platform</b>Fast color changes and versatility.</div>
-            <div class="bullet"><b>Cap ready</b>Quick change cap system included.</div>
-            <div class="bullet"><b>Easy daily production</b>Built for consistent results and workflow.</div>
-          </div>
-          <div class="value-strip">
-            <div class="value-title">Why Buy From Stitch It International</div>
-            <div class="value-grid">
-              <div class="value-item">✔ Authorized SWF Distributor</div>
-              <div class="value-item">✔ 7 Year Limited Factory Warranty</div>
-              <div class="value-item">✔ Financing via BYLD Finance</div>
-              <div class="value-item">✔ Installation and training available</div>
-            </div>
-          </div>
-          <div class="mid-strip">
-            <div class="mid-title">Quick Snapshot</div>
-            <div class="mid-grid">
-              <div class="mid-box"><b>Best for</b><ul class="mini-list"><li>Startups and small shops</li><li>Hats and everyday flats</li><li>Limited floor space</li></ul></div>
-              <div class="mid-box"><b>What to decide</b><ul class="mini-list"><li>Freight and setup timing</li><li>Install and training schedule</li><li>Any add on hoops needed</li></ul></div>
-            </div>
-          </div>
-          <div class="cta-row">
-            <a class="cta-btn cta-primary" href="https://byldfinance.com/pages/apply-now" target="_blank" rel="noopener">Get Pre-Approved</a>
-            <a class="cta-btn" href="https://form.jotform.com/260635331558054" target="_blank" rel="noopener">Freight Quote</a>
-            <a class="cta-btn" href="https://www.youtube.com/watch?v=FXqivUu4cfo" target="_blank" rel="noopener">Watch Demo</a>
-            <a class="cta-btn" href="https://form.jotform.com/260636305618154" target="_blank" rel="noopener">Request Live Demo</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="right">
-        <div class="card">
-          <h2>Lineup and Pricing</h2>
-          <div class="pricing">
-            <div class="model">MAS-12 (Compact Single Head)</div><div class="price">$12,999</div>
-            <div class="subnote">Ask about freight, install and training options.</div>
-          </div>
-        </div>
-        <div class="card">
-          <h2>Machine Specifications</h2>
-          <table>
-            <tr><td>Max speed</td><td><b>1,000 rpm</b></td></tr>
-            <tr><td>Needles</td><td><b>12</b></td></tr>
-            <tr><td>Field (Flat)</td><td><b>14 x 9" (310 x 180 mm)</b></td></tr>
-            <tr><td>Field (Cap)</td><td><b>360 x 75 mm</b></td></tr>
-            <tr><td>LCD panel</td><td><b>10.4 inch color</b></td></tr>
-            <tr><td>Design memory</td><td><b>4,000,000 stitches</b></td></tr>
-          </table>
-        </div>
-        <div class="card">
-          <h2>Highlights &amp; Included Accessories</h2>
-          <div class="acc-grid">
-            <div class="acc-item"><b>Compact commercial setup</b>A smaller footprint that still feels like a real production machine.</div>
-            <div class="acc-item"><b>Cap plus tubular ready</b>Cap system included, plus tubular hoops for daily use.</div>
-            <div class="acc-item"><b>Simple workflow</b>Easy operation, fast design selection, and clean monitoring.</div>
-            <div class="acc-item"><b>Great starter package</b>Solid included accessories to get going right away.</div>
-          </div>
-          <div class="incl">
-            <div class="t">Included Accessories</div>
-            <div class="incl-grid">
-              <div class="incl-box"><b>Tubular Round Frames</b><ul class="incl-list"><li>TRF 12 (4.25")</li><li>TRF 15 (5.4")</li><li>TRF 18 (6.6")</li></ul></div>
-              <div class="incl-box"><b>Tubular Square Frames</b><ul class="incl-list"><li>TSF-24x24 (8.9" x 8.9")</li><li>TSF-39x26 (14.7" x 9.4")</li></ul></div>
-              <div class="incl-box"><b>Quick-Change Cap System</b><ul class="incl-list"><li>Cap frames (2 pcs/head)</li><li>Cap frame driver (1 pc)</li><li>Cap frame holder (1 pc)</li></ul></div>
-              <div class="incl-box"><b>Notes</b>Need additional hoops or accessories? Ask your salesperson for more info and we will dial it in.</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-<!-- ============================================================
-  10. MIGHTY HOOPS
-  ============================================================ -->
-<div class="section-block" id="mighty-hoop">
-  <div class="section-label">Accessory</div>
-  <div class="section-divider"></div>
-  <div class="page-shell">
-
-    <div class="topbar">
-      <div class="brand-left">
-        <img class="logo-stitch" alt="Stitch It International" src="https://cdn.shopify.com/s/files/1/1236/6284/files/new_sii_logo_1_1_f7596205-751d-425c-ba49-acfe68d36dea.png?v=1771362816">
-        <div class="divider"></div>
-        <div>
-          <div class="kicker">Accessory</div>
-          <h1 class="page-h1"><span>Mighty</span> Hoops</h1>
-        </div>
-      </div>
-      <img class="logo" alt="Mighty Hoops" src="https://cdn.shopify.com/s/files/1/1236/6284/files/mighty_hoop_logo_-_Edited.png?v=1772756275">
-    </div>
-
-    <div class="content">
-      <div class="hero">
-        <img class="hero-img" alt="Mighty Hoop" src="https://cdn.shopify.com/s/files/1/1236/6284/files/27c06fd3-4088-4f19-92d3-36be8f6949f0.png?v=1772756812">
-        <div class="hero-pad">
-          <div class="desc">
-            <p>The best solution for all your hooping needs. Let the magnets do the work. Mighty Hoops are a patented system by Midwest Products Inc., the innovators of the HoopMaster.</p>
-            <p>Magnetic Mighty Hoops make hooping anything from delicate, thin materials to heavy duty workwear a breeze. No more struggling with manual hoops, adjusting outer rings, or using excessive force. They also help reduce hoop burn and reduce stress on wrists and arms.</p>
-          </div>
-          <div class="bullets">
-            <div class="bullet"><b>Magnetic hooping</b>Fast, consistent clamp pressure.</div>
-            <div class="bullet"><b>Less operator fatigue</b>Way easier on wrists and arms.</div>
-            <div class="bullet"><b>Reduces hoop burn</b>Cleaner finish on materials.</div>
-            <div class="bullet"><b>Production friendly</b>Built for repeat workflow.</div>
-          </div>
-          <div class="mid-strip">
-            <div class="mid-title">Quick Snapshot</div>
-            <div class="mid-grid">
-              <div class="mid-box"><b>Best for</b><ul class="mini-list"><li>High volume flat embroidery</li><li>Thick materials and workwear</li><li>Faster, repeatable setups</li></ul></div>
-              <div class="mid-box"><b>What to decide</b><ul class="mini-list"><li>Hoop sizes you need</li><li>Machine compatibility</li><li>Whether you want HoopMaster too</li></ul></div>
-            </div>
-          </div>
-          <div class="left-shot">
-            <div class="t">Popular SWF Sizes</div>
-            <img alt="Mighty Hoops pricing screenshot" src="https://cdn.shopify.com/s/files/1/1236/6284/files/MH.jpg?v=1772757659">
-          </div>
-          <div class="cta-row">
-            <a class="cta-btn cta-primary" href="https://stitchitintl.com/collections/mighty-hoop/machine-vendor_swf?sort_by=best-selling" target="_blank" rel="noopener">Buy Now</a>
-            <a class="cta-btn" href="https://www.youtube.com/watch?v=AAIyWrC9U2M" target="_blank" rel="noopener">Watch Demo</a>
-            <a class="cta-btn" href="https://stitchitintl.com/collections/mighty-hoop/machine-vendor_swf?sort_by=best-selling" target="_blank" rel="noopener">SWF Sizes</a>
-            <a class="cta-btn" href="https://stitchitintl.com/collections/mighty-hoop/machine-vendor_swf?sort_by=best-selling" target="_blank" rel="noopener">Compatibility</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="right">
-        <div class="card">
-          <h2>Pricing</h2>
-          <div class="pricing">
-            <div class="model">Mighty Hoops for SWF</div><div class="price" style="font-size:14px;">Shop sizes</div>
-            <div class="subnote">Pricing varies by hoop size. Shop all SWF Mighty Hoops: <a href="https://stitchitintl.com/collections/mighty-hoop/machine-vendor_swf?sort_by=best-selling" target="_blank" rel="noopener" style="color:var(--ink);text-decoration:underline;">stitchitintl.com/collections/mighty-hoop</a></div>
-          </div>
-        </div>
-        <div class="card">
-          <h2>Compatibility</h2>
-          <div class="acc-grid">
-            <div class="acc-item"><b>Multi needle tubular machines</b>Works with most multi needle tubular embroidery machines.</div>
-            <div class="acc-item"><b>Some single needle tubular</b>Select single needle tubular machines can be compatible.</div>
-            <div class="acc-item"><b>Less hoop burn</b>Helps reduce marks and stress on materials.</div>
-            <div class="acc-item"><b>Less force required</b>No cranking down rings or fighting tight hoops.</div>
-          </div>
-          <div class="note-box" style="margin-top:10px;"><span>Not sure what sizes to get?</span> Start with the SWF sizing page, then tell us what you run most (left chest, jackets, bags, workwear) and we will point you to the best starter set.</div>
-        </div>
-        <div class="card">
-          <h2>Best Pairing: HoopMaster</h2>
-          <div class="acc-grid">
-            <div class="acc-item"><b>Fastest and most consistent hooping</b>Mighty Hoops can be used alone, but they shine with a hooping station.</div>
-            <div class="acc-item"><b>Ultimate hooping experience</b>Pair with HoopMaster for speed and repeatability.</div>
-            <div class="acc-item"><b>Less rehoops</b>Better placement consistency means fewer redo's.</div>
-            <div class="acc-item"><b>Cleaner workflow</b>Easier training for new operators and smoother production.</div>
-          </div>
-          <div class="note-box" style="margin-top:10px;"><span>View all Mighty Hoop sizes made for SWF machines:</span> <a href="https://stitchitintl.com/collections/mighty-hoop/machine-vendor_swf?sort_by=best-selling" target="_blank" rel="noopener" style="color:var(--ink);text-decoration:underline;">stitchitintl.com</a></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-<!-- ============================================================
-  11. SUPPLIES
-  ============================================================ -->
-<div class="section-block" id="supplies">
-  <div class="section-label">Embroidery Supplies</div>
-  <div class="section-divider"></div>
-  <div class="page-shell">
-
-    <div class="topbar">
-      <div class="brand-left">
-        <img class="logo-stitch" alt="Stitch It International" src="https://cdn.shopify.com/s/files/1/1236/6284/files/new_sii_logo_1_1_f7596205-751d-425c-ba49-acfe68d36dea.png?v=1771362816">
-        <div class="divider"></div>
-        <div>
-          <div class="kicker">Embroidery Supplies + Shop Essentials</div>
-          <h1 class="page-h1"><span>Supplies, Support,</span> and Wholesale Pricing</h1>
-        </div>
-      </div>
-      <img class="logo" alt="SWF" src="https://cdn.shopify.com/s/files/1/1236/6284/files/swfnobg.png?v=1759258611">
-    </div>
-
-    <div class="content">
-      <div class="left">
-        <div class="card">
-          <div class="desc">
-            <p>From thread, bobbins, and needles to backing, topping, and other production essentials, we help customers keep machines running smoothly. We also offer <b>wholesale pricing</b> for customers who want better pricing and a stronger long-term partnership.</p>
-          </div>
-          <div class="bullets" style="margin-top:10px;">
-            <div class="bullet"><b>Embroidery thread</b>Stock up on core colors and everyday production thread.</div>
-            <div class="bullet"><b>Bobbins + needles</b>Essential consumables to keep your machines running smoothly.</div>
-            <div class="bullet"><b>Backing + topping</b>Support better sewouts across a wide range of garments and jobs.</div>
-            <div class="bullet"><b>Wholesale pricing</b>Qualified shops can request a wholesale account for better pricing.</div>
-          </div>
-        </div>
-
-        <div class="card">
-          <h2>What Customers Shop For Most</h2>
-          <div class="value-strip">
-            <div class="value-title">Popular Categories</div>
-            <div class="value-grid">
-              <div class="value-item">✔ Embroidery thread</div>
-              <div class="value-item">✔ Prewound bobbins</div>
-              <div class="value-item">✔ Needles</div>
-              <div class="value-item">✔ Backing</div>
-              <div class="value-item">✔ Topping</div>
-              <div class="value-item">✔ Other shop essentials</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="card">
-          <h2>Why Customers Buy Supplies From Stitch It</h2>
-          <div class="grid2">
-            <div class="info-box"><div class="label">One Source</div><div class="value">Machines, support, and supplies all from one trusted partner.</div></div>
-            <div class="info-box"><div class="label">Built For Production</div><div class="value">Products selected for real embroidery shop workflow.</div></div>
-            <div class="info-box"><div class="label">Better Ordering Rhythm</div><div class="value">Makes it easier to reorder the supplies customers use every day.</div></div>
-            <div class="info-box"><div class="label">Wholesale Opportunity</div><div class="value">Qualified customers may be eligible for better supply pricing.</div></div>
-          </div>
-        </div>
-
-        <div class="cta-box">
-          <div class="t">Request A Wholesale Account</div>
-          <p class="p">Want access to wholesale pricing on embroidery supplies? Fill out the wholesale request form and our team will review your information.</p>
-          <a class="cta-btn cta-red" href="https://form.jotform.com/260695708625164" target="_blank" rel="noopener">Request Wholesale Pricing</a>
-        </div>
-      </div>
-
-      <div class="right">
-        <div class="card">
-          <h2>Supply Categories</h2>
-          <div class="grid2">
-            <div class="info-box"><div class="label">Thread</div><div class="value">Keep core colors and high-use thread in stock for daily jobs.</div></div>
-            <div class="info-box"><div class="label">Bobbins</div><div class="value">Production-ready bobbins for smoother, more efficient operation.</div></div>
-            <div class="info-box"><div class="label">Needles</div><div class="value">The right needles help improve stitch quality and consistency.</div></div>
-            <div class="info-box"><div class="label">Backing + Topping</div><div class="value">Essential stabilizers for cleaner results across fabrics and garments.</div></div>
-          </div>
-          <div class="note-box" style="margin-top:10px;"><span>Tip:</span> Shops that standardize their supply ordering process usually reduce downtime and avoid last-minute rush orders.</div>
-        </div>
-
-        <div class="card">
-          <h2>How Wholesale Pricing Works</h2>
-          <div class="step-grid">
-            <div class="step"><div class="step-num">Step 1</div><div class="step-text">Submit the wholesale request form with your business information.</div></div>
-            <div class="step"><div class="step-num">Step 2</div><div class="step-text">Our team reviews your account and ordering needs.</div></div>
-            <div class="step"><div class="step-num">Step 3</div><div class="step-text">Qualified customers receive access to wholesale pricing opportunities.</div></div>
-            <div class="step"><div class="step-num">Step 4</div><div class="step-text">Order supplies through Stitch It and keep your shop stocked more efficiently.</div></div>
-          </div>
-          <div class="note-box" style="margin-top:10px;"><span>Important:</span> Wholesale pricing is subject to account review and approval.</div>
-        </div>
-
-        <div class="card">
-          <h2>Best Fit For</h2>
-          <div class="list-card">
-            <b>Customers Who Benefit Most</b>
-            <ul class="clean-list">
-              <li>Shops running embroidery production every week</li>
-              <li>Customers who reorder thread, needles, or bobbins regularly</li>
-              <li>Businesses wanting a more organized supply purchasing process</li>
-              <li>Customers looking for stronger long-term buying relationships</li>
-              <li>Growing decorators who want better pricing as volume increases</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-<!-- ============================================================
-  12. STITCHMAKER
-  ============================================================ -->
-<div class="section-block" id="stitchmaker">
-  <div class="section-label">Digitizing Software</div>
-  <div class="section-divider"></div>
-  <div class="page-shell">
-
-    <div class="topbar">
-      <div class="brand-left">
-        <img class="logo-stitch" alt="Stitch It International" src="https://cdn.shopify.com/s/files/1/1236/6284/files/new_sii_logo_1_1_f7596205-751d-425c-ba49-acfe68d36dea.png?v=1771362816">
-        <div class="divider"></div>
-        <div>
-          <div class="kicker">Digitizing Software</div>
-          <h1 class="page-h1"><span>StitchMaker</span> Digitizing PRO</h1>
-        </div>
-      </div>
-      <img class="logo" alt="StitchMaker" src="https://cdn.shopify.com/s/files/1/1236/6284/files/StitchMaker_DP_Logo_1_abe93edb-40d6-46d1-843c-dedceedf4250.png?v=1772752805">
-    </div>
-
-    <div class="content">
-      <div class="hero">
-        <img class="hero-img" alt="StitchMaker Digitizing PRO" src="https://cdn.shopify.com/s/files/1/1236/6284/files/200_Built-In_Fonts_3_1_1.png?v=1772750225">
-        <div class="hero-pad">
-          <div class="desc">
-            <p>StitchMaker Digitizing PRO is a full featured embroidery digitizing suite built for shops that want speed, control, and clean production ready files. Create designs from scratch, auto digitize artwork, refine stitch paths, and export reliably for real world sewing.</p>
-            <p>Instead of multiple add ons and upgrades, StitchMaker Digitizing PRO delivers a comprehensive all in one digitizing solution that includes Applique Fonts Upgrade, Puffy Fonts Upgrade, Micro Fonts Upgrade, Digitizing Upgrade, and Lettering and Editing in one package.</p>
-          </div>
-          <div class="bullets">
-            <div class="bullet"><b>All in one package</b>Digitizing + lettering + editing, no add ons.</div>
-            <div class="bullet"><b>Built in fonts</b>Applique, puffy, and micro fonts included.</div>
-            <div class="bullet"><b>3D realistic preview</b>See how it will sew before you run it.</div>
-            <div class="bullet"><b>Production tools</b>Batch conversion, analysis, optimization.</div>
-          </div>
-          <div class="mid-strip">
-            <div class="mid-title">Quick Snapshot</div>
-            <div class="mid-grid">
-              <div class="mid-box"><b>Best for</b><ul class="mini-list"><li>Embroidery shops digitizing daily</li><li>Bringing digitizing in house</li><li>Better control of stitch quality</li></ul></div>
-              <div class="mid-box"><b>What you will love</b><ul class="mini-list"><li>Auto digitize + manual control</li><li>3D view and design sequence</li><li>Clean exports for production</li></ul></div>
-            </div>
-          </div>
-          <div class="training">
-            <div class="t">Training Available</div>
-            <p class="p"><span>One on one online training class:</span> 30 minute sessions via Zoom. Perfect for setup, workflow, and getting your first files production ready.</p>
-          </div>
-          <div class="cta-row">
-            <a class="cta-btn cta-primary" href="https://stitchitintl.com/products/stitchmaker-digitizing-software?_pos=1&_sid=32b6c1f25&_ss=r" target="_blank" rel="noopener">Buy Now</a>
-            <a class="cta-btn" href="https://www.youtube.com/watch?v=sD-qpvT3Jsg" target="_blank" rel="noopener">View Demo</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="right">
-        <div class="card">
-          <h2>Pricing</h2>
-          <div class="pricing">
-            <div class="model">StitchMaker Digitizing PRO</div><div class="price">$2,999.99</div>
-            <div class="subnote">One time purchase. Includes bundled upgrades in one package.</div>
-          </div>
-          <div class="pill-row">
-            <span class="pill">Applique Fonts</span>
-            <span class="pill">Puffy Fonts</span>
-            <span class="pill">Micro Fonts</span>
-            <span class="pill">Digitizing Upgrade</span>
-            <span class="pill">Lettering + Editing</span>
-          </div>
-        </div>
-
-        <div class="card">
-          <h2>Top Capabilities</h2>
-          <div class="acc-grid">
-            <div class="acc-item"><b>Digitizing</b><ul><li>Magic Wand segmented</li><li>Auto digitizing wizard</li><li>Stitch snapshots</li><li>Manual digitizing tools</li></ul></div>
-            <div class="acc-item"><b>3D + Viewing</b><ul><li>3D realistic view</li><li>Design sequence</li><li>Design gallery</li><li>Virtual redraw</li></ul></div>
-            <div class="acc-item"><b>Editing</b><ul><li>Density and underlay controls</li><li>Stitch angles and direction</li><li>Start and end points</li><li>Branching and joins</li></ul></div>
-            <div class="acc-item"><b>Production Tools</b><ul><li>Design optimization</li><li>Batch conversion</li><li>Design analysis</li><li>Custom thread charts</li></ul></div>
-          </div>
-        </div>
-
-        <div class="card">
-          <h2>Feature Breakdown</h2>
-          <div class="incl-grid">
-            <div class="incl-box"><b>Stitch types</b><ul class="incl-list"><li>Run: Standard, Bean, Motif</li><li>Satin: Contour, Whipped, Raised</li><li>Fill: Shape, Echo, Grid, Radial</li></ul></div>
-            <div class="incl-box"><b>Applique + specialty</b><ul class="incl-list"><li>Applique twill + tackle twill</li><li>Click 2 Stitch</li><li>Name drops + bubble text</li></ul></div>
-            <div class="incl-box"><b>Editing power</b><ul class="incl-list"><li>Sequence + optimize sew order</li><li>Angles, density, underlay controls</li><li>Branching + joins</li></ul></div>
-            <div class="incl-box"><b>Toolset</b><ul class="incl-list"><li>Cutter, Repeat, Carousel</li><li>Place, Reflect, Scatter</li><li>Guidelines, Ruler, Editors</li></ul></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
 
 
 <!-- ============================================================
@@ -1924,99 +784,23 @@ td:first-child { color: var(--muted); width: 50%; }
   ============================================================ -->
 <div class="section-block" id="sunny">
   <div class="section-label">Single Head Embroidery</div>
-  <div class="section-divider"></div>
-  <div class="page-shell">
 
-    <div class="topbar">
-      <div class="brand-left">
-        <img class="logo" alt="SWF" src="https://cdn.shopify.com/s/files/1/1236/6284/files/swfnobg.png?v=1759258611">
-        <div class="divider"></div>
-        <div>
-          <div class="kicker">Single Head Embroidery</div>
-          <h1 class="page-h1"><span>Sunny</span> 7-Needle Compact</h1>
-        </div>
-      </div>
-      <img class="logo" alt="Stitch It International" src="https://cdn.shopify.com/s/files/1/1236/6284/files/new_sii_logo_1_1_f7596205-751d-425c-ba49-acfe68d36dea.png?v=1771362816">
-    </div>
 
-    <div class="content">
-      <div class="hero">
-        <img class="hero-img" alt="SWF Sunny 7-Needle" src="https://cdn.shopify.com/s/files/1/1236/6284/files/Sunny_6.jpg?v=1759260197">
-        <div class="hero-pad">
-          <div class="desc">
-            <p>The SWF Sunny is a compact, 7 needle single head built for creators and small shops that want an affordable, easy to run embroidery setup for day to day work. It is a strong fit for beginners, craft shows, side hustles, and smaller production needs where simplicity matters.</p>
-            <p>This machine focuses on flat embroidery workflows and portability, and it does not include a cap system.</p>
-          </div>
-          <div class="bullets">
-            <div class="bullet"><b>Compact 7 needle platform</b>Simple operation for everyday embroidery.</div>
-            <div class="bullet"><b>Portable setup</b>Great for events and small workspaces.</div>
-            <div class="bullet"><b>Creative friendly features</b>Built in designs, fonts, and photo stitch support.</div>
-            <div class="bullet"><b>Flat hoop workflow</b>Includes multiple flat hoop sizes.</div>
-          </div>
-          <div class="value-strip">
-            <div class="value-title">Why Buy From Stitch It International</div>
-            <div class="value-grid">
-              <div class="value-item">✔ Authorized SWF Distributor</div>
-              <div class="value-item">✔ 7 Year Limited Factory Warranty</div>
-              <div class="value-item">✔ Financing via BYLD Finance</div>
-              <div class="value-item">✔ Installation and training available</div>
-            </div>
-          </div>
-          <div class="mid-strip">
-            <div class="mid-title">Quick Snapshot</div>
-            <div class="mid-grid">
-              <div class="mid-box"><b>Best for</b><ul class="mini-list"><li>Beginners and startups</li><li>Craft shows and events</li><li>Flat goods and small runs</li></ul></div>
-              <div class="mid-box"><b>What to decide</b><ul class="mini-list"><li>Freight and setup timing</li><li>Thread and starter supplies</li><li>Any extra hoops needed</li></ul></div>
-            </div>
-          </div>
-          <div class="cta-row">
-            <a class="cta-btn cta-primary" href="https://byldfinance.com/pages/apply-now" target="_blank" rel="noopener">Get Pre-Approved</a>
-            <a class="cta-btn" href="https://form.jotform.com/260635331558054" target="_blank" rel="noopener">Freight Quote</a>
-            <a class="cta-btn" href="https://www.youtube.com/watch?v=42-Y5YTWTiE" target="_blank" rel="noopener">Watch Demo</a>
-            <a class="cta-btn" href="https://form.jotform.com/260636305618154" target="_blank" rel="noopener">Request Live Demo</a>
-          </div>
-        </div>
-      </div>
 
-      <div class="right">
-        <div class="card">
-          <h2>Lineup and Pricing</h2>
-          <div class="pricing">
-            <div class="model">Sunny 7-Needle Compact Single Head</div><div class="price">$6,499</div>
-            <div class="subnote">Ask about freight, install and training options.</div>
-          </div>
-        </div>
-        <div class="card">
-          <h2>Machine Specifications</h2>
-          <table>
-            <tr><td>Needles</td><td><b>7</b></td></tr>
-            <tr><td>LCD Panel</td><td><b>8" color touch screen</b></td></tr>
-            <tr><td>Max Speed</td><td><b>800 rpm</b></td></tr>
-            <tr><td>Field (Flat)</td><td><b>240 x 200 mm</b></td></tr>
-            <tr><td>Cap System</td><td><b>Included</b></td></tr>
-          </table>
-        </div>
-        <div class="card">
-          <h2>Highlights &amp; Included Accessories</h2>
-          <div class="acc-grid">
-            <div class="acc-item"><b>Compact and approachable</b>Great entry point for embroidery without a big footprint.</div>
-            <div class="acc-item"><b>Creator focused</b>Built in designs and lettering support for fast starts.</div>
-            <div class="acc-item"><b>Event friendly</b>Easy to transport for shows and on the go setups.</div>
-            <div class="acc-item"><b>Flat hoop workflow</b>Includes multiple flat hoop sizes out of the box.</div>
-          </div>
-          <div class="incl">
-            <div class="t">Included Accessories</div>
-            <div class="incl-grid">
-              <div class="incl-box"><b>Flat hoops (qty 1 each)</b><ul class="incl-list"><li>10" x 8" flat hoop</li><li>5" x 4" flat hoop</li><li>2" x 2" flat hoop</li></ul></div>
-              <div class="incl-box"><b>Notes</b><ul class="incl-list"><li>Cap system included</li><li>Ask us about optional add ons</li><li>Freight and setup help available</li></ul></div>
-            </div>
-          </div>
-          <div class="note-box" style="margin-top:10px;"><span>Most customers ask about:</span> freight timing, training, starter supplies, accessories, software, and what hoop sizes they will use most.</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+<!-- ============================================================
+  4. INSTALL & TRAINING
+  ============================================================ -->
+<div class="section-block" id="install">
+  <div class="section-label">Support &amp; Coverage</div>
+
+
+
+<!-- ============================================================
+  1. BYLD ROI PAGE
+  ============================================================ -->
+<div class="section-block" id="byld-roi">
+  <div class="section-label">Equipment Financing</div>
+
 
 
 <!-- ============================================================
@@ -2024,106 +808,30 @@ td:first-child { color: var(--muted); width: 50%; }
   ============================================================ -->
 <div class="section-block" id="trade-in">
   <div class="section-label">Used Equipment &amp; Upgrade Program</div>
-  <div class="section-divider"></div>
-  <div class="page-shell">
 
-    <div class="topbar">
-      <div class="brand-left">
-        <img class="logo-stitch" alt="Stitch It International" src="https://cdn.shopify.com/s/files/1/1236/6284/files/new_sii_logo_1_1_f7596205-751d-425c-ba49-acfe68d36dea.png?v=1771362816">
-        <div class="divider"></div>
-        <div>
-          <div class="kicker">Used Equipment + Upgrade Program</div>
-          <h1 class="page-h1"><span>We Accept</span> Trade-Ins</h1>
-        </div>
-      </div>
-      <img class="logo" alt="SWF" src="https://cdn.shopify.com/s/files/1/1236/6284/files/swfnobg.png?v=1759258611">
-    </div>
 
-    <div class="content">
-      <div class="left">
-        <div class="card">
-          <div class="desc"><p>We evaluate used equipment based on brand, model, age, condition, stitch count, included accessories, and current market demand. The more complete and accurate the information, the faster we can review it.</p></div>
-          <div class="bullets" style="margin-top:10px;">
-            <div class="bullet"><b>Upgrade easier</b>Use existing equipment to help offset your next purchase.</div>
-            <div class="bullet"><b>Simple process</b>Submit your machine details and photos online.</div>
-            <div class="bullet"><b>Faster review</b>Complete information helps us quote more accurately.</div>
-            <div class="bullet"><b>Works with financing</b>Trade value can help reduce the amount financed.</div>
-          </div>
-        </div>
 
-        <div class="card">
-          <h2>What Helps Maximize Trade Value</h2>
-          <div class="value-strip">
-            <div class="value-title">Best Information To Include</div>
-            <div class="value-grid">
-              <div class="value-item">✔ Clear machine photos</div>
-              <div class="value-item">✔ Exact model number</div>
-              <div class="value-item">✔ Age / purchase year</div>
-              <div class="value-item">✔ Working condition</div>
-              <div class="value-item">✔ Stitch count if available</div>
-              <div class="value-item">✔ Included hoops / accessories</div>
-            </div>
-          </div>
-        </div>
+<!-- ============================================================
+  12. STITCHMAKER
+  ============================================================ -->
+<div class="section-block" id="stitchmaker">
+  <div class="section-label">Digitizing Software</div>
 
-        <div class="card">
-          <h2>Common Trade-In Candidates</h2>
-          <div class="grid2">
-            <div class="info-box"><div class="label">Single Head Machines</div><div class="value">Great for customers moving into multi-head production.</div></div>
-            <div class="info-box"><div class="label">Older Multi-Head Units</div><div class="value">A strong option when upgrading to newer, faster equipment.</div></div>
-            <div class="info-box"><div class="label">Running Equipment</div><div class="value">Operational machines with photos and details are easiest to evaluate.</div></div>
-            <div class="info-box"><div class="label">Complete Packages</div><div class="value">Machines with hoops, cap systems, and extras can be more attractive.</div></div>
-          </div>
-        </div>
 
-        <div class="cta-box">
-          <div class="t">Request A Trade-In Review</div>
-          <p class="p">Fill out the trade-in form with your contact information and machine details, and our team will review it and follow up with next steps.</p>
-          <a class="cta-btn cta-red" href="https://form.jotform.com/260695056141153" target="_blank" rel="noopener">Get Trade-In Value</a>
-        </div>
-      </div>
 
-      <div class="right">
-        <div class="card">
-          <h2>How It Works</h2>
-          <div class="step-grid">
-            <div class="step"><div class="step-num">Step 1</div><div class="step-text">Submit your machine information and photos through our trade-in form.</div></div>
-            <div class="step"><div class="step-num">Step 2</div><div class="step-text">We review the equipment details, condition, and marketability.</div></div>
-            <div class="step"><div class="step-num">Step 3</div><div class="step-text">Our team follows up with valuation guidance and next-step options.</div></div>
-            <div class="step"><div class="step-num">Step 4</div><div class="step-text">Apply the trade-in toward your next machine purchase, when approved.</div></div>
-          </div>
-        </div>
+<!-- ============================================================
+  10. MIGHTY HOOPS
+  ============================================================ -->
+<div class="section-block" id="mighty-hoop">
+  <div class="section-label">Accessory</div>
 
-        <div class="card">
-          <h2>What To Submit</h2>
-          <div class="list-card">
-            <b>Recommended Information</b>
-            <ul class="clean-list">
-              <li>Machine brand and exact model</li>
-              <li>Number of heads and needles</li>
-              <li>Approximate year of purchase</li>
-              <li>Overall condition and any issues</li>
-              <li>Photos of front, side, control panel, and sewing area</li>
-              <li>List of included hoops, cap system, or accessories</li>
-              <li>Any known service history or major repairs</li>
-            </ul>
-          </div>
-        </div>
 
-        <div class="card">
-          <h2>Why Customers Trade In</h2>
-          <div class="grid2">
-            <div class="info-box"><div class="label">Move Up In Production</div><div class="value">Go from a single head into a 4, 6, or 8 head setup.</div></div>
-            <div class="info-box"><div class="label">Reduce Out Of Pocket Cost</div><div class="value">Trade value can help lower the size of the next investment.</div></div>
-            <div class="info-box"><div class="label">Simplify The Upgrade</div><div class="value">One transaction is often easier than selling privately first.</div></div>
-            <div class="info-box"><div class="label">Pair With Financing</div><div class="value">A trade-in plus financing can make the next machine more manageable.</div></div>
-          </div>
-          <div class="note-box" style="margin-top:10px;"><span>Next step:</span> Submit your machine through the form and let us review the trade-in opportunity.</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+
+<!-- ============================================================
+  11. SUPPLIES
+  ============================================================ -->
+<div class="section-block" id="supplies">
+  <div class="section-label">Embroidery Supplies</div>
 
 <!-- Bottom spacer -->
 <div style="height:40px;"></div>
